@@ -76,6 +76,7 @@ architecture Behavioral of adau1761_test is
 		);
 	END COMPONENT;
 
+
    component clocking
    port(
       CLK_100           : in     std_logic;
@@ -84,6 +85,16 @@ architecture Behavioral of adau1761_test is
       LOCKED            : out    std_logic
       );
    end component;
+
+
+    component simpletone
+    port(
+        clk : in std_logic;
+        tone : out std_logic_vector(28 downto 0)
+        );
+    end component;
+
+
    
    signal clk_48     : std_logic;
    signal new_sample : std_logic;
@@ -119,7 +130,7 @@ process(clk_48)
    
    -- extend the line in sample to 29 bits.
    line_in_l_extended <= line_in_l(hi) & line_in_l(hi) & line_in_l(hi) & line_in_l(hi) & line_in_l(hi) & line_in_l;
-   line_in_r_extended <= line_in_r(hi) & line_in_r(hi) & line_in_r(hi) & line_in_r(hi) & line_in_r(hi) & line_in_r;
+   --line_in_r_extended <= line_in_r(hi) & line_in_r(hi) & line_in_r(hi) & line_in_r(hi) & line_in_r(hi) & line_in_r;
 
    -- filter the extended samples
 lpms1_l: low_pass_moving_sum GENERIC MAP(data_width => 29, window_width =>  8) PORT MAP(clk => clk_48,	enable => new_sample, sample_in => line_in_l_extended, sample_out => filter1_l);
@@ -139,6 +150,15 @@ lpms3_r: low_pass_moving_sum GENERIC MAP(data_width => 29, window_width => 32) P
                                                     filter1_r(26 downto 3) when "01",
                                                     filter2_r(27 downto 4) when "10",
                                                     filter3_r(28 downto 5) when others;
+
+thiswillwork : simpletone PORT MAP (
+    clk => clk_48,
+    tone => line_in_r_extended
+    );
+
+
+
+
                                  
 i_clocking : clocking port map (
       CLK_100 => CLK_100,
@@ -167,7 +187,7 @@ Inst_adau1761_izedboard: adau1761_izedboard PORT MAP(
       active     => active
 	);
 
-	Inst_dsp_block: dsp_block PORT MAP(
+Inst_dsp_block: dsp_block PORT MAP(
 		clk        => clk_48,
 		new_sample => new_sample,
 		in_l       => line_in_l_extended,
