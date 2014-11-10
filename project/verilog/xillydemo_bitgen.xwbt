@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/afs/ece.cmu.edu/usr/elliotr/Documents/xillinux-eval-zedboard-1.3a/verilog/xillydemo.ncd
+OUTFILE=/afs/ece.cmu.edu/usr/elliotr/Documents/xillinux-eval-zedboard-1.3a/verilog/xillydemo.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=/afs/ece.cmu.edu/usr/elliotr/Documents/xillinux-eval-zedboard-1.3a/verilog
+LICENSE=WebPack
+USER_INFO=174679548_176449548_210570730_342
