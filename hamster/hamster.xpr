@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright (c) 2001-2013 Xilinx Inc, All rights reserved -->
 
-<Project Version="7" Minor="1" Path="/afs/ece.cmu.edu/usr/elliotr/Private/18545/hamster/hamster.xpr">
+<Project Version="7" Minor="1" Path="/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/hamster/hamster.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="7ce92b6f145741f2a9930b8161320d04"/>
@@ -19,7 +19,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/i3c2.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/i3c2.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/i3c2.vhd"/>
           <Attr Name="ImportTime" Val="1389784982"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -27,7 +27,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/adau1761_configuraiton_data.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/adau1761_configuraiton_data.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/adau1761_configuraiton_data.vhd"/>
           <Attr Name="ImportTime" Val="1390616598"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -35,7 +35,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/i2s_data_interface.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/i2s_data_interface.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/i2s_data_interface.vhd"/>
           <Attr Name="ImportTime" Val="1390187956"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -43,7 +43,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/i2c.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/i2c.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/i2c.vhd"/>
           <Attr Name="ImportTime" Val="1390564640"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -51,15 +51,22 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/ADAU1761_interface.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/ADAU1761_interface.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/ADAU1761_interface.vhd"/>
           <Attr Name="ImportTime" Val="1390072294"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/funtimes.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/low_pass_moving_sum.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/low_pass_moving_sum.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/low_pass_moving_sum.vhd"/>
           <Attr Name="ImportTime" Val="1390171012"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -67,7 +74,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/dsp_block.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/dsp_block.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/dsp_block.vhd"/>
           <Attr Name="ImportTime" Val="1390186168"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -75,7 +82,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/clocking.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/clocking.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/clocking.vhd"/>
           <Attr Name="ImportTime" Val="1389095454"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -83,7 +90,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/adau1761_izedboard.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/adau1761_izedboard.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/adau1761_izedboard.vhd"/>
           <Attr Name="ImportTime" Val="1390564524"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -91,7 +98,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/adau1761_test.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/adau1761_test.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/adau1761_test.vhd"/>
           <Attr Name="ImportTime" Val="1390564608"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -99,20 +106,22 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/low_pass_moving_average.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/low_pass_moving_average.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../hamsterworks_dsp_enhanced/low_pass_moving_average.vhd"/>
           <Attr Name="ImportTime" Val="1390161280"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/tb_adau1761_test.vhd">
+      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
         <FileInfo>
-          <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../hamsterworks_dsp_enhanced/tb_adau1761_test.vhd"/>
-          <Attr Name="ImportTime" Val="1390187438"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -141,13 +150,22 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/imports/hamsterworks_dsp_enhanced/tb_adau1761_test.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/imports/hamsterworks_dsp_enhanced/tb_adau1761_test.vhd"/>
+          <Attr Name="ImportTime" Val="1411574748"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="adau1761_test"/>
+        <Option Name="TopModule" Val="tb_adau1761_test"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
   </FileSets>
@@ -159,7 +177,7 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
@@ -172,6 +190,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
   </Runs>
   <HWSession Dir="hw_1" File="hw.xml"/>

@@ -9,9 +9,6 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 
 	//typedef enum {IDLE,ATTACK,DECAY,SUSTAIN,RELEASE} estate;
 	
-	
-	
-	
 	wire [4:0] IDLE    = 5'b00001;
 	wire [4:0] ATTACK  = 5'b00010;
 	wire [4:0] DECAY   = 5'b00100;
