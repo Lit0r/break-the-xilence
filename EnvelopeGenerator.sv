@@ -1,12 +1,12 @@
 module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_value, busy);
 	input logic clk, rst_b;
 	input logic note_on, note_off;
-	input [7:0] a, b, c, d;
-	input [7:0] x, y, z;
-	output [7:0] out_value;
+	input logic [7:0] a, b, c, d;
+	input logic [7:0] x, y, z;
+	output logic [7:0] out_value;
 	output logic busy;
 
-	enum logic {
+	enum logic [4:0] {
 	IDLE = 5'b00001, 
 	ATTACK = 5'b00010,
 	DECAY = 5'b00100,
@@ -35,8 +35,8 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   					ns = ATTACK;
   			end
   			DECAY: begin
-  				if((b-(b-c)/y<c)
-  					ns = SUSTAIN;
+  				if((b-(b-c)/y)<c) 
+					ns = SUSTAIN;
   				else
   					ns = DECAY;
   			end
@@ -47,7 +47,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   					ns = SUSTAIN;
   			end
   			RELEASE: begin
-  				if((c-(c-d)/z<d)
+  				if((c-(c-d)/z)<d)
   					ns = IDLE;
   				else
   					ns = RELEASE;
@@ -81,4 +81,4 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   		endcase
   	end
 
-
+endmodule:envelope_generator
