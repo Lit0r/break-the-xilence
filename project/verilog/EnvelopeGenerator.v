@@ -17,17 +17,22 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 	
 	reg [4:0] current, next;
 	
-	reg [31:0] counter, counter1;
+	reg [17:0] riv; // relase state initial value
 	
-	assign counter1 = counter +  1;
+	
+	reg [31:0] counter;
+	wire [31:0] counter1;
+	assign counter1 = counter + 1;
 
   	always@(posedge clk, negedge rst_b) begin
     	if(~rst_b) current <= IDLE;
     	else begin
-			if(current != next)
-				counter = 0;
-			else
-				counter = counter1;
+			if(current != next) begin
+				counter <= 0;
+				if(next == RELEASE)
+					riv <= out_value;
+			end else
+				counter <= counter1;
 			current <= next;
 		end
   	end	
@@ -42,13 +47,17 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   					next = IDLE;
   			end
   			ATTACK: begin
-  				if(counter1 >= x)
+  				if(note_off)
+					next = RELEASE;
+				else if(counter1 >= x)
   					next = DECAY;
   				else
   					next = ATTACK;
   			end
   			DECAY: begin
-  				if(counter1 >= y) 
+  				if(note_off)
+					next = RELEASE;
+				else if(counter1 >= y) 
 					next = SUSTAIN;
   				else
   					next = DECAY;
@@ -88,7 +97,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   				busy = 1'b1;
   			end
   			RELEASE:begin
-  				out_value = c + counter * (d - c) / z;
+  				out_value = riv + counter * (d - riv) / z;
   				busy = 1'b1;
   			end
   		endcase
