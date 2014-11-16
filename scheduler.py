@@ -7,6 +7,7 @@ g = open("/dev/xillybus_write_32", "wb")
 monophonic = True
 freeBanks = Queue.Queue(32)
 queuedNotes = Queue.Queue(80)
+d = dict()
 fs = 48000000
 
 #fill the FIFO queue to prepare note banks
@@ -28,19 +29,30 @@ try:
                     #queue the note
                     queuedNotes.put(note)
                 else:
-                    print "Note On",
-                    print note
-                    freq = 440 * (2 ** ((note - 69) / 12.0))
-                    g.write(struct.pack("i", fs / freq))
-                    g.flush()
+                    if not freeBanks.empty():
+                        print "Note On",
+                        print note
+                        freq = 440 * (2 ** ((note - 69) / 12.0))
+                        bank = freeBanks.get()
+                        d[note] = bank
+                        g.write(struct.pack("ii", bank, fs / freq))
+                        g.flush()
+                    else:
+                        queuedNotes.put(note)
             elif event == '80':
                 print "Note Off",
                 print note
+                bank = d[note]
+                freeBanks.push(bank)
                 if queuedNotes.empty():
-                    g.write(struct.pack("i", 0))
+                    g.write(struct.pack("ii", bank, 0))
                     g.flush()
                 else:
-                    g.write(struct.pack("i", queuedNotes.pull()))
+                    bank = freeBanks.get()
+                    newNote = queuedNotes.get()
+                    d[newNote] = bank
+                    freq = 440 * (2 ** ((newNote - 69) / 12.0))
+                    g.write(struct.pack("ii", bank, fs / freq))
                     g.flush()
 
             elif event == 'b0':
@@ -53,12 +65,15 @@ try:
             #polyphonic scheduling
             if event == '90':
                 if not freeBanks.empty():
-                    g.write(struct.pack())
+                    bank = freeBanks.get()
+                    d[note] = bank
+                    freq = 440 * (2 ** ((note - 69) / 12.0))
+                    g.write(struct.pack("ii", bank, fs / freq))
                     g.flush()
             elif event == '80':
-                #need to hold map of notes -> banks
-                #to know which banks to turn off
-                pass
+                bank = d[note]
+                freeBanks.push(bank)
+                g.write(struct.pack("ii", bank, 0))
             elif event =='b0':
                 print "Control Event",
                 print "Slider", note,
