@@ -39,7 +39,8 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 
   	//next state logic
   	always @* begin
-  		case(current)
+  		done = 0;
+		case(current)
   			IDLE: begin
   				if(note_on)
   					next = ATTACK;
@@ -69,12 +70,14 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   					next = SUSTAIN;
   			end
   			RELEASE: begin
-  				if(counter1 >= z)
+  				if(counter1 >= z) begin
   					next = IDLE;
-            done = 1'b1;
-  				else
+					done = 1'b1;
+  				end else
   					next = RELEASE;
   			end
+			default:
+				next = IDLE;
   		endcase
   	end
 
@@ -82,7 +85,6 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   	always @* begin
   		case(current)
   			IDLE:begin
-          done = 1'b0;
   				out_value = a;
   				busy = 1'b0;
   			end
