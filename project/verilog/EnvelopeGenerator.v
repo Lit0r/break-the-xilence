@@ -1,10 +1,10 @@
-module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_value, busy);
+module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_value, busy,done);
 	input clk, rst_b;
 	input note_on, note_off;
 	input [6:0] a, b, c, d;
 	input [31:0] x, y, z;
 	output reg [17:0] out_value;
-	output reg busy;
+	output reg busy, done;
 
 
 	//typedef enum {IDLE,ATTACK,DECAY,SUSTAIN,RELEASE} estate;
@@ -71,6 +71,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   			RELEASE: begin
   				if(counter1 >= z)
   					next = IDLE;
+            done = 1'b1;
   				else
   					next = RELEASE;
   			end
@@ -81,6 +82,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   	always @* begin
   		case(current)
   			IDLE:begin
+          done = 1'b0;
   				out_value = a;
   				busy = 1'b0;
   			end
