@@ -1,14 +1,22 @@
 import struct
 import Queue
+import fcntl
+import os
 
 f = open("/dev/snd/midiC1D0","rb")
 g = open("/dev/xillybus_write_32", "wb")
+freed = open("/dev/snd/midiC0D0", "rb")
+
+flags = fcntl.fcntl(freed, fcntl.F_GETFL)
+flags = flags | os.O_NONBLOCK
+fcntl.fcntl(freed, fcntl.F_SETFL, flags)
 
 monophonic = True
 freeBanks = Queue.Queue(32)
 queuedNotes = Queue.Queue(80)
 d = dict()
 fs = 48000000
+
 
 #fill the FIFO queue to prepare note banks
 for i in range(32):
@@ -80,7 +88,14 @@ try:
                 print "to position", velocity
 
 
+        try:
+            stuff = freed.read(3)
+            #freeBanks.put(freed.read(1))
+            print "Note", int(stuff[1].encode('hex'), 16)
+        except IOError:
+            pass
         byte = f.read(3)
+
 
 
 finally:
