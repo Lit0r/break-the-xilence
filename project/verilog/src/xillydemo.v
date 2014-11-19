@@ -212,13 +212,59 @@ adau1761_test adau (
 );
 
 
+
+wire [17:0] adsr_out;
+
+wire [23:0] audio_pre_filter;
+wire [35:0] audio_post_filter;
+
+
+
+
+
 //(input clk, input en, input [25:0] period, output logic [23:0] tone);
 squaregen sq (
 .clk(clk_48),
 .en(fromps[22:0] != 0),
 .period(fromps[22:0]),
-.tone(audio)
+.tone(audio_pre_filter)
 );
+
+assign audio_post_filter = audio_pre_filter * adsr_out;
+assign audio = audio_post_filter[35:35-24+1];//audio_post_filter[35:18];//(35-18+1)];
+
+
+
+
+
+reg nevent;
+reg [22:0] oldfromps;
+always @(posedge clk_48) begin
+	nevent <= (fromps[22:0] != oldfromps);
+	oldfromps <= fromps[22:0];
+end
+
+envelope_generator egtest (
+	.clk(clk_48),
+	.rst_b(1'b1),
+	.note_on(nevent && fromps[22:0] != 0),
+	.note_off(nevent && fromps[22:0] == 0), 
+	.a(0),
+	.b(127), 
+	.c(63), 
+	.d(0), 
+	.x(48000000), 
+	.y(48000000), 
+	.z(48000000), 
+	.out_value(adsr_out), 
+	.busy()
+	);
+
+
+
+
+
+
 
 
 assign fromps = user_w_write_32_data;

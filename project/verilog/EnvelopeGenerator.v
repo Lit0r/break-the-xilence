@@ -80,7 +80,10 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 				next = IDLE;
   		endcase
   	end
-
+	
+	//reg [63:0] intermediate; // for calculations that'll overflow otherwise
+	
+	
   	//output logic
   	always @* begin
   		case(current)
@@ -89,11 +92,11 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   				busy = 1'b0;
   			end
   			ATTACK:begin
-  				out_value = a + counter * (b - a) / x;
+  				out_value = $signed({1'b0, a}) + $signed({32'b0, counter}) * $signed(b - a) / $signed(x);
   				busy = 1'b1;
   			end
   			DECAY:begin
-  				out_value = b + counter * (c - b) / y;
+  				out_value = $signed({1'b0, b}) + $signed({32'b0, counter}) * $signed(c - b) / $signed(y);
   				busy = 1'b1;
   			end
   			SUSTAIN:begin
@@ -101,7 +104,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   				busy = 1'b1;
   			end
   			RELEASE:begin
-  				out_value = riv + counter * (d - riv) / z;
+  				out_value = $signed({1'b0, riv}) + $signed({32'b0, counter}) * $signed(d - riv) / $signed(z);
   				busy = 1'b1;
   			end
   		endcase
