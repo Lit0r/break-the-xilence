@@ -92,11 +92,11 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   				busy = 1'b0;
   			end
   			ATTACK:begin
-  				out_value = a + {32'b0, counter} * $signed(b - a) / x;
+  				out_value = a + $signed({32'b0, counter}) * ($signed(b) - $signed(a)) / x;
   				busy = 1'b1;
   			end
   			DECAY:begin
-  				out_value = b + {32'b0, counter} * $signed(c - b) / y;
+  				out_value = b + $signed({32'b0, counter}) * ($signed(c) - $signed(b)) / y;
   				busy = 1'b1;
   			end
   			SUSTAIN:begin
@@ -104,7 +104,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   				busy = 1'b1;
   			end
   			RELEASE:begin
-  				out_value = riv + {32'b0, counter} * $signed(d - riv) / z;
+  				out_value = riv + $signed({32'b0, counter}) * ($signed(d) - $signed(riv)) / z;
   				busy = 1'b1;
   			end
   		endcase
