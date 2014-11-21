@@ -151,7 +151,7 @@ NET  otg_oc          LOC = L16  | IOSTANDARD="LVCMOS33";
 #
 # Engineer: Mike Field <hamster@snap.net.nz>
 ###########################################
-NET CLK_100       LOC = Y9   | IOSTANDARD=LVCMOS33 | PERIOD = 10 ns;  # "GCLK"
+#NET CLK_100       LOC = Y9   | IOSTANDARD=LVCMOS33 | PERIOD = 10 ns;  # "GCLK"
 
 NET AC_ADR0       LOC = AB1  | IOSTANDARD=LVCMOS33;
 NET AC_ADR1       LOC = Y5   | IOSTANDARD=LVCMOS33;

@@ -86,7 +86,9 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 	
   	//output logic
   	always @* begin
-  		case(current)
+  		busy = 0;
+		out_value = 0;
+		case(current)
   			IDLE:begin
   				out_value = a;
   				busy = 1'b0;

@@ -97,7 +97,7 @@ IBUFG #(
    reg [7:0] litearray3[0:31];
 
    // Wires related to /dev/xillybus_mem_8
-   /*wire      user_r_mem_8_rden;
+   /* wire      user_r_mem_8_rden;
    wire      user_r_mem_8_empty;
    reg [7:0] user_r_mem_8_data;
    wire      user_r_mem_8_eof;
@@ -211,6 +211,18 @@ adau1761_test adau (
 
 );
 
+clk_calc_audio audio_clk_div
+ (// Clock in ports
+  .CLK_IN1(clk_100_buffered),
+  // Clock out ports
+  .clk_calc(clk_calc),
+  // Status and control signals
+  .RESET(),
+  .LOCKED()
+ );
+
+
+
 
 
 wire [17:0] adsr_out;
@@ -224,28 +236,28 @@ wire [35:0] audio_post_filter;
 
 //(input clk, input en, input [25:0] period, output logic [23:0] tone);
 squaregen sq (
-.clk(clk_48),
-.en(fromps[22:0] != 0),
+.clk(clk_calc),
+.en(/*fromps[22:0] != 0*/ 1'b1),
 .period(fromps[22:0]),
 .tone(audio_pre_filter)
 );
 
-assign audio_post_filter = audio_pre_filter * adsr_out;
-assign audio = audio_post_filter[35:35-24+1];//audio_post_filter[35:18];//(35-18+1)];
-
+assign audio_post_filter = $signed(audio_pre_filter) * $signed(adsr_out);
+//assign audio = audio_post_filter[35:35-24+1];//audio_post_filter[35:18];//(35-18+1)];
+assign audio = audio_pre_filter;//adsr_out;
 
 
 
 
 reg nevent;
 reg [22:0] oldfromps;
-always @(posedge clk_48) begin
+always @(posedge clk_calc) begin
 	nevent <= (fromps[22:0] != oldfromps);
 	oldfromps <= fromps[22:0];
 end
 
 envelope_generator egtest (
-	.clk(clk_48),
+	.clk(clk_calc),
 	.rst_b(1'b1),
 	.note_on(nevent && fromps[22:0] != 0),
 	.note_off(nevent && fromps[22:0] == 0), 
@@ -253,9 +265,9 @@ envelope_generator egtest (
 	.b(127), 
 	.c(63), 
 	.d(0), 
-	.x(48000000), 
-	.y(48000000), 
-	.z(48000000), 
+	.x(48000), 
+	.y(48000), 
+	.z(48000), 
 	.out_value(adsr_out), 
 	.busy()
 	);
@@ -449,10 +461,10 @@ assign fromps = user_w_write_32_data;
    //assign  user_r_mem_8_eof = 0;
    //assign  user_w_mem_8_full = 0;
 
-   reg seen;
-
-	always @(posedge clk_48)
-	    seen <= user_w_write_32_wren;
+   //reg seen;
+wire seen = 1'b1;
+	//always @(posedge clk_48)
+	  //  seen <= user_w_write_32_wren;
 
 
 

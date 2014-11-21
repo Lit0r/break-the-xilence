@@ -1,3 +1,117 @@
 Welcome to Xilinx CORE Generator.
 Help system initialized.
 The IP Catalog has been reloaded.
+Opening project file
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/coregen.cgp.
+Customize and GenerateINFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+Resolving generics for 'clk_wiz_v3_6'...
+Applying external generics to 'clk_wiz_v3_6'...
+Delivering associated files for 'clk_wiz_v3_6'...
+WARNING:sim - Component clk_wiz_v3_6 does not have a valid model name for
+   Verilog synthesis
+Delivering EJava files for 'clk_wiz_v3_6'...
+Delivered 3 files into directory
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6
+Delivered 1 file into directory
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6
+Generating ASY schematic symbol...
+Loading device for application Rf_Device from file '7z020.nph' in environment
+/afs/ece.cmu.edu/support/xilinx/xilinx.release/14.2/ISE_DS/ISE/.
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating ISE project...
+XCO file found: clk_wiz_v3_6.xco
+XMDF file found: clk_wiz_v3_6_xmdf.tcl
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6/example_design/clk_wiz_v3_6_exdes.ucf -view all
+-origin_type created
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6/example_design/clk_wiz_v3_6_exdes.v -view all
+-origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file
+   "/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog
+   /ipcore_dir/tmp/_cg/clk_wiz_v3_6/example_design/clk_wiz_v3_6_exdes.v" into
+   library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6.asy -view all -origin_type imported
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6.v -view all -origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file
+   "/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog
+   /ipcore_dir/tmp/_cg/clk_wiz_v3_6.v" into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_wiz_v3_6.veo -view all -origin_type imported
+WARNING: This core does not have a top level called "/clk_wiz_v3_6"
+WARNING: Top level has been set to "/clk_wiz_v3_6_exdes"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Saved CGP file for project 'coregen'.
+Recustomize and Generate (Under Original Project Settings)INFO:sim:172 - Generating IP...
+Resolving generics for 'clk_calc_audio'...
+Applying external generics to 'clk_calc_audio'...
+Delivering associated files for 'clk_calc_audio'...
+WARNING:sim - Component clk_wiz_v3_6 does not have a valid model name for
+   Verilog synthesis
+Delivering EJava files for 'clk_calc_audio'...
+Delivered 3 files into directory
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio
+Delivered 1 file into directory
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio
+Generating ASY schematic symbol...
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating ISE project...
+XCO file found: clk_calc_audio.xco
+XMDF file found: clk_calc_audio_xmdf.tcl
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio/example_design/clk_calc_audio_exdes.ucf -view all
+-origin_type created
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio/example_design/clk_calc_audio_exdes.v -view all
+-origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file
+   "/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog
+   /ipcore_dir/tmp/_cg/clk_calc_audio/example_design/clk_calc_audio_exdes.v"
+   into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio.asy -view all -origin_type imported
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio.v -view all -origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file
+   "/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog
+   /ipcore_dir/tmp/_cg/clk_calc_audio.v" into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding
+/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/ipc
+ore_dir/tmp/_cg/clk_calc_audio.veo -view all -origin_type imported
+WARNING: This core does not have a top level called "/clk_calc_audio"
+WARNING: Top level has been set to "/clk_calc_audio_exdes"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Saved CGP file for project 'coregen'.
+Closed project file.
