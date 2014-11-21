@@ -13,7 +13,8 @@ fcntl.fcntl(freed, fcntl.F_SETFL, flags)
 
 monophonic = True
 freeBanks = Queue.Queue(32)
-queuedNotes = Queue.Queue(80)
+queuedNotes = []
+playing = 0
 d = dict()
 fs = 48000000
 
@@ -33,26 +34,32 @@ try:
         #here lies monophonic scheduling
         if(monophonic):
             if event == '90':
-                if not queuedNotes.empty():
+                if not queuedNotes == []:
                     #queue the note
-                    queuedNotes.put(note)
+                    queuedNotes.insert(0, note)
                 else:
                     print "Note On",
                     print note
+                    playing = note
                     freq = 440 * (2 ** ((note - 69) / 12.0))
-                    g.write(struct.pack("ii", 1, fs / freq))
+                    g.write(struct.pack("i", fs / freq))
                     g.flush()
             elif event == '80':
                 print "Note Off",
                 print note
-                if queuedNotes.empty():
-                    g.write(struct.pack("ii", 1, 0))
+                if queuedNotes == []:
+                    playing = 0
+                    g.write(struct.pack("i", 0))
                     g.flush()
                 else:
-                    newNote = queuedNotes.get()
-                    freq = 440 * (2 ** ((newNote - 69) / 12.0))
-                    g.write(struct.pack("ii", 1, fs / freq))
-                    g.flush()
+                    if playing == note:
+                        newNote = queuedNotes.pop(0)
+                        freq = 440 * (2 ** ((newNote - 69) / 12.0))
+                        g.write(struct.pack("i", fs / freq))
+                        g.flush()    
+                    else:
+                        queuedNotes.remove(note)
+                    
 
             elif event == 'b0':
                 print "Control Event",
@@ -67,12 +74,12 @@ try:
                     bank = freeBanks.get()
                     d[note] = bank
                     freq = 440 * (2 ** ((note - 69) / 12.0))
-                    g.write(struct.pack("ii", bank, fs / freq))
+                    g.write(struct.pack("i", fs / freq))
                     g.flush()
             elif event == '80':
                 bank = d[note]
                 freeBanks.push(bank)
-                g.write(struct.pack("ii", bank, 0))
+                g.write(struct.pack("i", 0))
             elif event =='b0':
                 print "Control Event",
                 print "Slider", note,
