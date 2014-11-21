@@ -37,30 +37,21 @@ try:
                     #queue the note
                     queuedNotes.put(note)
                 else:
-                    if not freeBanks.empty():
-                        print "Note On",
-                        print note
-                        freq = 440 * (2 ** ((note - 69) / 12.0))
-                        bank = freeBanks.get()
-                        d[note] = bank
-                        g.write(struct.pack("ii", bank, fs / freq))
-                        g.flush()
-                    else:
-                        queuedNotes.put(note)
+                    print "Note On",
+                    print note
+                    freq = 440 * (2 ** ((note - 69) / 12.0))
+                    g.write(struct.pack("ii", 1, fs / freq))
+                    g.flush()
             elif event == '80':
                 print "Note Off",
                 print note
-                bank = d[note]
-                freeBanks.push(bank)
                 if queuedNotes.empty():
-                    g.write(struct.pack("ii", bank, 0))
+                    g.write(struct.pack("ii", 1, 0))
                     g.flush()
                 else:
-                    bank = freeBanks.get()
                     newNote = queuedNotes.get()
-                    d[newNote] = bank
                     freq = 440 * (2 ** ((newNote - 69) / 12.0))
-                    g.write(struct.pack("ii", bank, fs / freq))
+                    g.write(struct.pack("ii", 1, fs / freq))
                     g.flush()
 
             elif event == 'b0':
