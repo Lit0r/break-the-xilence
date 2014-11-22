@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<DesignStrategy goal="harder better faster stronger" strategy="elliot" version="12.1">
+
+  <Description>The Default strategy provides a balanced optimization of performance results vs. runtime. The default property values correspond to the default values of each of the underlying implementation tools. This strategy keeps all properties in an unlocked state so that you can modify the values as you wish.</Description>
+
+  <DeviceList devices="zynq"/>
+
+  <Properties>
+    <property name="Synthesize - XST:Optimization Goal" value="Speed"/>
+    <property name="Synthesize - XST:Optimization Effort" value="Fast"/>
+    <property name="Synthesize - XST:Cross Clock Analysis" value="true"/>
+    <property name="Map:Placer Effort Level" value="Standard"/>
+    <property name="Place &amp; Route:Place &amp; Route Effort Level (Overall)" value="Standard"/>
+  </Properties>
+
+</DesignStrategy>

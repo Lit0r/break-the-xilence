@@ -25,12 +25,12 @@ module sawgen(input clk, input en, input [25:0] period, output reg [23:0] tone);
     
     //logic[31:0] period = (48000000 / freq);
     
-    wire [23:0] tone0;
-	 wire [55:0] tone1;
-	 //reg [23:0] tone2;
-	 //reg en0, en1;
+    reg [23:0] tone0;
+	 reg [55:0] tone1;
+	 reg [23:0] tone2;
+	 reg en0, en1;
 	 wire [95:0] m_axis_dout_tdata;
-	 
+	 /*
 	 multiplier your_instance_name (
   .clk(clk), // input clk
   .a({count}), // input [63 : 0] a
@@ -54,16 +54,17 @@ module sawgen(input clk, input en, input [25:0] period, output reg [23:0] tone);
 	 
 	 
 	 
-	 
+	 */
     always @(posedge clk) begin
-		  //en0 <= en;
-		  //en1 <= en0;
-		  //tone0 <= $signed({32'b0, count}) * $signed(amplitude * 2);
-		  //tone1 <= $signed(tone0) / $signed(period);
-		  tone <= en ? 
-		          m_axis_dout_tvalid ? $signed(tone1) + $signed(-amplitude) : 
-					 tone
-					 : 0;
+		  en0 <= en;
+		  en1 <= en0;
+		  tone0 <= $signed({32'b0, count}) * $signed(amplitude * 2);
+		  tone1 <= $signed(tone0) / $signed(period);
+		  tone <= en1 ? 
+		          //m_axis_dout_tvalid 
+					 $signed(tone1) + $signed(-amplitude) : 0;
+				//	 tone
+				//	 : 0;
 			 
 	 
 	 
