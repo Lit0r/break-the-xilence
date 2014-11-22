@@ -13,7 +13,7 @@ library unisim;
 use unisim.vcomponents.all;
 
 entity adau1761_test is
-    Port ( clk_100  : in    STD_LOGIC;
+    Port ( clk_48  : in    STD_LOGIC;
            AC_ADR0  : out   STD_LOGIC;
            AC_ADR1  : out   STD_LOGIC;
            AC_GPIO0 : out   STD_LOGIC;  -- I2S MISO
@@ -24,7 +24,6 @@ entity adau1761_test is
            AC_SCK   : out   STD_LOGIC;
            AC_SDA   : inout STD_LOGIC;
 			  
-			  clk_48_out : out STD_LOGIC;
 			  audio : in STD_LOGIC_VECTOR(23 downto 0);
 			  
            sw       : in    STD_LOGIC_VECTOR(7 downto 0)
@@ -78,16 +77,7 @@ architecture Behavioral of adau1761_test is
 		);
 	END COMPONENT;
 
-   component clocking
-   port(
-      CLK_100           : in     std_logic;
-      CLK_48            : out    std_logic;
-      RESET             : in     std_logic;
-      LOCKED            : out    std_logic
-      );
-   end component;
    
-   signal clk_48     : std_logic;
    signal new_sample : std_logic;
    signal line_in_l  : std_logic_vector(23 downto 0);
    signal line_in_r  : std_logic_vector(23 downto 0);
@@ -140,18 +130,11 @@ process(clk_48)
         --                                            filter1_r(26 downto 3) when "01",
           --                                          filter2_r(27 downto 4) when "10",
             --                                        filter3_r(28 downto 5) when others;
-clk_48_out <= clk_48;         
 hphone_r <= audio;
 hphone_l <= audio;
 
 
 			
-i_clocking : clocking port map (
-      CLK_100 => CLK_100,
-      CLK_48  => CLK_48,
-      RESET   => '0',
-      LOCKED  => open
-   );
 
 Inst_adau1761_izedboard: adau1761_izedboard PORT MAP(
 		clk_48     => clk_48,

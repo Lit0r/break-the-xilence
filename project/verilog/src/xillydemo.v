@@ -193,8 +193,14 @@ wire [31:0] fromps;
 wire [23:0] audio;
 
 
+clocking clocker(
+	.CLK_IN1(clk_100_buffered),
+	.CLK_audio(clk_48),
+	.CLK_calc(clk_calc)
+);
+
 adau1761_test adau (
-.clk_100(clk_100_buffered),
+			  .clk_48(clk_48),
            .AC_ADR0(AC_ADR0)  ,
            .AC_ADR1(AC_ADR1)  ,
            .AC_GPIO0(AC_GPIO0) ,
@@ -204,24 +210,11 @@ adau1761_test adau (
            .AC_MCLK(AC_MCLK) ,
            .AC_SCK(AC_SCK)  ,
            .AC_SDA(AC_SDA) ,
-			  .clk_48_out(clk_48),
 			  .audio(audio),
            .sw()     
 
 
 );
-
-clk_calc_audio audio_clk_div
- (// Clock in ports
-  .CLK_IN1(clk_100_buffered),
-  // Clock out ports
-  .clk_calc(clk_calc),
-  // Status and control signals
-  .RESET(),
-  .LOCKED()
- );
-
-
 
 
 
@@ -243,8 +236,8 @@ squaregen sq (
 );
 
 assign audio_post_filter = $signed(audio_pre_filter) * $signed(adsr_out);
-//assign audio = audio_post_filter[35:35-24+1];//audio_post_filter[35:18];//(35-18+1)];
-assign audio = audio_pre_filter;//adsr_out;
+assign audio = audio_post_filter[35:35-24+1];//audio_post_filter[35:18];//(35-18+1)];
+//assign audio = audio_post_filter;//adsr_out;
 
 
 
@@ -265,9 +258,9 @@ envelope_generator egtest (
 	.b(127), 
 	.c(63), 
 	.d(0), 
-	.x(48000), 
-	.y(48000), 
-	.z(48000), 
+	.x(48000000), 
+	.y(48000000), 
+	.z(48000000), 
 	.out_value(adsr_out), 
 	.busy()
 	);
