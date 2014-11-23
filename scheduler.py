@@ -16,7 +16,7 @@ freeBanks = Queue.Queue(32)
 queuedNotes = []
 playing = 0
 d = dict()
-fs = 48000000
+fs = 4800000
 
 
 #fill the FIFO queue to prepare note banks
@@ -33,33 +33,24 @@ try:
 
         #here lies monophonic scheduling
         if(monophonic):
-            if event == '90':
-                if not queuedNotes == []:
-                    #queue the note
-                    queuedNotes.insert(0, note)
-                else:
-                    print "Note On",
-                    print note
-                    playing = note
-                    freq = 440 * (2 ** ((note - 69) / 12.0))
-                    g.write(struct.pack("i", fs / freq))
-                    g.flush()
-            elif event == '80':
-                print "Note Off",
-                print note
-                if queuedNotes == []:
-                    playing = 0
+            if(event == '90'):
+                queuedNotes.insert(0, note)
+                playing = note
+                freq = 440 * (2 ** ((note - 69) / 12.0))
+                g.write(struct.pack("i", fs / freq))
+                g.flush
+
+            elif(event == '80'):    
+                queuedNotes.remove(note)
+                if(queuedNotes == []):
                     g.write(struct.pack("i", 0))
                     g.flush()
-                else:
-                    if playing == note:
-                        newNote = queuedNotes.pop(0)
-                        freq = 440 * (2 ** ((newNote - 69) / 12.0))
-                        g.write(struct.pack("i", fs / freq))
-                        g.flush()    
-                    else:
-                        queuedNotes.remove(note)
-                    
+                elif(playing == note):
+                    newNote = queuedNotes.pop(0) 
+                    playing = newNote  
+                    freq = 440 * (2 ** ((note - 69) / 12.0)) 
+                    g.write(struct.pack("i", fs / freq))
+                    g.flush()
 
             elif event == 'b0':
                 print "Control Event",
@@ -98,3 +89,31 @@ try:
 
 finally:
     f.close()
+
+
+            # if event == '90':
+            #     if not queuedNotes == []:
+            #         #queue the note
+            #         queuedNotes.insert(0, note)
+            #     else:
+            #         print "Note On",
+            #         print note
+            #         playing = note
+            #         freq = 440 * (2 ** ((note - 69) / 12.0))
+            #         g.write(struct.pack("i", fs / freq))
+            #         g.flush()
+            # elif event == '80':
+            #     print "Note Off",
+            #     print note
+            #     if queuedNotes == []:
+            #         playing = 0
+            #         g.write(struct.pack("i", 0))
+            #         g.flush()
+            #     else:
+            #         if playing == note:
+            #             newNote = queuedNotes.pop(0)
+            #             freq = 440 * (2 ** ((newNote - 69) / 12.0))
+            #             g.write(struct.pack("i", fs / freq))
+            #             g.flush()    
+            #         else:
+            #             queuedNotes.remove(note)
