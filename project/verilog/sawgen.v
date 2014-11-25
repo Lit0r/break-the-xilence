@@ -29,7 +29,7 @@ module sawgen(input clk, input en, input [25:0] period, output reg [23:0] tone);
 	 reg [55:0] tone1;
 	 reg [23:0] tone2;
 	 reg en0, en1;
-	 wire [95:0] m_axis_dout_tdata;
+	 //wire [95:0] m_axis_dout_tdata;
 	 /*
 	 multiplier your_instance_name (
   .clk(clk), // input clk
@@ -58,7 +58,7 @@ module sawgen(input clk, input en, input [25:0] period, output reg [23:0] tone);
     always @(posedge clk) begin
 		  en0 <= en;
 		  en1 <= en0;
-		  tone0 <= $signed({32'b0, count}) * $signed(amplitude * 2);
+		  tone0 <= $signed(count + 56'b0) * $signed(amplitude * 2);
 		  tone1 <= $signed(tone0) / $signed(period);
 		  tone <= en1 ? 
 		          //m_axis_dout_tvalid 

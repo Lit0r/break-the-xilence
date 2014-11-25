@@ -221,24 +221,24 @@ adau1761_test adau (
 wire [17:0] adsr_out;
 
 wire [23:0] audio_pre_filter;
-wire [35:0] audio_post_filter;
+wire [41:0] audio_post_filter;
 
 
 
 
 
 //(input clk, input en, input [25:0] period, output logic [23:0] tone);
-sawgen sq (
+squaregen sq (
 .clk(clk_calc),
 .en(/*fromps[22:0] != 0*/ 1'b1),
 .period(fromps[22:0]),
 .tone(audio_pre_filter)
 );
 
-//assign audio_post_filter = $signed(audio_pre_filter) * $signed(adsr_out);
-//assign audio = audio_post_filter[35:35-24+1];//audio_post_filter[35:18];//(35-18+1)];
+assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
+assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
 //assign audio = audio_post_filter;//adsr_out;
-assign audio = audio_pre_filter;
+//assign audio = audio_pre_filter;
 
 
 
@@ -248,7 +248,7 @@ always @(posedge clk_calc) begin
 	nevent <= (fromps[22:0] != oldfromps);
 	oldfromps <= fromps[22:0];
 end
-/*
+
 envelope_generator egtest (
 	.clk(clk_calc),
 	.rst_b(1'b1),
@@ -258,16 +258,16 @@ envelope_generator egtest (
 	.b(127), 
 	.c(63), 
 	.d(0), 
-	.x(48000000), 
-	.y(48000000), 
-	.z(48000000), 
+	.x(4800000), 
+	.y(4800000), 
+	.z(4800000), 
 	.out_value(adsr_out), 
 	.busy()
 	);
 
 
 
-*/
+
 
 
 
