@@ -84,10 +84,14 @@ architecture Behavioral of pmodAD2_ctrl is
 	signal fDoRead			: STD_LOGIC;
 	signal currentAddr	: STD_LOGIC_VECTOR(7 downto 0);
 	signal fDone			: STD_LOGIC;
-	
+
 	constant addrAD2		: STD_LOGIC_VECTOR(6 downto 0) := "0101000";
-	constant writeCfg		: STD_LOGIC_VECTOR(7 downto 0) := "11110000";
-	
+	constant writeCfg1		: STD_LOGIC_VECTOR(7 downto 0) := "00010000";
+	constant writeCfg2		: STD_LOGIC_VECTOR(7 downto 0) := "00100000";
+	constant writeCfg3		: STD_LOGIC_VECTOR(7 downto 0) := "01000000";
+	constant writeCfg4		: STD_LOGIC_VECTOR(7 downto 0) := "10000000";
+
+	signal config : integer := 0;	
 	signal waitCount : integer := 0;
 	
 	type	state_AD2_reader is (stDone, stWait, stGo, stConfig, stRead1, stRead2);
@@ -142,6 +146,7 @@ begin
 				fDoTransmit <= '0';
 				fMessage <= '0';
 				waitCount <= 0;
+				if()
 			else
 				case stMain is
 					-- When the TWI controller we're using is brought out of a reset state
@@ -163,11 +168,17 @@ begin
 					when stConfig =>
 						fMessage <= '0';
 						fDoTransmit <= '0';
+						if (config = 0) writeCfg <= writeCfg1;
+						if (config = 1) writeCfg <= writeCfg2;
+						if (config = 2) writeCfg <= writeCfg3;
+						if (config = 3) writeCfg <= writeCfg4;
+
 						
 						-- Hold the configuration state until we're done sending.
 						if (fDone = '1') then
 							-- Send the proper pins high for the state change
 							stMain <= stRead1;
+							config <= (config = 3) ? 0 : config + 1;
 						else
 							-- Force the pins low now that we're actually in the state.
 							fMessage <= '0';
