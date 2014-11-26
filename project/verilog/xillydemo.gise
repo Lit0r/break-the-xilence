@@ -55,6 +55,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="xillydemo.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="xillydemo.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="xillydemo.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="xillydemo_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="xillydemo_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="xillydemo_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="xillydemo_map.mrp" xil_pn:subbranch="Map"/>
@@ -98,19 +99,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1416984053" xil_pn:in_ck="7745052194430438295" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5287887104323726114" xil_pn:start_ts="1416984009">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
+    <transform xil_pn:end_ts="1417029189" xil_pn:in_ck="7745052194430438295" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5287887104323726114" xil_pn:start_ts="1417029172">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xillydemo.lso"/>
       <outfile xil_pn:name="xillydemo.ngc"/>
       <outfile xil_pn:name="xillydemo.ngr"/>
       <outfile xil_pn:name="xillydemo.prj"/>
-      <outfile xil_pn:name="xillydemo.stx"/>
       <outfile xil_pn:name="xillydemo.syr"/>
       <outfile xil_pn:name="xillydemo.xst"/>
       <outfile xil_pn:name="xillydemo_xst.xrpt"/>
@@ -124,6 +121,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="xillydemo.bld"/>
@@ -134,6 +132,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="xillydemo.pcf"/>
       <outfile xil_pn:name="xillydemo_map.map"/>
@@ -148,6 +147,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="xillydemo.ncd"/>
       <outfile xil_pn:name="xillydemo.pad"/>
@@ -160,9 +160,10 @@
       <outfile xil_pn:name="xillydemo_par.xrpt"/>
     </transform>
     <transform xil_pn:end_ts="1416984409" xil_pn:in_ck="2710075710342955802" xil_pn:name="TRANEXT_bitFile_zynq" xil_pn:prop_ck="-8808622799194500101" xil_pn:start_ts="1416984350">
-      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="usage_statistics_webtalk.html"/>
       <outfile xil_pn:name="webtalk.log"/>
@@ -175,6 +176,7 @@
     <transform xil_pn:end_ts="1416984350" xil_pn:in_ck="383094678223408404" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416183" xil_pn:start_ts="1416984328">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="xillydemo.twr"/>
       <outfile xil_pn:name="xillydemo.twx"/>

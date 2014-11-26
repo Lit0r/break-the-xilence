@@ -81,9 +81,10 @@ architecture Behavioral of pmodAD2_ctrl is
 	------------------------------------------------------------------------
 	signal fMessage		: STD_LOGIC;
 	signal fDoTransmit	: STD_LOGIC;
-	signal fDoRead			: STD_LOGIC;
+	signal fDoRead		: STD_LOGIC;
 	signal currentAddr	: STD_LOGIC_VECTOR(7 downto 0);
-	signal fDone			: STD_LOGIC;
+	signal fDone		: STD_LOGIC;
+	signal writeCfg     : STD_LOGIC(7 downto 0);
 
 	constant addrAD2		: STD_LOGIC_VECTOR(6 downto 0) := "0101000";
 	constant writeCfg1		: STD_LOGIC_VECTOR(7 downto 0) := "00010000";
@@ -146,7 +147,6 @@ begin
 				fDoTransmit <= '0';
 				fMessage <= '0';
 				waitCount <= 0;
-				if()
 			else
 				case stMain is
 					-- When the TWI controller we're using is brought out of a reset state
@@ -168,10 +168,11 @@ begin
 					when stConfig =>
 						fMessage <= '0';
 						fDoTransmit <= '0';
-						if (config = 0) writeCfg <= writeCfg1;
-						if (config = 1) writeCfg <= writeCfg2;
-						if (config = 2) writeCfg <= writeCfg3;
-						if (config = 3) writeCfg <= writeCfg4;
+						if (config = 0) then writeCfg <= writeCfg1;
+						else if (config = 1) then writeCfg <= writeCfg2;
+						else if (config = 2) then writeCfg <= writeCfg3;
+						else if (config = 3) then writeCfg <= writeCfg4;
+						end if;
 
 						
 						-- Hold the configuration state until we're done sending.
