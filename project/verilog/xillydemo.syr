@@ -1,0 +1,2374 @@
+Release 14.2 - xst P.28xd (lin)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Reading design: xillydemo.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "xillydemo.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "xillydemo"
+Output Format                      : NGC
+Target Device                      : xc7z020-1-clg484
+
+---- Source Options
+Top Module Name                    : xillydemo
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 0
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : YES
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir" "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation" "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/cores" "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/runonce"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillybus_core.v" into library work
+Parsing module <xillybus_core>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/system.v" into library work
+Parsing module <system>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillybus.v" into library work
+Parsing module <xillybus>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/fifo_8x2048.v" into library work
+Parsing module <fifo_8x2048>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/fifo_32x512.v" into library work
+Parsing module <fifo_32x512>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/squaregen.v" into library work
+Parsing module <squaregen>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" into library work
+Parsing module <clocking>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/EnvelopeGenerator.v" into library work
+Parsing module <envelope_generator>.
+Parsing module <envgenpipeline>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/decoder.v" into library work
+Parsing module <decoder>.
+Analyzing Verilog file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" into library work
+Parsing module <xillydemo>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i3c2.vhd" into library work
+Parsing entity <i3c2>.
+Parsing architecture <Behavioral> of entity <i3c2>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_configuraiton_data.vhd" into library work
+Parsing entity <adau1761_configuraiton_data>.
+Parsing architecture <Behavioral> of entity <adau1761_configuraiton_data>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" into library work
+Parsing entity <TWICtl>.
+Parsing architecture <Behavioral> of entity <twictl>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2s_data_interface.vhd" into library work
+Parsing entity <i2s_data_interface>.
+Parsing architecture <Behavioral> of entity <i2s_data_interface>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" into library work
+Parsing entity <i2c>.
+Parsing architecture <Behavioral> of entity <i2c>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ADAU1761_interface.vhd" into library work
+Parsing entity <ADAU1761_interface>.
+Parsing architecture <Behavioral> of entity <adau1761_interface>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/pmodAD2_ctrl.vhd" into library work
+Parsing entity <pmodAD2_ctrl>.
+Parsing architecture <Behavioral> of entity <pmodad2_ctrl>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/internalCounter.vhd" into library work
+Parsing entity <internalCounter>.
+Parsing architecture <Behavioral> of entity <internalcounter>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/clkDivSecondary.vhd" into library work
+Parsing entity <clkDivSecondary>.
+Parsing architecture <Behavioral> of entity <clkdivsecondary>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/clkDivMain.vhd" into library work
+Parsing entity <clkDivMain>.
+Parsing architecture <Behavioral> of entity <clkdivmain>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_izedboard.vhd" into library work
+Parsing entity <adau1761_izedboard>.
+Parsing architecture <Behavioral> of entity <adau1761_izedboard>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/masterControler.vhd" into library work
+Parsing entity <masterControler>.
+Parsing architecture <Behavioral> of entity <mastercontroler>.
+Parsing VHDL file "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_test.vhd" into library work
+Parsing entity <adau1761_test>.
+Parsing architecture <Behavioral> of entity <adau1761_test>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 204: Port RESET is not connected to this instance
+WARNING:HDLCompiler:1016 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 271: Port done is not connected to this instance
+WARNING:HDLCompiler:1016 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 324: Port MIO is not connected to this instance
+
+Elaborating module <xillydemo>.
+
+Elaborating module <IBUFG(IBUF_LOW_PWR="TRUE",IOSTANDARD="DEFAULT")>.
+
+Elaborating module <clocking>.
+
+Elaborating module <MMCME2_ADV(BANDWIDTH="OPTIMIZED",CLKOUT4_CASCADE="FALSE",COMPENSATION="ZHOLD",STARTUP_WAIT="FALSE",DIVCLK_DIVIDE=1,CLKFBOUT_MULT_F=6.0,CLKFBOUT_PHASE=0.0,CLKFBOUT_USE_FINE_PS="FALSE",CLKOUT0_DIVIDE_F=12.5,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT0_USE_FINE_PS="FALSE",CLKOUT1_DIVIDE=125,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT1_USE_FINE_PS="FALSE",CLKIN1_PERIOD=10.0,REF_JITTER1=0.01)>.
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 132: Assignment to clkfboutb_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 134: Assignment to clkout0b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 136: Assignment to clkout1b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 137: Assignment to clkout2_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 138: Assignment to clkout2b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 139: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 140: Assignment to clkout3b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 141: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 142: Assignment to clkout5_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 143: Assignment to clkout6_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 155: Assignment to do_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 156: Assignment to drdy_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 162: Assignment to psdone_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 165: Assignment to clkinstopped_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v" Line 166: Assignment to clkfbstopped_unused ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+Going to vhdl side to elaborate module adau1761_test
+
+Elaborating entity <adau1761_test> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_test.vhd" Line 104: Assignment to sw_synced ignored, since the identifier is never used
+
+Elaborating entity <adau1761_izedboard> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <i2c> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <adau1761_configuraiton_data> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <i3c2> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <ADAU1761_interface> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <i2s_data_interface> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+
+Elaborating module <squaregen>.
+WARNING:HDLCompiler:413 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/squaregen.v" Line 36: Result of 32-bit expression is truncated to fit in 24-bit target.
+WARNING:HDLCompiler:189 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 242: Size mismatch in connection of port <period>. Formal port size is 26-bit while actual signal size is 23-bit.
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 246: Assignment to audio_post_filter ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 249: Result of 32-bit expression is truncated to fit in 24-bit target.
+Going to vhdl side to elaborate module masterControler
+
+Elaborating entity <masterControler> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <clkDivMain> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <clkDivSecondary> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <internalCounter> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <pmodAD2_ctrl> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <TWICtl> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" Line 146: Assignment to fstop ignored, since the identifier is never used
+INFO:HDLCompiler:679 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" Line 325. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" Line 358. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" Line 376. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" Line 394. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd" Line 412. Case statement is complete. others clause is never selected
+Back to verilog to continue elaboration
+
+Elaborating module <decoder>.
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 260: Assignment to dial1 ignored, since the identifier is never used
+
+Elaborating module <envelope_generator>.
+
+Elaborating module <envgenpipeline>.
+WARNING:HDLCompiler:413 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/EnvelopeGenerator.v" Line 205: Result of 40-bit expression is truncated to fit in 32-bit target.
+WARNING:HDLCompiler:413 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/EnvelopeGenerator.v" Line 209: Result of 32-bit expression is truncated to fit in 18-bit target.
+WARNING:HDLCompiler:413 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/EnvelopeGenerator.v" Line 150: Result of 18-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:189 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 276: Size mismatch in connection of port <a>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 277: Size mismatch in connection of port <b>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 278: Size mismatch in connection of port <c>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 279: Size mismatch in connection of port <d>. Formal port size is 7-bit while actual signal size is 32-bit.
+
+Elaborating module <xillybus>.
+
+Elaborating module <FDCE>.
+
+Elaborating module <system>.
+WARNING:HDLCompiler:1499 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/system.v" Line 1: Empty module <system> remains a black box.
+
+Elaborating module <xillybus_core>.
+WARNING:HDLCompiler:1499 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillybus_core.v" Line 1: Empty module <xillybus_core> remains a black box.
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 347: Assignment to user_r_read_32_rden ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 408: Assignment to user_wren ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 422: Assignment to quiesce ignored, since the identifier is never used
+
+Elaborating module <fifo_32x512>.
+WARNING:HDLCompiler:1499 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/fifo_32x512.v" Line 1: Empty module <fifo_32x512> remains a black box.
+
+Elaborating module <fifo_8x2048>.
+WARNING:HDLCompiler:1499 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/fifo_8x2048.v" Line 1: Empty module <fifo_8x2048> remains a black box.
+WARNING:HDLCompiler:552 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 204: Input port RESET is not connected on this instance
+WARNING:HDLCompiler:552 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 210: Input port sw[7] is not connected on this instance
+WARNING:HDLCompiler:552 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 256: Input port RESET is not connected on this instance
+WARNING:HDLCompiler:552 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" Line 324: Input port PS_SRSTB is not connected on this instance
+WARNING:Xst:2972 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/masterControler.vhd" line 135. All outputs of instance <valueCounter> of block <internalCounter> are unconnected in block <masterControler>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 260. All outputs of instance <d1> of block <decoder> are unconnected in block <xillydemo>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 271. All outputs of instance <egtest> of block <envelope_generator> are unconnected in block <xillydemo>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <xillydemo>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v".
+WARNING:Xst:2898 - Port 'sw', unconnected in block instance 'adau', is tied to GND.
+WARNING:Xst:2898 - Port 'RESET', unconnected in block instance 'mc1', is tied to GND.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 204: Output port <LOCKED> of the instance <clocker> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 260: Output port <o1> of the instance <d1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 260: Output port <o2> of the instance <d1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 260: Output port <o3> of the instance <d1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 260: Output port <o4> of the instance <d1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 271: Output port <out_value> of the instance <egtest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 271: Output port <busy> of the instance <egtest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 271: Output port <done> of the instance <egtest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 324: Output port <quiesce> of the instance <xillybus_ins> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 324: Output port <DDR_WEB> of the instance <xillybus_ins> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 324: Output port <user_wren> of the instance <xillybus_ins> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v" line 324: Output port <user_r_read_32_rden> of the instance <xillybus_ins> is unconnected or connected to loadless signal.
+    Found 32x8-bit single-port RAM <Mram_litearray0> for signal <litearray0>.
+    Found 32x8-bit single-port RAM <Mram_litearray1> for signal <litearray1>.
+    Found 32x8-bit single-port RAM <Mram_litearray2> for signal <litearray2>.
+    Found 32x8-bit single-port RAM <Mram_litearray3> for signal <litearray3>.
+    Found 32-bit register for signal <user_rd_data>.
+    Summary:
+	inferred   4 RAM(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <xillydemo> synthesized.
+
+Synthesizing Unit <clocking>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/clocking.v".
+    Summary:
+	no macro.
+Unit <clocking> synthesized.
+
+Synthesizing Unit <adau1761_test>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_test.vhd".
+WARNING:Xst:647 - Input <sw> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_test.vhd" line 139: Output port <line_in_l> of the instance <Inst_adau1761_izedboard> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_test.vhd" line 139: Output port <line_in_r> of the instance <Inst_adau1761_izedboard> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_test.vhd" line 139: Output port <new_sample> of the instance <Inst_adau1761_izedboard> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <adau1761_test> synthesized.
+
+Synthesizing Unit <adau1761_izedboard>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_izedboard.vhd".
+    Summary:
+	no macro.
+Unit <adau1761_izedboard> synthesized.
+
+Synthesizing Unit <i2c>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd".
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <outputs> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <reg_addr> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <reg_data> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <reg_write> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <debug_scl> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <debug_sda> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2c.vhd" line 58: Output port <error> of the instance <Inst_i3c2> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <i2c> synthesized.
+
+Synthesizing Unit <adau1761_configuraiton_data>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/adau1761_configuraiton_data.vhd".
+    Found 9-bit register for signal <data>.
+    Found 128x9-bit Read Only RAM for signal <_n0373>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   9 D-type flip-flop(s).
+Unit <adau1761_configuraiton_data> synthesized.
+
+Synthesizing Unit <i3c2>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i3c2.vhd".
+        clk_divide = "01111000"
+    Found 1-bit register for signal <i2c_scl>.
+    Found 1-bit register for signal <debug_scl>.
+    Found 1-bit register for signal <i2c_sda_t>.
+    Found 4-bit register for signal <state>.
+    Found 8-bit register for signal <bitcount>.
+    Found 9-bit register for signal <i2c_data>.
+    Found 8-bit register for signal <reg_data>.
+    Found 1-bit register for signal <ack_flag>.
+    Found 10-bit register for signal <pcnext>.
+    Found 4-bit register for signal <i2c_bits_left>.
+    Found 16-bit register for signal <delay>.
+    Found 1-bit register for signal <skip>.
+    Found 1-bit register for signal <i2c_doing_read>.
+    Found 5-bit register for signal <reg_addr>.
+    Found 16-bit register for signal <outputs>.
+    Found 1-bit register for signal <i2c_started>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 22                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit adder for signal <pcnext[9]_GND_14_o_add_56_OUT> created at line 1241.
+    Found 4-bit subtractor for signal <GND_14_o_GND_14_o_sub_42_OUT<3:0>> created at line 1308.
+    Found 8-bit subtractor for signal <GND_14_o_GND_14_o_sub_58_OUT<7:0>> created at line 1308.
+    Found 16-bit subtractor for signal <GND_14_o_GND_14_o_sub_66_OUT<15:0>> created at line 1308.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  83 D-type flip-flop(s).
+	inferred 127 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <i3c2> synthesized.
+
+Synthesizing Unit <ADAU1761_interface>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ADAU1761_interface.vhd".
+    Found 1-bit register for signal <master_clk>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <ADAU1761_interface> synthesized.
+
+Synthesizing Unit <i2s_data_interface>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/i2s_data_interface.vhd".
+    Found 127-bit register for signal <sr_in>.
+    Found 1-bit register for signal <i2s_d_out>.
+    Found 24-bit register for signal <audio_l_out>.
+    Found 24-bit register for signal <audio_r_out>.
+    Found 64-bit register for signal <sr_out>.
+    Found 1-bit register for signal <i2s_lr_last>.
+    Found 10-bit register for signal <bclk_delay>.
+    Found 1-bit register for signal <i2s_d_in_last>.
+    Found 1-bit register for signal <new_sample>.
+    Summary:
+	inferred 253 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <i2s_data_interface> synthesized.
+
+Synthesizing Unit <squaregen>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/squaregen.v".
+        amplitude = 24'b000011111111111111111111
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_count[31]_mux_3_OUT> created at line 34.
+    Found 32-bit comparator greater for signal <n0000> created at line 31
+    Found 32-bit comparator greater for signal <GND_33_o_count[31]_LessThan_7_o> created at line 37
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <squaregen> synthesized.
+
+Synthesizing Unit <masterControler>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/masterControler.vhd".
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/masterControler.vhd" line 129: Output port <early100Hz> of the instance <secondDivider> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/masterControler.vhd" line 135: Output port <outNum> of the instance <valueCounter> is unconnected or connected to loadless signal.
+    Found 1-bit tristate buffer for signal <SDA_ALT_IN> created at line 165
+    Found 1-bit tristate buffer for signal <SCL_ALT_IN> created at line 166
+    Summary:
+	inferred   2 Tristate(s).
+Unit <masterControler> synthesized.
+
+Synthesizing Unit <clkDivMain>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/clkDivMain.vhd".
+    Found 16-bit register for signal <cValue>.
+    Found 1-bit register for signal <fClkInternal>.
+    Found 16-bit adder for signal <cValue[15]_GND_38_o_add_2_OUT> created at line 78.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+Unit <clkDivMain> synthesized.
+
+Synthesizing Unit <clkDivSecondary>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/clkDivSecondary.vhd".
+    Found 1-bit register for signal <fClkPredelay>.
+    Found 16-bit register for signal <cValue>.
+    Found 1-bit register for signal <fClkInternal>.
+    Found 16-bit adder for signal <cValue[15]_GND_39_o_add_4_OUT> created at line 89.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  18 D-type flip-flop(s).
+Unit <clkDivSecondary> synthesized.
+
+Synthesizing Unit <pmodAD2_ctrl>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/pmodAD2_ctrl.vhd".
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/pmodAD2_ctrl.vhd" line 108: Output port <ERR_O> of the instance <I2CBus> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <fDoTransmit>.
+    Found 1-bit register for signal <fMessage>.
+    Found 32-bit register for signal <waitCount>.
+    Found 16-bit register for signal <wData0>.
+    Found 3-bit register for signal <stMain>.
+    Found finite state machine <FSM_1> for signal <stMain>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 6                                              |
+    | Clock              | mainClk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | stwait                                         |
+    | Power Up State     | stdone                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <waitCount[31]_GND_41_o_add_2_OUT> created at line 152.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  50 D-type flip-flop(s).
+	inferred  17 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <pmodAD2_ctrl> synthesized.
+
+Synthesizing Unit <TWICtl>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/TWICtl.vhd".
+        CLOCKFREQ = 100
+    Set property "fsm_encoding = gray" for signal <state>.
+    Found 1-bit register for signal <ddSda>.
+    Found 1-bit register for signal <dScl>.
+    Found 2-bit register for signal <busState>.
+    Found 10-bit register for signal <busFreeCnt>.
+    Found 1-bit register for signal <int_Rst>.
+    Found 10-bit register for signal <sclCnt>.
+    Found 8-bit register for signal <dataByte>.
+    Found 3-bit register for signal <bitCount>.
+    Found 1-bit register for signal <addrNData>.
+    Found 8-bit register for signal <currAddr>.
+    Found 2-bit register for signal <subState>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <rSda>.
+    Found 1-bit register for signal <rScl>.
+    Found 1-bit register for signal <DONE_O>.
+    Found 1-bit register for signal <ERR_O>.
+    Found 1-bit register for signal <dSda>.
+INFO:Xst:1799 - State sterror is never reached in FSM <state>.
+INFO:Xst:1799 - State ststoperror is never reached in FSM <state>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 62                                             |
+    | Inputs             | 16                                             |
+    | Outputs            | 9                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Power Up State     | stidle                                         |
+    | Encoding           | gray                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <subState[1]_GND_43_o_add_36_OUT> created at line 281.
+    Found 10-bit subtractor for signal <GND_43_o_GND_43_o_sub_6_OUT<9:0>> created at line 167.
+    Found 10-bit subtractor for signal <GND_43_o_GND_43_o_sub_13_OUT<9:0>> created at line 207.
+    Found 3-bit subtractor for signal <GND_43_o_GND_43_o_sub_24_OUT<2:0>> created at line 245.
+    Found 1-bit tristate buffer for signal <SDA> created at line 548
+    Found 1-bit tristate buffer for signal <SCL> created at line 550
+    Found 8-bit comparator not equal for signal <n0135> created at line 488
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  52 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  46 Multiplexer(s).
+	inferred   2 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <TWICtl> synthesized.
+
+Synthesizing Unit <envgenpipeline>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/EnvelopeGenerator.v".
+    Found 1-bit register for signal <subva0<7>>.
+    Found 1-bit register for signal <subva0<6>>.
+    Found 1-bit register for signal <subva0<5>>.
+    Found 1-bit register for signal <subva0<4>>.
+    Found 1-bit register for signal <subva0<3>>.
+    Found 1-bit register for signal <subva0<2>>.
+    Found 1-bit register for signal <subva0<1>>.
+    Found 1-bit register for signal <subva0<0>>.
+    Found 1-bit register for signal <subvb0<7>>.
+    Found 1-bit register for signal <subvb0<6>>.
+    Found 1-bit register for signal <subvb0<5>>.
+    Found 1-bit register for signal <subvb0<4>>.
+    Found 1-bit register for signal <subvb0<3>>.
+    Found 1-bit register for signal <subvb0<2>>.
+    Found 1-bit register for signal <subvb0<1>>.
+    Found 1-bit register for signal <subvb0<0>>.
+    Found 1-bit register for signal <divv0<31>>.
+    Found 1-bit register for signal <divv0<30>>.
+    Found 1-bit register for signal <divv0<29>>.
+    Found 1-bit register for signal <divv0<28>>.
+    Found 1-bit register for signal <divv0<27>>.
+    Found 1-bit register for signal <divv0<26>>.
+    Found 1-bit register for signal <divv0<25>>.
+    Found 1-bit register for signal <divv0<24>>.
+    Found 1-bit register for signal <divv0<23>>.
+    Found 1-bit register for signal <divv0<22>>.
+    Found 1-bit register for signal <divv0<21>>.
+    Found 1-bit register for signal <divv0<20>>.
+    Found 1-bit register for signal <divv0<19>>.
+    Found 1-bit register for signal <divv0<18>>.
+    Found 1-bit register for signal <divv0<17>>.
+    Found 1-bit register for signal <divv0<16>>.
+    Found 1-bit register for signal <divv0<15>>.
+    Found 1-bit register for signal <divv0<14>>.
+    Found 1-bit register for signal <divv0<13>>.
+    Found 1-bit register for signal <divv0<12>>.
+    Found 1-bit register for signal <divv0<11>>.
+    Found 1-bit register for signal <divv0<10>>.
+    Found 1-bit register for signal <divv0<9>>.
+    Found 1-bit register for signal <divv0<8>>.
+    Found 1-bit register for signal <divv0<7>>.
+    Found 1-bit register for signal <divv0<6>>.
+    Found 1-bit register for signal <divv0<5>>.
+    Found 1-bit register for signal <divv0<4>>.
+    Found 1-bit register for signal <divv0<3>>.
+    Found 1-bit register for signal <divv0<2>>.
+    Found 1-bit register for signal <divv0<1>>.
+    Found 1-bit register for signal <divv0<0>>.
+    Found 1-bit register for signal <predef0>.
+    Found 1-bit register for signal <predefv0<17>>.
+    Found 1-bit register for signal <predefv0<16>>.
+    Found 1-bit register for signal <predefv0<15>>.
+    Found 1-bit register for signal <predefv0<14>>.
+    Found 1-bit register for signal <predefv0<13>>.
+    Found 1-bit register for signal <predefv0<12>>.
+    Found 1-bit register for signal <predefv0<11>>.
+    Found 1-bit register for signal <predefv0<10>>.
+    Found 1-bit register for signal <predefv0<9>>.
+    Found 1-bit register for signal <predefv0<8>>.
+    Found 1-bit register for signal <predefv0<7>>.
+    Found 1-bit register for signal <predefv0<6>>.
+    Found 1-bit register for signal <predefv0<5>>.
+    Found 1-bit register for signal <predefv0<4>>.
+    Found 1-bit register for signal <predefv0<3>>.
+    Found 1-bit register for signal <predefv0<2>>.
+    Found 1-bit register for signal <predefv0<1>>.
+    Found 1-bit register for signal <predefv0<0>>.
+    Found 1-bit register for signal <counter1<31>>.
+    Found 1-bit register for signal <counter1<30>>.
+    Found 1-bit register for signal <counter1<29>>.
+    Found 1-bit register for signal <counter1<28>>.
+    Found 1-bit register for signal <counter1<27>>.
+    Found 1-bit register for signal <counter1<26>>.
+    Found 1-bit register for signal <counter1<25>>.
+    Found 1-bit register for signal <counter1<24>>.
+    Found 1-bit register for signal <counter1<23>>.
+    Found 1-bit register for signal <counter1<22>>.
+    Found 1-bit register for signal <counter1<21>>.
+    Found 1-bit register for signal <counter1<20>>.
+    Found 1-bit register for signal <counter1<19>>.
+    Found 1-bit register for signal <counter1<18>>.
+    Found 1-bit register for signal <counter1<17>>.
+    Found 1-bit register for signal <counter1<16>>.
+    Found 1-bit register for signal <counter1<15>>.
+    Found 1-bit register for signal <counter1<14>>.
+    Found 1-bit register for signal <counter1<13>>.
+    Found 1-bit register for signal <counter1<12>>.
+    Found 1-bit register for signal <counter1<11>>.
+    Found 1-bit register for signal <counter1<10>>.
+    Found 1-bit register for signal <counter1<9>>.
+    Found 1-bit register for signal <counter1<8>>.
+    Found 1-bit register for signal <counter1<7>>.
+    Found 1-bit register for signal <counter1<6>>.
+    Found 1-bit register for signal <counter1<5>>.
+    Found 1-bit register for signal <counter1<4>>.
+    Found 1-bit register for signal <counter1<3>>.
+    Found 1-bit register for signal <counter1<2>>.
+    Found 1-bit register for signal <counter1<1>>.
+    Found 1-bit register for signal <counter1<0>>.
+    Found 1-bit register for signal <subv1<7>>.
+    Found 1-bit register for signal <subv1<6>>.
+    Found 1-bit register for signal <subv1<5>>.
+    Found 1-bit register for signal <subv1<4>>.
+    Found 1-bit register for signal <subv1<3>>.
+    Found 1-bit register for signal <subv1<2>>.
+    Found 1-bit register for signal <subv1<1>>.
+    Found 1-bit register for signal <subv1<0>>.
+    Found 1-bit register for signal <subvb1<7>>.
+    Found 1-bit register for signal <subvb1<6>>.
+    Found 1-bit register for signal <subvb1<5>>.
+    Found 1-bit register for signal <subvb1<4>>.
+    Found 1-bit register for signal <subvb1<3>>.
+    Found 1-bit register for signal <subvb1<2>>.
+    Found 1-bit register for signal <subvb1<1>>.
+    Found 1-bit register for signal <subvb1<0>>.
+    Found 1-bit register for signal <divv1<31>>.
+    Found 1-bit register for signal <divv1<30>>.
+    Found 1-bit register for signal <divv1<29>>.
+    Found 1-bit register for signal <divv1<28>>.
+    Found 1-bit register for signal <divv1<27>>.
+    Found 1-bit register for signal <divv1<26>>.
+    Found 1-bit register for signal <divv1<25>>.
+    Found 1-bit register for signal <divv1<24>>.
+    Found 1-bit register for signal <divv1<23>>.
+    Found 1-bit register for signal <divv1<22>>.
+    Found 1-bit register for signal <divv1<21>>.
+    Found 1-bit register for signal <divv1<20>>.
+    Found 1-bit register for signal <divv1<19>>.
+    Found 1-bit register for signal <divv1<18>>.
+    Found 1-bit register for signal <divv1<17>>.
+    Found 1-bit register for signal <divv1<16>>.
+    Found 1-bit register for signal <divv1<15>>.
+    Found 1-bit register for signal <divv1<14>>.
+    Found 1-bit register for signal <divv1<13>>.
+    Found 1-bit register for signal <divv1<12>>.
+    Found 1-bit register for signal <divv1<11>>.
+    Found 1-bit register for signal <divv1<10>>.
+    Found 1-bit register for signal <divv1<9>>.
+    Found 1-bit register for signal <divv1<8>>.
+    Found 1-bit register for signal <divv1<7>>.
+    Found 1-bit register for signal <divv1<6>>.
+    Found 1-bit register for signal <divv1<5>>.
+    Found 1-bit register for signal <divv1<4>>.
+    Found 1-bit register for signal <divv1<3>>.
+    Found 1-bit register for signal <divv1<2>>.
+    Found 1-bit register for signal <divv1<1>>.
+    Found 1-bit register for signal <divv1<0>>.
+    Found 1-bit register for signal <predef1>.
+    Found 1-bit register for signal <predefv1<17>>.
+    Found 1-bit register for signal <predefv1<16>>.
+    Found 1-bit register for signal <predefv1<15>>.
+    Found 1-bit register for signal <predefv1<14>>.
+    Found 1-bit register for signal <predefv1<13>>.
+    Found 1-bit register for signal <predefv1<12>>.
+    Found 1-bit register for signal <predefv1<11>>.
+    Found 1-bit register for signal <predefv1<10>>.
+    Found 1-bit register for signal <predefv1<9>>.
+    Found 1-bit register for signal <predefv1<8>>.
+    Found 1-bit register for signal <predefv1<7>>.
+    Found 1-bit register for signal <predefv1<6>>.
+    Found 1-bit register for signal <predefv1<5>>.
+    Found 1-bit register for signal <predefv1<4>>.
+    Found 1-bit register for signal <predefv1<3>>.
+    Found 1-bit register for signal <predefv1<2>>.
+    Found 1-bit register for signal <predefv1<1>>.
+    Found 1-bit register for signal <predefv1<0>>.
+    Found 1-bit register for signal <subvb2<7>>.
+    Found 1-bit register for signal <subvb2<6>>.
+    Found 1-bit register for signal <subvb2<5>>.
+    Found 1-bit register for signal <subvb2<4>>.
+    Found 1-bit register for signal <subvb2<3>>.
+    Found 1-bit register for signal <subvb2<2>>.
+    Found 1-bit register for signal <subvb2<1>>.
+    Found 1-bit register for signal <subvb2<0>>.
+    Found 1-bit register for signal <mult2<39>>.
+    Found 1-bit register for signal <mult2<38>>.
+    Found 1-bit register for signal <mult2<37>>.
+    Found 1-bit register for signal <mult2<36>>.
+    Found 1-bit register for signal <mult2<35>>.
+    Found 1-bit register for signal <mult2<34>>.
+    Found 1-bit register for signal <mult2<33>>.
+    Found 1-bit register for signal <mult2<32>>.
+    Found 1-bit register for signal <mult2<31>>.
+    Found 1-bit register for signal <mult2<30>>.
+    Found 1-bit register for signal <mult2<29>>.
+    Found 1-bit register for signal <mult2<28>>.
+    Found 1-bit register for signal <mult2<27>>.
+    Found 1-bit register for signal <mult2<26>>.
+    Found 1-bit register for signal <mult2<25>>.
+    Found 1-bit register for signal <mult2<24>>.
+    Found 1-bit register for signal <mult2<23>>.
+    Found 1-bit register for signal <mult2<22>>.
+    Found 1-bit register for signal <mult2<21>>.
+    Found 1-bit register for signal <mult2<20>>.
+    Found 1-bit register for signal <mult2<19>>.
+    Found 1-bit register for signal <mult2<18>>.
+    Found 1-bit register for signal <mult2<17>>.
+    Found 1-bit register for signal <mult2<16>>.
+    Found 1-bit register for signal <mult2<15>>.
+    Found 1-bit register for signal <mult2<14>>.
+    Found 1-bit register for signal <mult2<13>>.
+    Found 1-bit register for signal <mult2<12>>.
+    Found 1-bit register for signal <mult2<11>>.
+    Found 1-bit register for signal <mult2<10>>.
+    Found 1-bit register for signal <mult2<9>>.
+    Found 1-bit register for signal <mult2<8>>.
+    Found 1-bit register for signal <mult2<7>>.
+    Found 1-bit register for signal <mult2<6>>.
+    Found 1-bit register for signal <mult2<5>>.
+    Found 1-bit register for signal <mult2<4>>.
+    Found 1-bit register for signal <mult2<3>>.
+    Found 1-bit register for signal <mult2<2>>.
+    Found 1-bit register for signal <mult2<1>>.
+    Found 1-bit register for signal <mult2<0>>.
+    Found 1-bit register for signal <divv2<31>>.
+    Found 1-bit register for signal <divv2<30>>.
+    Found 1-bit register for signal <divv2<29>>.
+    Found 1-bit register for signal <divv2<28>>.
+    Found 1-bit register for signal <divv2<27>>.
+    Found 1-bit register for signal <divv2<26>>.
+    Found 1-bit register for signal <divv2<25>>.
+    Found 1-bit register for signal <divv2<24>>.
+    Found 1-bit register for signal <divv2<23>>.
+    Found 1-bit register for signal <divv2<22>>.
+    Found 1-bit register for signal <divv2<21>>.
+    Found 1-bit register for signal <divv2<20>>.
+    Found 1-bit register for signal <divv2<19>>.
+    Found 1-bit register for signal <divv2<18>>.
+    Found 1-bit register for signal <divv2<17>>.
+    Found 1-bit register for signal <divv2<16>>.
+    Found 1-bit register for signal <divv2<15>>.
+    Found 1-bit register for signal <divv2<14>>.
+    Found 1-bit register for signal <divv2<13>>.
+    Found 1-bit register for signal <divv2<12>>.
+    Found 1-bit register for signal <divv2<11>>.
+    Found 1-bit register for signal <divv2<10>>.
+    Found 1-bit register for signal <divv2<9>>.
+    Found 1-bit register for signal <divv2<8>>.
+    Found 1-bit register for signal <divv2<7>>.
+    Found 1-bit register for signal <divv2<6>>.
+    Found 1-bit register for signal <divv2<5>>.
+    Found 1-bit register for signal <divv2<4>>.
+    Found 1-bit register for signal <divv2<3>>.
+    Found 1-bit register for signal <divv2<2>>.
+    Found 1-bit register for signal <divv2<1>>.
+    Found 1-bit register for signal <divv2<0>>.
+    Found 1-bit register for signal <predef2>.
+    Found 1-bit register for signal <predefv2<17>>.
+    Found 1-bit register for signal <predefv2<16>>.
+    Found 1-bit register for signal <predefv2<15>>.
+    Found 1-bit register for signal <predefv2<14>>.
+    Found 1-bit register for signal <predefv2<13>>.
+    Found 1-bit register for signal <predefv2<12>>.
+    Found 1-bit register for signal <predefv2<11>>.
+    Found 1-bit register for signal <predefv2<10>>.
+    Found 1-bit register for signal <predefv2<9>>.
+    Found 1-bit register for signal <predefv2<8>>.
+    Found 1-bit register for signal <predefv2<7>>.
+    Found 1-bit register for signal <predefv2<6>>.
+    Found 1-bit register for signal <predefv2<5>>.
+    Found 1-bit register for signal <predefv2<4>>.
+    Found 1-bit register for signal <predefv2<3>>.
+    Found 1-bit register for signal <predefv2<2>>.
+    Found 1-bit register for signal <predefv2<1>>.
+    Found 1-bit register for signal <predefv2<0>>.
+    Found 1-bit register for signal <subvb3<7>>.
+    Found 1-bit register for signal <subvb3<6>>.
+    Found 1-bit register for signal <subvb3<5>>.
+    Found 1-bit register for signal <subvb3<4>>.
+    Found 1-bit register for signal <subvb3<3>>.
+    Found 1-bit register for signal <subvb3<2>>.
+    Found 1-bit register for signal <subvb3<1>>.
+    Found 1-bit register for signal <subvb3<0>>.
+    Found 1-bit register for signal <div3<31>>.
+    Found 1-bit register for signal <div3<30>>.
+    Found 1-bit register for signal <div3<29>>.
+    Found 1-bit register for signal <div3<28>>.
+    Found 1-bit register for signal <div3<27>>.
+    Found 1-bit register for signal <div3<26>>.
+    Found 1-bit register for signal <div3<25>>.
+    Found 1-bit register for signal <div3<24>>.
+    Found 1-bit register for signal <div3<23>>.
+    Found 1-bit register for signal <div3<22>>.
+    Found 1-bit register for signal <div3<21>>.
+    Found 1-bit register for signal <div3<20>>.
+    Found 1-bit register for signal <div3<19>>.
+    Found 1-bit register for signal <div3<18>>.
+    Found 1-bit register for signal <div3<17>>.
+    Found 1-bit register for signal <div3<16>>.
+    Found 1-bit register for signal <div3<15>>.
+    Found 1-bit register for signal <div3<14>>.
+    Found 1-bit register for signal <div3<13>>.
+    Found 1-bit register for signal <div3<12>>.
+    Found 1-bit register for signal <div3<11>>.
+    Found 1-bit register for signal <div3<10>>.
+    Found 1-bit register for signal <div3<9>>.
+    Found 1-bit register for signal <div3<8>>.
+    Found 1-bit register for signal <div3<7>>.
+    Found 1-bit register for signal <div3<6>>.
+    Found 1-bit register for signal <div3<5>>.
+    Found 1-bit register for signal <div3<4>>.
+    Found 1-bit register for signal <div3<3>>.
+    Found 1-bit register for signal <div3<2>>.
+    Found 1-bit register for signal <div3<1>>.
+    Found 1-bit register for signal <div3<0>>.
+    Found 1-bit register for signal <predef3>.
+    Found 1-bit register for signal <predefv3<17>>.
+    Found 1-bit register for signal <predefv3<16>>.
+    Found 1-bit register for signal <predefv3<15>>.
+    Found 1-bit register for signal <predefv3<14>>.
+    Found 1-bit register for signal <predefv3<13>>.
+    Found 1-bit register for signal <predefv3<12>>.
+    Found 1-bit register for signal <predefv3<11>>.
+    Found 1-bit register for signal <predefv3<10>>.
+    Found 1-bit register for signal <predefv3<9>>.
+    Found 1-bit register for signal <predefv3<8>>.
+    Found 1-bit register for signal <predefv3<7>>.
+    Found 1-bit register for signal <predefv3<6>>.
+    Found 1-bit register for signal <predefv3<5>>.
+    Found 1-bit register for signal <predefv3<4>>.
+    Found 1-bit register for signal <predefv3<3>>.
+    Found 1-bit register for signal <predefv3<2>>.
+    Found 1-bit register for signal <predefv3<1>>.
+    Found 1-bit register for signal <predefv3<0>>.
+    Found 1-bit register for signal <add4<17>>.
+    Found 1-bit register for signal <add4<16>>.
+    Found 1-bit register for signal <add4<15>>.
+    Found 1-bit register for signal <add4<14>>.
+    Found 1-bit register for signal <add4<13>>.
+    Found 1-bit register for signal <add4<12>>.
+    Found 1-bit register for signal <add4<11>>.
+    Found 1-bit register for signal <add4<10>>.
+    Found 1-bit register for signal <add4<9>>.
+    Found 1-bit register for signal <add4<8>>.
+    Found 1-bit register for signal <add4<7>>.
+    Found 1-bit register for signal <add4<6>>.
+    Found 1-bit register for signal <add4<5>>.
+    Found 1-bit register for signal <add4<4>>.
+    Found 1-bit register for signal <add4<3>>.
+    Found 1-bit register for signal <add4<2>>.
+    Found 1-bit register for signal <add4<1>>.
+    Found 1-bit register for signal <add4<0>>.
+    Found 1-bit register for signal <predef4>.
+    Found 1-bit register for signal <predefv4<17>>.
+    Found 1-bit register for signal <predefv4<16>>.
+    Found 1-bit register for signal <predefv4<15>>.
+    Found 1-bit register for signal <predefv4<14>>.
+    Found 1-bit register for signal <predefv4<13>>.
+    Found 1-bit register for signal <predefv4<12>>.
+    Found 1-bit register for signal <predefv4<11>>.
+    Found 1-bit register for signal <predefv4<10>>.
+    Found 1-bit register for signal <predefv4<9>>.
+    Found 1-bit register for signal <predefv4<8>>.
+    Found 1-bit register for signal <predefv4<7>>.
+    Found 1-bit register for signal <predefv4<6>>.
+    Found 1-bit register for signal <predefv4<5>>.
+    Found 1-bit register for signal <predefv4<4>>.
+    Found 1-bit register for signal <predefv4<3>>.
+    Found 1-bit register for signal <predefv4<2>>.
+    Found 1-bit register for signal <predefv4<1>>.
+    Found 1-bit register for signal <predefv4<0>>.
+    Found 1-bit register for signal <counter0<31>>.
+    Found 1-bit register for signal <counter0<30>>.
+    Found 1-bit register for signal <counter0<29>>.
+    Found 1-bit register for signal <counter0<28>>.
+    Found 1-bit register for signal <counter0<27>>.
+    Found 1-bit register for signal <counter0<26>>.
+    Found 1-bit register for signal <counter0<25>>.
+    Found 1-bit register for signal <counter0<24>>.
+    Found 1-bit register for signal <counter0<23>>.
+    Found 1-bit register for signal <counter0<22>>.
+    Found 1-bit register for signal <counter0<21>>.
+    Found 1-bit register for signal <counter0<20>>.
+    Found 1-bit register for signal <counter0<19>>.
+    Found 1-bit register for signal <counter0<18>>.
+    Found 1-bit register for signal <counter0<17>>.
+    Found 1-bit register for signal <counter0<16>>.
+    Found 1-bit register for signal <counter0<15>>.
+    Found 1-bit register for signal <counter0<14>>.
+    Found 1-bit register for signal <counter0<13>>.
+    Found 1-bit register for signal <counter0<12>>.
+    Found 1-bit register for signal <counter0<11>>.
+    Found 1-bit register for signal <counter0<10>>.
+    Found 1-bit register for signal <counter0<9>>.
+    Found 1-bit register for signal <counter0<8>>.
+    Found 1-bit register for signal <counter0<7>>.
+    Found 1-bit register for signal <counter0<6>>.
+    Found 1-bit register for signal <counter0<5>>.
+    Found 1-bit register for signal <counter0<4>>.
+    Found 1-bit register for signal <counter0<3>>.
+    Found 1-bit register for signal <counter0<2>>.
+    Found 1-bit register for signal <counter0<1>>.
+    Found 1-bit register for signal <counter0<0>>.
+    Summary:
+	inferred 393 D-type flip-flop(s).
+Unit <envgenpipeline> synthesized.
+
+Synthesizing Unit <div_40s_32s>.
+    Related source file is "".
+    Found 40-bit subtractor for signal <a[39]_unary_minus_1_OUT> created at line 0.
+    Found 32-bit subtractor for signal <b[31]_unary_minus_3_OUT> created at line 0.
+    Found 72-bit adder for signal <n4763> created at line 0.
+    Found 72-bit adder for signal <GND_104_o_b[31]_add_5_OUT> created at line 0.
+    Found 71-bit adder for signal <n4767> created at line 0.
+    Found 71-bit adder for signal <GND_104_o_b[31]_add_7_OUT> created at line 0.
+    Found 70-bit adder for signal <n4771> created at line 0.
+    Found 70-bit adder for signal <GND_104_o_b[31]_add_9_OUT> created at line 0.
+    Found 69-bit adder for signal <n4775> created at line 0.
+    Found 69-bit adder for signal <GND_104_o_b[31]_add_11_OUT> created at line 0.
+    Found 68-bit adder for signal <n4779> created at line 0.
+    Found 68-bit adder for signal <GND_104_o_b[31]_add_13_OUT> created at line 0.
+    Found 67-bit adder for signal <n4783> created at line 0.
+    Found 67-bit adder for signal <GND_104_o_b[31]_add_15_OUT> created at line 0.
+    Found 66-bit adder for signal <n4787> created at line 0.
+    Found 66-bit adder for signal <GND_104_o_b[31]_add_17_OUT> created at line 0.
+    Found 65-bit adder for signal <n4791> created at line 0.
+    Found 65-bit adder for signal <GND_104_o_b[31]_add_19_OUT> created at line 0.
+    Found 64-bit adder for signal <n4795> created at line 0.
+    Found 64-bit adder for signal <GND_104_o_b[31]_add_21_OUT> created at line 0.
+    Found 63-bit adder for signal <n4799> created at line 0.
+    Found 63-bit adder for signal <GND_104_o_b[31]_add_23_OUT> created at line 0.
+    Found 62-bit adder for signal <n4803> created at line 0.
+    Found 62-bit adder for signal <GND_104_o_b[31]_add_25_OUT> created at line 0.
+    Found 61-bit adder for signal <n4807> created at line 0.
+    Found 61-bit adder for signal <GND_104_o_b[31]_add_27_OUT> created at line 0.
+    Found 60-bit adder for signal <n4811> created at line 0.
+    Found 60-bit adder for signal <GND_104_o_b[31]_add_29_OUT> created at line 0.
+    Found 59-bit adder for signal <n4815> created at line 0.
+    Found 59-bit adder for signal <GND_104_o_b[31]_add_31_OUT> created at line 0.
+    Found 58-bit adder for signal <n4819> created at line 0.
+    Found 58-bit adder for signal <GND_104_o_b[31]_add_33_OUT> created at line 0.
+    Found 57-bit adder for signal <n4823> created at line 0.
+    Found 57-bit adder for signal <GND_104_o_b[31]_add_35_OUT> created at line 0.
+    Found 56-bit adder for signal <n4827> created at line 0.
+    Found 56-bit adder for signal <GND_104_o_b[31]_add_37_OUT> created at line 0.
+    Found 55-bit adder for signal <n4831> created at line 0.
+    Found 55-bit adder for signal <GND_104_o_b[31]_add_39_OUT> created at line 0.
+    Found 54-bit adder for signal <n4835> created at line 0.
+    Found 54-bit adder for signal <GND_104_o_b[31]_add_41_OUT> created at line 0.
+    Found 53-bit adder for signal <n4839> created at line 0.
+    Found 53-bit adder for signal <GND_104_o_b[31]_add_43_OUT> created at line 0.
+    Found 52-bit adder for signal <n4843> created at line 0.
+    Found 52-bit adder for signal <GND_104_o_b[31]_add_45_OUT> created at line 0.
+    Found 51-bit adder for signal <n4847> created at line 0.
+    Found 51-bit adder for signal <GND_104_o_b[31]_add_47_OUT> created at line 0.
+    Found 50-bit adder for signal <n4851> created at line 0.
+    Found 50-bit adder for signal <GND_104_o_b[31]_add_49_OUT> created at line 0.
+    Found 49-bit adder for signal <n4855> created at line 0.
+    Found 49-bit adder for signal <GND_104_o_b[31]_add_51_OUT> created at line 0.
+    Found 48-bit adder for signal <n4859> created at line 0.
+    Found 48-bit adder for signal <GND_104_o_b[31]_add_53_OUT> created at line 0.
+    Found 47-bit adder for signal <n4863> created at line 0.
+    Found 47-bit adder for signal <GND_104_o_b[31]_add_55_OUT> created at line 0.
+    Found 46-bit adder for signal <n4867> created at line 0.
+    Found 46-bit adder for signal <GND_104_o_b[31]_add_57_OUT> created at line 0.
+    Found 45-bit adder for signal <n4871> created at line 0.
+    Found 45-bit adder for signal <GND_104_o_b[31]_add_59_OUT> created at line 0.
+    Found 44-bit adder for signal <n4875> created at line 0.
+    Found 44-bit adder for signal <GND_104_o_b[31]_add_61_OUT> created at line 0.
+    Found 43-bit adder for signal <n4879> created at line 0.
+    Found 43-bit adder for signal <GND_104_o_b[31]_add_63_OUT> created at line 0.
+    Found 42-bit adder for signal <n4883> created at line 0.
+    Found 42-bit adder for signal <GND_104_o_b[31]_add_65_OUT> created at line 0.
+    Found 41-bit adder for signal <n4887> created at line 0.
+    Found 41-bit adder for signal <GND_104_o_b[31]_add_67_OUT> created at line 0.
+    Found 40-bit adder for signal <n4891> created at line 0.
+    Found 40-bit adder for signal <a[39]_b[31]_add_69_OUT> created at line 0.
+    Found 40-bit adder for signal <n4895> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_71_OUT> created at line 0.
+    Found 40-bit adder for signal <n4899> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_73_OUT> created at line 0.
+    Found 40-bit adder for signal <n4903> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_75_OUT> created at line 0.
+    Found 40-bit adder for signal <n4907> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_77_OUT> created at line 0.
+    Found 40-bit adder for signal <n4911> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_79_OUT[39:0]> created at line 0.
+    Found 40-bit adder for signal <n4915> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_81_OUT[39:0]> created at line 0.
+    Found 40-bit adder for signal <n4919> created at line 0.
+    Found 40-bit adder for signal <a[39]_GND_104_o_add_83_OUT[39:0]> created at line 0.
+    Found 41-bit adder for signal <GND_104_o_BUS_0001_add_86_OUT[40:0]> created at line 0.
+    Found 72-bit comparator greater for signal <BUS_0001_INV_2608_o> created at line 0
+    Found 71-bit comparator greater for signal <BUS_0002_INV_2607_o> created at line 0
+    Found 70-bit comparator greater for signal <BUS_0003_INV_2606_o> created at line 0
+    Found 69-bit comparator greater for signal <BUS_0004_INV_2605_o> created at line 0
+    Found 68-bit comparator greater for signal <BUS_0005_INV_2604_o> created at line 0
+    Found 67-bit comparator greater for signal <BUS_0006_INV_2603_o> created at line 0
+    Found 66-bit comparator greater for signal <BUS_0007_INV_2602_o> created at line 0
+    Found 65-bit comparator greater for signal <BUS_0008_INV_2601_o> created at line 0
+    Found 64-bit comparator greater for signal <BUS_0009_INV_2600_o> created at line 0
+    Found 63-bit comparator greater for signal <BUS_0010_INV_2599_o> created at line 0
+    Found 62-bit comparator greater for signal <BUS_0011_INV_2598_o> created at line 0
+    Found 61-bit comparator greater for signal <BUS_0012_INV_2597_o> created at line 0
+    Found 60-bit comparator greater for signal <BUS_0013_INV_2596_o> created at line 0
+    Found 59-bit comparator greater for signal <BUS_0014_INV_2595_o> created at line 0
+    Found 58-bit comparator greater for signal <BUS_0015_INV_2594_o> created at line 0
+    Found 57-bit comparator greater for signal <BUS_0016_INV_2593_o> created at line 0
+    Found 56-bit comparator greater for signal <BUS_0017_INV_2592_o> created at line 0
+    Found 55-bit comparator greater for signal <BUS_0018_INV_2591_o> created at line 0
+    Found 54-bit comparator greater for signal <BUS_0019_INV_2590_o> created at line 0
+    Found 53-bit comparator greater for signal <BUS_0020_INV_2589_o> created at line 0
+    Found 52-bit comparator greater for signal <BUS_0021_INV_2588_o> created at line 0
+    Found 51-bit comparator greater for signal <BUS_0022_INV_2587_o> created at line 0
+    Found 50-bit comparator greater for signal <BUS_0023_INV_2586_o> created at line 0
+    Found 49-bit comparator greater for signal <BUS_0024_INV_2585_o> created at line 0
+    Found 48-bit comparator greater for signal <BUS_0025_INV_2584_o> created at line 0
+    Found 47-bit comparator greater for signal <BUS_0026_INV_2583_o> created at line 0
+    Found 46-bit comparator greater for signal <BUS_0027_INV_2582_o> created at line 0
+    Found 45-bit comparator greater for signal <BUS_0028_INV_2581_o> created at line 0
+    Found 44-bit comparator greater for signal <BUS_0029_INV_2580_o> created at line 0
+    Found 43-bit comparator greater for signal <BUS_0030_INV_2579_o> created at line 0
+    Found 42-bit comparator greater for signal <BUS_0031_INV_2578_o> created at line 0
+    Found 41-bit comparator greater for signal <BUS_0032_INV_2577_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0033_INV_2576_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0034_INV_2575_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0035_INV_2574_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0036_INV_2573_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0037_INV_2572_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0038_INV_2571_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0039_INV_2570_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0040_INV_2569_o> created at line 0
+    Found 40-bit comparator greater for signal <BUS_0041_INV_2568_o> created at line 0
+    Summary:
+	inferred  83 Adder/Subtractor(s).
+	inferred  41 Comparator(s).
+	inferred 1486 Multiplexer(s).
+Unit <div_40s_32s> synthesized.
+
+Synthesizing Unit <xillybus>.
+    Related source file is "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillybus.v".
+    Set property "IOB = TRUE" for instance <vga_iob_ff<0>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<1>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<2>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<3>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<4>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<5>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<6>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<7>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<8>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<9>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<10>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<11>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<12>>.
+    Set property "IOB = TRUE" for instance <vga_iob_ff<13>>.
+    Set property "BOX_TYPE = user_black_box" for instance <system_i>.
+INFO:Xst:3210 - "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillybus.v" line 149: Output port <xillyvga_0_vga_de> of the instance <system_i> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <xillybus> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 128x9-bit single-port Read Only RAM                   : 1
+ 32x8-bit single-port RAM                              : 4
+# Adders/Subtractors                                   : 12
+ 10-bit adder                                          : 1
+ 10-bit subtractor                                     : 2
+ 16-bit adder                                          : 2
+ 16-bit subtractor                                     : 1
+ 2-bit adder                                           : 1
+ 3-bit subtractor                                      : 1
+ 32-bit adder                                          : 2
+ 4-bit subtractor                                      : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 53
+ 1-bit register                                        : 26
+ 10-bit register                                       : 4
+ 127-bit register                                      : 1
+ 16-bit register                                       : 5
+ 2-bit register                                        : 2
+ 24-bit register                                       : 2
+ 3-bit register                                        : 1
+ 32-bit register                                       : 3
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+ 64-bit register                                       : 1
+ 8-bit register                                        : 4
+ 9-bit register                                        : 2
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 2
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 192
+ 1-bit 2-to-1 multiplexer                              : 131
+ 10-bit 2-to-1 multiplexer                             : 16
+ 16-bit 2-to-1 multiplexer                             : 7
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 13
+ 64-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 17
+ 9-bit 2-to-1 multiplexer                              : 6
+# Tristates                                            : 4
+ 1-bit tristate buffer                                 : 4
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/runonce/fifo_32x512.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/runonce/fifo_8x2048.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_xillybus_0_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_xillybus_lite_0_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_processing_system7_0_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_xillyvga_0_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/cores/xillyvga_core.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/runonce/vga_fifo.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_axi_interconnect_0_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_axi4lite_0_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/system/implementation/system_axi_interconnect_1_wrapper.ngc>.
+Reading core </afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/cores/xillybus_core.ngc>.
+Loading core <fifo_32x512> for timing and area information for instance <fifo_32>.
+Loading core <fifo_8x2048> for timing and area information for instance <fifo_8>.
+Loading core <system_xillybus_0_wrapper> for timing and area information for instance <xillybus_0>.
+Loading core <system_xillybus_lite_0_wrapper> for timing and area information for instance <xillybus_lite_0>.
+Loading core <system_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
+Loading core <vga_fifo> for timing and area information for instance <vga_fifo_wrapper_ins/vga_fifo>.
+Loading core <xillyvga_core> for timing and area information for instance <xillyvga_0/xillyvga_core_ins>.
+Loading core <system_xillyvga_0_wrapper> for timing and area information for instance <xillyvga_0>.
+Loading core <system_axi_interconnect_0_wrapper> for timing and area information for instance <axi_interconnect_0>.
+Loading core <system_axi4lite_0_wrapper> for timing and area information for instance <axi4lite_0>.
+Loading core <system_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <system> for timing and area information for instance <system_i>.
+Loading core <xillybus_core> for timing and area information for instance <xillybus_core_ins>.
+WARNING:Xst:1710 - FF/Latch <currAddr_1> (without init value) has a constant value of 1 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <currAddr_2> (without init value) has a constant value of 0 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <currAddr_3> (without init value) has a constant value of 0 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <currAddr_4> (without init value) has a constant value of 1 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <currAddr_5> (without init value) has a constant value of 0 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <currAddr_6> (without init value) has a constant value of 1 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <currAddr_7> (without init value) has a constant value of 0 in block <I2CBus>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <TWICtl>.
+The following registers are absorbed into counter <busFreeCnt>: 1 register on signal <busFreeCnt>.
+The following registers are absorbed into counter <sclCnt>: 1 register on signal <sclCnt>.
+The following registers are absorbed into counter <subState>: 1 register on signal <subState>.
+The following registers are absorbed into counter <bitCount>: 1 register on signal <bitCount>.
+Unit <TWICtl> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clkDivMain>.
+The following registers are absorbed into counter <cValue>: 1 register on signal <cValue>.
+Unit <clkDivMain> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clkDivSecondary>.
+The following registers are absorbed into counter <cValue>: 1 register on signal <cValue>.
+Unit <clkDivSecondary> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2c>.
+INFO:Xst:3226 - The RAM <Inst_adau1761_configuraiton_data/Mram__n0373> will be implemented as a BLOCK RAM, absorbing the following register(s): <Inst_adau1761_configuraiton_data/data>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 9-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <inst_address<6:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <inst_data>     |          |
+    |     dorstA         | connected to internal node          | high     |
+    | reset value        | 000000000                                      |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <i2c> synthesized (advanced).
+
+Synthesizing (advanced) Unit <pmodAD2_ctrl>.
+The following registers are absorbed into counter <waitCount>: 1 register on signal <waitCount>.
+Unit <pmodAD2_ctrl> synthesized (advanced).
+
+Synthesizing (advanced) Unit <squaregen>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <squaregen> synthesized (advanced).
+
+Synthesizing (advanced) Unit <xillydemo>.
+INFO:Xst:3231 - The small RAM <Mram_litearray0> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 8-bit                     |          |
+    |     clkA           | connected to signal <user_clk>      | rise     |
+    |     weA            | connected to signal <user_wstrb<0>> | high     |
+    |     addrA          | connected to signal <user_addr>     |          |
+    |     diA            | connected to signal <user_wr_data<7:0>> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_litearray1> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 8-bit                     |          |
+    |     clkA           | connected to signal <user_clk>      | rise     |
+    |     weA            | connected to signal <user_wstrb<1>> | high     |
+    |     addrA          | connected to signal <user_addr>     |          |
+    |     diA            | connected to signal <user_wr_data<15:8>> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_litearray2> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 8-bit                     |          |
+    |     clkA           | connected to signal <user_clk>      | rise     |
+    |     weA            | connected to signal <user_wstrb<2>> | high     |
+    |     addrA          | connected to signal <user_addr>     |          |
+    |     diA            | connected to signal <user_wr_data<23:16>> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_litearray3> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 8-bit                     |          |
+    |     clkA           | connected to signal <user_clk>      | rise     |
+    |     weA            | connected to signal <user_wstrb<3>> | high     |
+    |     addrA          | connected to signal <user_addr>     |          |
+    |     diA            | connected to signal <user_wr_data<31:24>> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <xillydemo> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 128x9-bit single-port block Read Only RAM             : 1
+ 32x8-bit single-port distributed RAM                  : 4
+# Adders/Subtractors                                   : 4
+ 10-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+ 4-bit subtractor                                      : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 8
+ 10-bit down counter                                   : 2
+ 16-bit up counter                                     : 2
+ 2-bit up counter                                      : 1
+ 3-bit down counter                                    : 1
+ 32-bit up counter                                     : 2
+# Registers                                            : 400
+ Flip-Flops                                            : 400
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 2
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 170
+ 1-bit 2-to-1 multiplexer                              : 116
+ 10-bit 2-to-1 multiplexer                             : 14
+ 16-bit 2-to-1 multiplexer                             : 7
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 13
+ 64-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 12
+ 9-bit 2-to-1 multiplexer                              : 6
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <currAddr_1> in Unit <TWICtl> is equivalent to the following 2 FFs/Latches, which will be removed : <currAddr_4> <currAddr_6> 
+INFO:Xst:2261 - The FF/Latch <currAddr_2> in Unit <TWICtl> is equivalent to the following 3 FFs/Latches, which will be removed : <currAddr_3> <currAddr_5> <currAddr_7> 
+WARNING:Xst:1710 - FF/Latch <currAddr_1> (without init value) has a constant value of 1 in block <TWICtl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <currAddr_2> (without init value) has a constant value of 0 in block <TWICtl>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <adau/Inst_adau1761_izedboard/Inst_i2c/FSM_0> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0011  | 001
+ 0010  | 010
+ 0001  | 011
+ 0100  | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <mc1/analogReciever/FSM_1> on signal <stMain[1:3]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ stdone   | 000
+ stwait   | 001
+ stgo     | 010
+ stconfig | 011
+ stread1  | 100
+ stread2  | 101
+----------------------
+Optimizing FSM <mc1/analogReciever/I2CBus/FSM_2> on signal <state[1:4]> with gray encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ stidle       | 0000
+ ststart      | 0001
+ stread       | 1100
+ stwrite      | 0011
+ sterror      | unreached
+ ststop       | 0100
+ stsack       | 0101
+ stmack       | 0110
+ stmnackstop  | 0010
+ stmnackstart | 0111
+ ststoperror  | unreached
+--------------------------
+WARNING:Xst:1293 - FF/Latch <sr_out_0> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_1> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_2> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_3> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_4> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_5> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_6> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sr_out_7> has a constant value of 0 in block <i2s_data_interface>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_15> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_14> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_13> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_12> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_10> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_9> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_8> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_7> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_6> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_5> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_4> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_3> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_2> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_1> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/wData0_0> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/analogReciever/I2CBus/ERR_O> of sequential type is unconnected in block <xillydemo>.
+
+Optimizing unit <xillydemo> ...
+
+Optimizing unit <xillybus> ...
+
+Optimizing unit <i2s_data_interface> ...
+
+Optimizing unit <i2c> ...
+
+Optimizing unit <clkDivSecondary> ...
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_23> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_22> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_21> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_20> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_19> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_18> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_17> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_16> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_15> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_14> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_13> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_12> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_11> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_10> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_9> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_8> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_7> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_6> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_5> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_4> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_3> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_2> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_1> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_0> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_23> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_22> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_21> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_20> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_19> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_18> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_17> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_16> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_15> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_14> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_13> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_12> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_11> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_10> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_9> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_8> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_7> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_6> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_5> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_4> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_3> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_2> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_1> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_0> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_126> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_125> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_124> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_123> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_122> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_121> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_120> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_119> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_118> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_117> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_116> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_115> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_114> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_113> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_112> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_111> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_110> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_109> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_108> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_107> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_106> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_105> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_104> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_103> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_102> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_101> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_100> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_99> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_98> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_97> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_96> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_95> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_94> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_93> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_92> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_91> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_90> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_89> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_88> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_87> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_86> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_85> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_84> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_83> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_82> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_81> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_80> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_79> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_78> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_77> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_76> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_75> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_74> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_73> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_72> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_71> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_70> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_69> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_68> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_67> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_66> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_65> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_64> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_63> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_62> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_61> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_60> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_59> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_58> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_57> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_56> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_55> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_54> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_53> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_52> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_51> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_50> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_49> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_48> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_47> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_46> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_45> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_44> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_43> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_42> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_41> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_40> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_39> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_38> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_37> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_36> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_35> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_34> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_33> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_32> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_31> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_30> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_29> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_28> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_27> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_26> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_25> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_24> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_23> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_22> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_21> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_20> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_19> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_18> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_17> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_16> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_15> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_14> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_13> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_12> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_11> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_10> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_9> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_8> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_7> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_6> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_5> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_4> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_3> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_2> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_1> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_0> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/i2s_d_in_last> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/new_sample> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:2677 - Node <mc1/secondDivider/fClkPredelay> of sequential type is unconnected in block <xillydemo>.
+WARNING:Xst:1710 - FF/Latch <adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_7> (without init value) has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_31> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_30> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_29> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_28> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_27> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_26> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_25> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_24> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sq/count_23> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_15> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_14> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_13> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_12> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_11> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_10> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mc1/mainDivider/cValue_9> has a constant value of 0 in block <xillydemo>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block xillydemo, actual ratio is 4.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <fifo_32> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <fifo_32> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <fifo_8> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <fifo_8> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <pre_user_wren> in Unit <xillybus_lite_0> is equivalent to the following FF/Latch : <pre_user_wren_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1> in Unit <axi4lite_0> is equivalent to the following FF/Latch : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_1> 
+INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <fifo_32> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <fifo_32> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <fifo_8> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <fifo_8> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <pre_user_wren> in Unit <xillybus_lite_0> is equivalent to the following FF/Latch : <pre_user_wren_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1> in Unit <axi4lite_0> is equivalent to the following FF/Latch : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_1> 
+INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> 
+INFO:Xst:2260 - The FF/Latch <pre_user_wren> in Unit <xillybus_lite_0> is equivalent to the following FF/Latch : <pre_user_wren_1> 
+INFO:Xst:2260 - The FF/Latch <pre_user_wren> in Unit <xillybus_lite_0> is equivalent to the following FF/Latch : <pre_user_wren_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <vga_fifo_wrapper_ins/vga_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> 
+INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1> in Unit <axi4lite_0> is equivalent to the following FF/Latch : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_1> 
+
+Final Macro Processing ...
+
+Processing Unit <xillydemo> :
+	Found 9-bit shift register for signal <adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_1>.
+Unit <xillydemo> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 296
+ Flip-Flops                                            : 296
+# Shift Registers                                      : 1
+ 9-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : xillydemo.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5567
+#      GND                         : 17
+#      INV                         : 257
+#      LUT1                        : 240
+#      LUT2                        : 442
+#      LUT3                        : 633
+#      LUT4                        : 644
+#      LUT5                        : 627
+#      LUT6                        : 1032
+#      MUXCY                       : 870
+#      MUXF7                       : 56
+#      VCC                         : 11
+#      XORCY                       : 738
+# FlipFlops/Latches                : 3587
+#      FD                          : 503
+#      FDC                         : 102
+#      FDCE                        : 39
+#      FDE                         : 1806
+#      FDP                         : 15
+#      FDPE                        : 2
+#      FDR                         : 401
+#      FDRE                        : 609
+#      FDS                         : 22
+#      FDSE                        : 88
+# RAMS                             : 97
+#      RAM32M                      : 18
+#      RAM32X1D                    : 10
+#      RAM32X1S                    : 32
+#      RAM64M                      : 16
+#      RAM64X1D                    : 16
+#      RAMB18E1                    : 5
+# Shift Registers                  : 4
+#      SRLC16E                     : 4
+# Clock Buffers                    : 6
+#      BUFG                        : 6
+# IO Buffers                       : 88
+#      IBUF                        : 3
+#      IBUFG                       : 1
+#      IOBUF                       : 59
+#      OBUF                        : 23
+#      OBUFT                       : 2
+# Others                           : 5
+#      MMCME2_ADV                  : 1
+#      PLLE2_ADV                   : 1
+#      PS7                         : 1
+#      PULLUP                      : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            3573  out of  106400     3%  
+ Number of Slice LUTs:                 4099  out of  53200     7%  
+    Number used as Logic:              3875  out of  53200     7%  
+    Number used as Memory:              224  out of  17400     1%  
+       Number used as RAM:              220
+       Number used as SRL:                4
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   5635
+   Number with an unused Flip Flop:    2062  out of   5635    36%  
+   Number with an unused LUT:          1536  out of   5635    27%  
+   Number of fully used LUT-FF pairs:  2037  out of   5635    36%  
+   Number of unique control sets:       203
+
+IO Utilization: 
+ Number of IOs:                          89
+ Number of bonded IOBs:                  88  out of    200    44%  
+    IOB Flip Flops/Latches:              14
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                3  out of    140     2%  
+    Number using Block RAM only:          3
+ Number of BUFG/BUFGCTRLs:                6  out of     32    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                          | Clock buffer(FF name)                                                                                                                       | Load  |
+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>| BUFG                                                                                                                                        | 3232  |
+clocker/clkout0                                                                       | BUFG                                                                                                                                        | 117   |
+clk_100                                                                               | IBUFG+BUFG                                                                                                                                  | 96    |
+clocker/clkout1                                                                       | BUFG                                                                                                                                        | 23    |
+mc1/mainDivider/fClkInternal                                                          | NONE(mc1/secondDivider/cValue_15)                                                                                                           | 17    |
+clk_100                                                                               | PLLE2_ADV:CLKOUT0                                                                                                                           | 204   |
+xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/m_axi_bready            | NONE(xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/screensaver_ins/BRAM_SINGLE_MACRO_inst/bram18_single_bl.bram18_single_bl)| 1     |
+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------+
+Control Signal                                                        | Buffer(FF name)                                                                         | Load  |
+----------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------+
+adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount<7>(XST_GND:G)| NONE(adau/Inst_adau1761_izedboard/Inst_i2c_Inst_adau1761_configuraiton_data/Mram__n0373)| 2     |
+----------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 18.252ns (Maximum Frequency: 54.789MHz)
+   Minimum input arrival time before clock: 2.439ns
+   Maximum output required time after clock: 2.789ns
+   Maximum combinational path delay: 0.865ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Clock period: 2.523ns (frequency: 396.354MHz)
+  Total number of paths / destination ports: 1058 / 23
+-------------------------------------------------------------------------
+Offset:              2.523ns (Levels of Logic = 16)
+  Source:            xillybus_ins/xillybus_core_ins/rd_arbiter_ins/unitr_2_data_0 (FF)
+  Destination:       sq/count_0 (FF)
+  Source Clock:      xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+  Destination Clock: clocker/clkout1 rising
+
+  Data Path: xillybus_ins/xillybus_core_ins/rd_arbiter_ins/unitr_2_data_0 to sq/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.282   0.649  rd_arbiter_ins/unitr_2_data_0 (user_w_write_32_data_w<0>)
+     end scope: 'xillybus_ins/xillybus_core_ins:user_w_write_32_data_w<0>'
+     LUT4:I0->O            1   0.053   0.000  sq/Mcompar_n0000_lut<0> (sq/Mcompar_n0000_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  sq/Mcompar_n0000_cy<0> (sq/Mcompar_n0000_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<1> (sq/Mcompar_n0000_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<2> (sq/Mcompar_n0000_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<3> (sq/Mcompar_n0000_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<4> (sq/Mcompar_n0000_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<5> (sq/Mcompar_n0000_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<6> (sq/Mcompar_n0000_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<7> (sq/Mcompar_n0000_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<8> (sq/Mcompar_n0000_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<9> (sq/Mcompar_n0000_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<10> (sq/Mcompar_n0000_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<11> (sq/Mcompar_n0000_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<12> (sq/Mcompar_n0000_cy<12>)
+     MUXCY:CI->O          23   0.204   0.539  sq/Mcompar_n0000_cy<13> (sq/Mcompar_n0000_cy<13>)
+     FDR:R                     0.325          sq/count_0
+    ----------------------------------------
+    Total                      2.523ns (1.335ns logic, 1.188ns route)
+                                       (52.9% logic, 47.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mc1/mainDivider/fClkInternal'
+  Clock period: 1.659ns (frequency: 602.829MHz)
+  Total number of paths / destination ports: 42 / 41
+-------------------------------------------------------------------------
+Offset:              1.659ns (Levels of Logic = 1)
+  Source:            mc1/secondDivider/fClkInternal (FF)
+  Destination:       mc1/analogReciever/stMain_FSM_FFd1 (FF)
+  Source Clock:      mc1/mainDivider/fClkInternal rising
+  Destination Clock: clk_100 rising
+
+  Data Path: mc1/secondDivider/fClkInternal to mc1/analogReciever/stMain_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.282   0.432  mc1/secondDivider/fClkInternal (mc1/secondDivider/fClkInternal)
+     INV:I->O             38   0.067   0.553  mc1/fRstRXCtrl1_INV_0 (mc1/fRstRXCtrl)
+     FDRE:R                    0.325          mc1/analogReciever/fDoTransmit
+    ----------------------------------------
+    Total                      1.659ns (0.674ns logic, 0.985ns route)
+                                       (40.6% logic, 59.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100'
+  Clock period: 1.104ns (frequency: 905.588MHz)
+  Total number of paths / destination ports: 48 / 48
+-------------------------------------------------------------------------
+Offset:              1.104ns (Levels of Logic = 1)
+  Source:            mc1/analogReciever/wData0_11 (FF)
+  Destination:       adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63 (FF)
+  Source Clock:      clk_100 rising
+  Destination Clock: clocker/clkout0 rising
+
+  Data Path: mc1/analogReciever/wData0_11 to adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              49   0.282   0.758  mc1/analogReciever/wData0_11 (mc1/analogReciever/wData0_11)
+     LUT5:I2->O            1   0.053   0.000  adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/Mmux_sr_out[62]_audio_l_in[23]_mux_5_OUT11 (adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[62]_audio_l_in[23]_mux_5_OUT<10>)
+     FDE:D                     0.011          adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_10
+    ----------------------------------------
+    Total                      1.104ns (0.346ns logic, 0.758ns route)
+                                       (31.3% logic, 68.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clocker/clkout1'
+  Clock period: 2.251ns (frequency: 444.326MHz)
+  Total number of paths / destination ports: 2116 / 46
+-------------------------------------------------------------------------
+Offset:              2.251ns (Levels of Logic = 15)
+  Source:            sq/count_1 (FF)
+  Destination:       adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63 (FF)
+  Source Clock:      clocker/clkout1 rising
+  Destination Clock: clocker/clkout0 rising
+
+  Data Path: sq/count_1 to adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.282   0.662  sq/count_1 (sq/count_1)
+     LUT4:I0->O            0   0.053   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_lutdi (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_lutdi)
+     MUXCY:DI->O           1   0.278   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<0> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<1> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<2> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<3> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<4> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<5> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<6> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<7> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<8> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<9> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<10> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<11> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<11>)
+     MUXCY:CI->O          46   0.178   0.569  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<12> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<12>)
+     LUT5:I4->O            1   0.053   0.000  adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/Mmux_sr_out[62]_audio_l_in[23]_mux_5_OUT11 (adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[62]_audio_l_in[23]_mux_5_OUT<10>)
+     FDE:D                     0.011          adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_10
+    ----------------------------------------
+    Total                      2.251ns (1.020ns logic, 1.231ns route)
+                                       (45.3% logic, 54.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Clock period: 2.264ns (frequency: 441.775MHz)
+  Total number of paths / destination ports: 2024 / 46
+-------------------------------------------------------------------------
+Offset:              2.264ns (Levels of Logic = 16)
+  Source:            xillybus_ins/xillybus_core_ins/rd_arbiter_ins/unitr_2_data_2 (FF)
+  Destination:       adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63 (FF)
+  Source Clock:      xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+  Destination Clock: clocker/clkout0 rising
+
+  Data Path: xillybus_ins/xillybus_core_ins/rd_arbiter_ins/unitr_2_data_2 to adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.282   0.662  rd_arbiter_ins/unitr_2_data_2 (user_w_write_32_data_w<2>)
+     end scope: 'xillybus_ins/xillybus_core_ins:user_w_write_32_data_w<2>'
+     LUT4:I0->O            1   0.053   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_lut<0> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<0> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<1> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<2> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<3> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<4> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<5> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<6> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<7> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<8> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<9> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<10> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<11> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<11>)
+     MUXCY:CI->O          46   0.178   0.569  sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<12> (sq/Mcompar_GND_33_o_count[31]_LessThan_7_o_cy<12>)
+     LUT5:I4->O            1   0.053   0.000  adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/Mmux_sr_out[62]_audio_l_in[23]_mux_5_OUT11 (adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[62]_audio_l_in[23]_mux_5_OUT<10>)
+     FDE:D                     0.011          adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_10
+    ----------------------------------------
+    Total                      2.264ns (1.033ns logic, 1.231ns route)
+                                       (45.6% logic, 54.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Clock period: 18.252ns (frequency: 54.789MHz)
+  Total number of paths / destination ports: 2568 / 79
+-------------------------------------------------------------------------
+Offset:              2.808ns (Levels of Logic = 3)
+  Source:            xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/registers_ins/v_sync_stop_reg_10 (FF)
+  Destination:       xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/scan_ins/screensaver_on_0 (FF)
+  Source Clock:      xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+  Destination Clock: clk_100 rising 2.6X
+
+  Data Path: xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/registers_ins/v_sync_stop_reg_10 to xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/scan_ins/screensaver_on_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.282   0.608  registers_ins/v_sync_stop_reg_10 (registers_ins/v_sync_stop_reg[10])
+     LUT6:I3->O           15   0.053   0.727  scan_ins/vpos[11]_v_total[11]_inv124 (scan_ins/vpos[11]_v_total[11]_inv123)
+     LUT4:I0->O            2   0.053   0.419  scan_ins/vpos[11]_v_total[11]_inv125 (scan_ins/vpos[11]_v_total[11]_inv)
+     LUT5:I4->O            3   0.053   0.413  scan_ins/_n0254_inv1 (scan_ins/_n0254_inv)
+     FDSE:CE                   0.200          scan_ins/screensaver_on_0
+    ----------------------------------------
+    Total                      2.808ns (0.641ns logic, 2.167ns route)
+                                       (22.8% logic, 77.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100'
+  Clock period: 4.567ns (frequency: 218.946MHz)
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              1.054ns (Levels of Logic = 1)
+  Source:            xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0 (FF)
+  Destination:       xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram (RAM)
+  Source Clock:      clk_100 rising 2.6X
+  Destination Clock: xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+
+  Data Path: xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0 to xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              3   0.282   0.413  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg<0>)
+     begin scope: 'xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:RSTB<0>'
+     RAMB18E1:RSTRAMB          0.359          ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram
+    ----------------------------------------
+    Total                      1.054ns (0.641ns logic, 0.413ns route)
+                                       (60.8% logic, 39.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Clock period: 3.959ns (frequency: 252.589MHz)
+  Total number of paths / destination ports: 79449 / 7326
+-------------------------------------------------------------------------
+Delay:               3.959ns (Levels of Logic = 6)
+  Source:            xillybus_ins/xillybus_core_ins/unitw_3_ins/unitw_3_active (FF)
+  Destination:       xillybus_ins/xillybus_core_ins/unitw_3_ins/unitw_3_active (FF)
+  Source Clock:      xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+  Destination Clock: xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+
+  Data Path: xillybus_ins/xillybus_core_ins/unitw_3_ins/unitw_3_active to xillybus_ins/xillybus_core_ins/unitw_3_ins/unitw_3_active
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.282   0.662  unitw_3_ins/unitw_3_active (unitw_3_ins/unitw_3_active)
+     LUT5:I1->O            4   0.053   0.745  unitw_3_ins/unitw_3_effective_rden1 (unitw_3_ins/unitw_3_effective_rden)
+     LUT5:I0->O            2   0.053   0.419  unitw_3_ins/unitw_3_submit_buffer5 (unitw_3_ins/unitw_3_submit_buffer5)
+     LUT6:I5->O           13   0.053   0.493  unitw_3_ins/unitw_3_submit_buffer7 (unitw_3_ins/unitw_3_submit_buffer)
+     LUT6:I5->O            3   0.053   0.427  unitw_3_ins/_n0451_inv1_SW0 (N232)
+     LUT6:I5->O            1   0.053   0.602  unitw_3_ins/unitw_3_active_glue_set_SW2 (N303)
+     LUT6:I3->O            1   0.053   0.000  unitw_3_ins/unitw_3_active_glue_set (unitw_3_ins/unitw_3_active_glue_set)
+     FDR:D                     0.011          unitw_3_ins/unitw_3_active
+    ----------------------------------------
+    Total                      3.959ns (0.611ns logic, 3.348ns route)
+                                       (15.4% logic, 84.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clocker/clkout0'
+  Clock period: 6.119ns (frequency: 163.425MHz)
+  Total number of paths / destination ports: 7549 / 180
+-------------------------------------------------------------------------
+Delay:               6.119ns (Levels of Logic = 6)
+  Source:            adau/Inst_adau1761_izedboard/Inst_i2c_Inst_adau1761_configuraiton_data/Mram__n0373 (RAM)
+  Destination:       adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/pcnext_9 (FF)
+  Source Clock:      clocker/clkout0 rising
+  Destination Clock: clocker/clkout0 rising
+
+  Data Path: adau/Inst_adau1761_izedboard/Inst_i2c_Inst_adau1761_configuraiton_data/Mram__n0373 to adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/pcnext_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB18E1:CLKARDCLK->DOADO1   22   2.454   0.771  adau/Inst_adau1761_izedboard/Inst_i2c_Inst_adau1761_configuraiton_data/Mram__n0373 (adau/Inst_adau1761_izedboard/Inst_i2c/inst_data<1>)
+     LUT4:I0->O            1   0.053   0.413  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/GND_14_o_inst_data[8]_equal_6_o1_SW0 (N102)
+     LUT6:I5->O           13   0.053   0.715  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Mmux_opcode<0>211 (adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/opcode<1>)
+     LUT4:I0->O            3   0.053   0.499  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/_n0536<3>1 (adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/_n0536)
+     LUT6:I4->O            7   0.053   0.525  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Mmux_state[3]_GND_14_o_wide_mux_118_OUT1021 (adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Mmux_state[3]_GND_14_o_wide_mux_118_OUT102)
+     LUT5:I3->O            1   0.053   0.413  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Mmux_state[3]_GND_14_o_wide_mux_118_OUT272 (adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Mmux_state[3]_GND_14_o_wide_mux_118_OUT271)
+     LUT6:I5->O            1   0.053   0.000  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Mmux_state[3]_GND_14_o_wide_mux_118_OUT273 (adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/state[3]_GND_14_o_wide_mux_118_OUT<8>)
+     FD:D                      0.011          adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/pcnext_8
+    ----------------------------------------
+    Total                      6.119ns (2.783ns logic, 3.336ns route)
+                                       (45.5% logic, 54.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100'
+  Clock period: 11.029ns (frequency: 90.668MHz)
+  Total number of paths / destination ports: 7433 / 615
+-------------------------------------------------------------------------
+Delay:               4.242ns (Levels of Logic = 4)
+  Source:            xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram (RAM)
+  Destination:       xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram (RAM)
+  Source Clock:      clk_100 rising 2.6X
+  Destination Clock: clk_100 rising 2.6X
+
+  Data Path: xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram to xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB18E1:CLKARDCLK->DOBDO13    1   2.454   0.413  ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram (DOUTB<32>)
+     end scope: 'xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:DOUTB<32>'
+     end scope: 'xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo:dout[32]'
+     LUT4:I3->O            3   0.053   0.427  scan_ins/fifo_rd_en1 (fifo_rd_en_w)
+     begin scope: 'xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo:rd_en'
+     LUT3:I2->O            1   0.053   0.399  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en)
+     begin scope: 'xillybus_ins/system_i/xillyvga_0/xillyvga_0/xillyvga_core_ins/vga_fifo_wrapper_ins/vga_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:ENB'
+     RAMB18E1:ENARDEN          0.443          ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram
+    ----------------------------------------
+    Total                      4.242ns (3.003ns logic, 1.239ns route)
+                                       (70.8% logic, 29.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clocker/clkout1'
+  Clock period: 2.521ns (frequency: 396.668MHz)
+  Total number of paths / destination ports: 1334 / 46
+-------------------------------------------------------------------------
+Delay:               2.521ns (Levels of Logic = 14)
+  Source:            sq/count_3 (FF)
+  Destination:       sq/count_0 (FF)
+  Source Clock:      clocker/clkout1 rising
+  Destination Clock: clocker/clkout1 rising
+
+  Data Path: sq/count_3 to sq/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.282   0.662  sq/count_3 (sq/count_3)
+     LUT4:I0->O            1   0.053   0.000  sq/Mcompar_n0000_lut<1> (sq/Mcompar_n0000_lut<1>)
+     MUXCY:S->O            1   0.291   0.000  sq/Mcompar_n0000_cy<1> (sq/Mcompar_n0000_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<2> (sq/Mcompar_n0000_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<3> (sq/Mcompar_n0000_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<4> (sq/Mcompar_n0000_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<5> (sq/Mcompar_n0000_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<6> (sq/Mcompar_n0000_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<7> (sq/Mcompar_n0000_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<8> (sq/Mcompar_n0000_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<9> (sq/Mcompar_n0000_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<10> (sq/Mcompar_n0000_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<11> (sq/Mcompar_n0000_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  sq/Mcompar_n0000_cy<12> (sq/Mcompar_n0000_cy<12>)
+     MUXCY:CI->O          23   0.204   0.539  sq/Mcompar_n0000_cy<13> (sq/Mcompar_n0000_cy<13>)
+     FDR:R                     0.325          sq/count_0
+    ----------------------------------------
+    Total                      2.521ns (1.320ns logic, 1.201ns route)
+                                       (52.4% logic, 47.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mc1/mainDivider/fClkInternal'
+  Clock period: 2.448ns (frequency: 408.497MHz)
+  Total number of paths / destination ports: 409 / 33
+-------------------------------------------------------------------------
+Delay:               2.448ns (Levels of Logic = 2)
+  Source:            mc1/secondDivider/cValue_3 (FF)
+  Destination:       mc1/secondDivider/cValue_15 (FF)
+  Source Clock:      mc1/mainDivider/fClkInternal rising
+  Destination Clock: mc1/mainDivider/fClkInternal rising
+
+  Data Path: mc1/secondDivider/cValue_3 to mc1/secondDivider/cValue_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.282   0.745  mc1/secondDivider/cValue_3 (mc1/secondDivider/cValue_3)
+     LUT6:I0->O            1   0.053   0.485  mc1/secondDivider/cValue[15]_lRefValue[15]_equal_3_o<15>4_SW0 (N193)
+     LUT6:I4->O           17   0.053   0.505  mc1/secondDivider/cValue[15]_lRefValue[15]_equal_3_o<15>4 (mc1/secondDivider/cValue[15]_lRefValue[15]_equal_3_o)
+     FDR:R                     0.325          mc1/secondDivider/cValue_0
+    ----------------------------------------
+    Total                      2.448ns (0.713ns logic, 1.735ns route)
+                                       (29.1% logic, 70.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clocker/clkout0'
+  Total number of paths / destination ports: 59 / 59
+-------------------------------------------------------------------------
+Offset:              0.947ns (Levels of Logic = 2)
+  Source:            AC_GPIO3 (PAD)
+  Destination:       adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63 (FF)
+  Destination Clock: clocker/clkout0 rising
+
+  Data Path: AC_GPIO3 to adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            57   0.000   0.883  AC_GPIO3_IBUF (AC_GPIO3_IBUF)
+     LUT5:I0->O            1   0.053   0.000  adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/Mmux_sr_out[62]_audio_l_in[23]_mux_5_OUT11 (adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[62]_audio_l_in[23]_mux_5_OUT<10>)
+     FDE:D                     0.011          adau/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_10
+    ----------------------------------------
+    Total                      0.947ns (0.064ns logic, 0.883ns route)
+                                       (6.8% logic, 93.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Total number of paths / destination ports: 1184 / 689
+-------------------------------------------------------------------------
+Offset:              2.439ns (Levels of Logic = 9)
+  Source:            xillybus_ins/system_i/processing_system7_0/processing_system7_0/PS7_i:SAXIACPRVALID (PAD)
+  Destination:       xillybus_ins/xillybus_core_ins/axi4_acp_recv_dma_ins/dw_count_9 (FF)
+  Destination Clock: xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+
+  Data Path: xillybus_ins/system_i/processing_system7_0/processing_system7_0/PS7_i:SAXIACPRVALID to xillybus_ins/xillybus_core_ins/axi4_acp_recv_dma_ins/dw_count_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:SAXIACPRVALID      7   0.000   0.000  processing_system7_0/PS7_i (S_AXI_ACP_RVALID)
+     end scope: 'xillybus_ins/system_i/processing_system7_0:S_AXI_ACP_RVALID'
+     begin scope: 'xillybus_ins/system_i/axi_interconnect_0:M_AXI_RVALID<0>'
+     end scope: 'xillybus_ins/system_i/axi_interconnect_0:S_AXI_RVALID<0>'
+     begin scope: 'xillybus_ins/system_i/xillybus_0:m_axi_rvalid'
+     end scope: 'xillybus_ins/system_i/xillybus_0:xillybus_M_AXI_RVALID'
+     end scope: 'xillybus_ins/system_i:xillybus_M_AXI_RVALID'
+     begin scope: 'xillybus_ins/xillybus_core_ins:M_AXI_ACP_RVALID_w'
+     LUT4:I0->O           53   0.053   0.570  axi4_acp_recv_dma_ins/M_AXI_ACP_RVALID_drop_AND_97_o1 (axi4_acp_recv_dma_ins/M_AXI_ACP_RVALID_drop_AND_97_o)
+     LUT5:I4->O            1   0.053   0.413  axi4_acp_recv_dma_ins/mux3211 (axi4_acp_recv_dma_ins/Mmux_state[2]_GND_12_o_mux_69_OUT_rs_A[8])
+     LUT5:I4->O            1   0.053   0.000  axi4_acp_recv_dma_ins/Mmux_state[2]_GND_12_o_mux_69_OUT_rs_lut[8] (axi4_acp_recv_dma_ins/Mmux_state[2]_GND_12_o_mux_69_OUT_rs_lut[8])
+     MUXCY:S->O            0   0.291   0.000  axi4_acp_recv_dma_ins/Mmux_state[2]_GND_12_o_mux_69_OUT_rs_cy[8] (axi4_acp_recv_dma_ins/Mmux_state[2]_GND_12_o_mux_69_OUT_rs_cy[8])
+     XORCY:CI->O           1   0.320   0.000  axi4_acp_recv_dma_ins/Mmux_state[2]_GND_12_o_mux_69_OUT_rs_xor[9] (axi4_acp_recv_dma_ins/state[2]_GND_12_o_mux_69_OUT[9])
+     FDE:D                     0.011          axi4_acp_recv_dma_ins/dw_count_9
+    ----------------------------------------
+    Total                      2.439ns (1.456ns logic, 0.983ns route)
+                                       (59.7% logic, 40.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.410ns (Levels of Logic = 1)
+  Source:            scl (PAD)
+  Destination:       mc1/analogReciever/I2CBus/dScl (FF)
+  Destination Clock: clk_100 rising
+
+  Data Path: scl to mc1/analogReciever/I2CBus/dScl
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           1   0.000   0.399  scl_IOBUF (N126)
+     FD:D                      0.011          mc1/analogReciever/I2CBus/dScl
+    ----------------------------------------
+    Total                      0.410ns (0.011ns logic, 0.399ns route)
+                                       (2.7% logic, 97.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Total number of paths / destination ports: 477 / 238
+-------------------------------------------------------------------------
+Offset:              2.789ns (Levels of Logic = 7)
+  Source:            xillybus_ins/xillybus_core_ins/axi4_slave_ins/S_AXI_WREADY (FF)
+  Destination:       xillybus_ins/system_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WREADY (PAD)
+  Source Clock:      xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+
+  Data Path: xillybus_ins/xillybus_core_ins/axi4_slave_ins/S_AXI_WREADY to xillybus_ins/system_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.282   0.608  axi4_slave_ins/S_AXI_WREADY (S_AXI_WREADY_w)
+     end scope: 'xillybus_ins/xillybus_core_ins:S_AXI_WREADY_w'
+     begin scope: 'xillybus_ins/system_i:xillybus_S_AXI_WREADY'
+     begin scope: 'xillybus_ins/system_i/xillybus_0:xillybus_S_AXI_WREADY'
+     end scope: 'xillybus_ins/system_i/xillybus_0:S_AXI_WREADY'
+     begin scope: 'xillybus_ins/system_i/axi4lite_0:M_AXI_WREADY<0>'
+     LUT3:I0->O            1   0.053   0.602  axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/S_AXI_WREADY1 (DEBUG_MC_MP_WDATACONTROL<1>)
+     LUT6:I3->O            3   0.053   0.739  axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/w_complete_mux13 (axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/w_complete_mux1)
+     LUT5:I0->O            1   0.053   0.399  axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/si_wready1 (DEBUG_SF_CB_WDATACONTROL<1>)
+     end scope: 'xillybus_ins/system_i/axi4lite_0:S_AXI_WREADY<0>'
+     begin scope: 'xillybus_ins/system_i/processing_system7_0:M_AXI_GP0_WREADY'
+    PS7:MAXIGP0WREADY          0.000          processing_system7_0/PS7_i
+    ----------------------------------------
+    Total                      2.789ns (0.441ns logic, 2.348ns route)
+                                       (15.8% logic, 84.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              0.714ns (Levels of Logic = 1)
+  Source:            mc1/analogReciever/I2CBus/rSda (FF)
+  Destination:       sda (PAD)
+  Source Clock:      clk_100 rising
+
+  Data Path: mc1/analogReciever/I2CBus/rSda to sda
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.282   0.432  mc1/analogReciever/I2CBus/rSda (mc1/analogReciever/I2CBus/rSda)
+     IOBUF:T->IO               0.000          sda_IOBUF (sda)
+    ----------------------------------------
+    Total                      0.714ns (0.282ns logic, 0.432ns route)
+                                       (39.5% logic, 60.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clocker/clkout0'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              0.701ns (Levels of Logic = 1)
+  Source:            adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_sda_t (FF)
+  Destination:       AC_SDA (PAD)
+  Source Clock:      clocker/clkout0 rising
+
+  Data Path: adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_sda_t to AC_SDA
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.282   0.419  adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_sda_t (adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_sda_t)
+     IOBUF:T->IO               0.000          adau/Inst_adau1761_izedboard/i_i2s_sda_obuf (AC_SDA)
+    ----------------------------------------
+    Total                      0.701ns (0.282ns logic, 0.419ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 114 / 58
+-------------------------------------------------------------------------
+Delay:               0.865ns (Levels of Logic = 3)
+  Source:            xillybus_ins/system_i/processing_system7_0/processing_system7_0/PS7_i:EMIOGPIOTN55 (PAD)
+  Destination:       PS_GPIO<55> (PAD)
+
+  Data Path: xillybus_ins/system_i/processing_system7_0/processing_system7_0/PS7_i:EMIOGPIOTN55 to PS_GPIO<55>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:EMIOGPIOTN55       1   0.000   0.399  processing_system7_0/PS7_i (processing_system7_0/gpio_out_t_n<55>)
+     INV:I->O              1   0.067   0.399  processing_system7_0/GPIO_T<55>1_INV_0 (GPIO_T<55>)
+     end scope: 'xillybus_ins/system_i/processing_system7_0:GPIO_T<55>'
+     IOBUF:T->IO               0.000          iobuf_0 (processing_system7_0_GPIO<55>)
+     end scope: 'xillybus_ins/system_i:processing_system7_0_GPIO<55>'
+    ----------------------------------------
+    Total                      0.865ns (0.067ns logic, 0.798ns route)
+                                       (7.7% logic, 92.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_100
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+clk_100                                                                               |    4.242|         |         |         |
+mc1/mainDivider/fClkInternal                                                          |    1.659|         |         |         |
+xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>|    2.808|         |         |         |
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clocker/clkout0
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+clk_100                                                                               |    1.104|         |         |         |
+clocker/clkout0                                                                       |    6.119|         |         |         |
+clocker/clkout1                                                                       |    2.251|         |         |         |
+xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>|    2.264|         |         |         |
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clocker/clkout1
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+clocker/clkout1                                                                       |    2.521|         |         |         |
+xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>|    2.523|         |         |         |
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mc1/mainDivider/fClkInternal
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+mc1/mainDivider/fClkInternal|    2.448|         |         |         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+clk_100                                                                               |    1.054|         |         |         |
+xillybus_ins/system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>|    3.959|         |         |         |
+--------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 34.00 secs
+Total CPU time to Xst completion: 23.02 secs
+ 
+--> 
+
+
+Total memory usage is 210732 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  277 (   0 filtered)
+Number of infos    :   74 (   0 filtered)
+

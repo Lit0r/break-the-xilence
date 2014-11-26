@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_PS_SRSTB</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_PS_SRSTB</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_PS_CLK</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_PS_CLK</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_PS_PORB</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_PS_PORB</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;53&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;53&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;52&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;52&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;51&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;51&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;50&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;50&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;49&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;49&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;48&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;48&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;47&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;47&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;46&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;46&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;45&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;45&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;44&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;44&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;43&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;43&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;42&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;42&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;41&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;41&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;40&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;40&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;39&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;39&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;38&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;38&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;37&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;37&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;36&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;36&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;35&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;35&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;34&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;34&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;33&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;33&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;32&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;32&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;31&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;31&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;30&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;30&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;29&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;29&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;28&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;28&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;27&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;27&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;26&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;26&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;25&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;25&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;24&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;24&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;23&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;23&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;22&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;22&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;21&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;21&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;20&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;20&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;19&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;19&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;18&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;18&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;17&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;17&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;16&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;16&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;15&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;15&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;14&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;14&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;13&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;13&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;12&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;12&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;11&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;11&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;10&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;10&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;9&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;9&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;8&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;8&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;7&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;7&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;6&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;6&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;5&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;5&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;4&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;4&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;3&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;3&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_MIO&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_MIO&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_BankAddr&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_BankAddr&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_BankAddr&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_BankAddr&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_BankAddr&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_BankAddr&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;14&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;14&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;13&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;13&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;12&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;12&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;11&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;11&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;10&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;10&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;9&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;9&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;8&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;8&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;7&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;7&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;6&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;6&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;5&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;5&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;4&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;4&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;3&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;3&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Addr&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Addr&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;31&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;31&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;30&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;30&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;29&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;29&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;28&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;28&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;27&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;27&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;26&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;26&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;25&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;25&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;24&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;24&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;23&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;23&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;22&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;22&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;21&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;21&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;20&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;20&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;19&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;19&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;18&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;18&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;17&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;17&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;16&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;16&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;15&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;15&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;14&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;14&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;13&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;13&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;12&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;12&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;11&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;11&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;10&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;10&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;9&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;9&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;8&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;8&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;7&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;7&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;6&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;6&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;5&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;5&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;4&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;4&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;3&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;3&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQ&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQ&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DM&lt;3&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DM&lt;3&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DM&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DM&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DM&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DM&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DM&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DM&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS&lt;3&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS&lt;3&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS_n&lt;3&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS_n&lt;3&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS_n&lt;2&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS_n&lt;2&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS_n&lt;1&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS_n&lt;1&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DQS_n&lt;0&gt;</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DQS_n&lt;0&gt;</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Clk</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Clk</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_Clk_n</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_Clk_n</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_CKE</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_CKE</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_CS_n</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_CS_n</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_RAS_n</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_RAS_n</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_CAS_n</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_CAS_n</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_WEB</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_WEB</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_ODT</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_ODT</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_DRSTB</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_DRSTB</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_VRN</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_VRN</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="info" file="NgdBuild" num="889" delta="old" >Pad net &apos;<arg fmt="%s" index="1">xillybus_ins/system_i/processing_system7_0_DDR_VRP</arg>&apos; is not connected to an external port in this design.  A new port &apos;<arg fmt="%s" index="2">processing_system7_0_DDR_VRP</arg>&apos; has been added and is connected to this signal.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="135" delta="old" >Constraint <arg fmt="%s" index="1">&lt;INST /xillydemo/EXPANDED/xillydemo/xillybus_ins\/system_i/axi4lite_0/axi4lite_0\/si_converter_bank\/gen_conv_slot[0].clock_conv_inst\/interconnect_aresetn_resync&lt;2&gt;_inv1_INV_0 TNM = FFS:axi4lite_0_...&gt;</arg>: No instances of type <arg fmt="%s" index="2">FFS</arg> were found under block &quot;<arg fmt="%s" index="3">xillybus_ins/system_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync&lt;2&gt;_inv1_INV_0</arg>&quot; (type=<arg fmt="%s" index="4">INV</arg>).
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="58" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMEGRP axi_interconnect_0_reset_source = FFS PADS CPUS;&gt;</arg>: <arg fmt="%s" index="2">CPUS &quot;*&quot;</arg> does not match any design objects.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="58" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMEGRP axi4lite_0_reset_source = FFS PADS CPUS;&gt;</arg>: <arg fmt="%s" index="2">CPUS &quot;*&quot;</arg> does not match any design objects.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="58" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMEGRP axi_interconnect_1_reset_source = FFS PADS CPUS;&gt;</arg>: <arg fmt="%s" index="2">CPUS &quot;*&quot;</arg> does not match any design objects.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="194" delta="old" >The <arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">axi4lite_0_reset_resync</arg>&apos;, does not directly or indirectly drive any flip-flops, latches and/or RAMs and is not actively used by any referencing constraint.
+ </msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">TN_gclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_gclk</arg>&apos;, was traced into <arg fmt="%s" index="4">MMCME2_ADV</arg> instance <arg fmt="%s" index="5">clocker/mmcm_adv_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">MMCME2_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT1</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clocker_clkout1 = PERIOD &quot;clocker_clkout1&quot; TS_gclk / 0.048 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">TN_gclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_gclk</arg>&apos;, was traced into <arg fmt="%s" index="4">MMCME2_ADV</arg> instance <arg fmt="%s" index="5">clocker/mmcm_adv_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">MMCME2_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clocker_clkout0 = PERIOD &quot;clocker_clkout0&quot; TS_gclk / 0.48 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">TN_gclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_gclk</arg>&apos;, was traced into <arg fmt="%s" index="4">PLLE2_ADV</arg> instance <arg fmt="%s" index="5">vga_clk_ins/vga_pll</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLLE2_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_xillybus_ins_system_i_xillyvga_0_xillyvga_0_xillyvga_core_ins_vga_clk_ins_clkout0 = PERIOD &quot;xillybus_ins_system_i_xillyvga_0_xillyvga_0_xillyvga_core_ins_vga_clk_ins_clkout0&quot; TS_gclk / ...&gt;</arg>
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N227</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N228</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N229</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N230</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N231</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N232</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N233</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N234</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N235</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N236</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N237</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N238</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N239</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N240</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N241</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N242</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N243</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N244</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N245</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N246</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N247</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N248</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N249</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N250</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N251</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N252</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N253</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N254</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N255</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N256</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N257</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N258</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N259</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N260</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N261</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N262</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N263</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N264</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N265</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N266</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N267</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N268</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N269</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N270</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N271</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N272</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N273</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N274</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N275</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N276</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N277</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N278</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N279</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N280</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N281</arg>&apos; has no driver
+</msg>
+
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N282</arg>&apos; has no driver
+</msg>
+
+</messages>
+

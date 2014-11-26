@@ -1,0 +1,70 @@
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
+xst -intstyle ise -ifn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.xst" -ofn "/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -sd ../system/implementation -sd ../cores -sd ../runonce -nt timestamp -uc src/xillydemo.ucf -p xc7z020-clg484-1 xillydemo.ngc xillydemo.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol std -t 2 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o xillydemo_map.ncd xillydemo.ngd xillydemo.pcf 
+par -w -intstyle ise -ol std -mt off xillydemo_map.ncd xillydemo.ncd xillydemo.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml xillydemo.twx xillydemo.ncd -o xillydemo.twr xillydemo.pcf 
+bitgen -intstyle ise -f xillydemo.ut xillydemo.ncd 
