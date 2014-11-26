@@ -246,7 +246,7 @@ squaregen sq (
 assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
 //assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
 //assign audio = audio_post_filter;//adsr_out;
-assign audio = (pmod1[11]) ? 0:audio_pre_filter;
+assign audio = (dial1[11] || dial2[11] || dial3[11] || dial4[11]) ? 0:audio_pre_filter;
 
 wire [15:0] pmod1; //, pmod2, pmod3;
 wire [11:0] dial1, dial2, dial3, dial4; //, dial5, dial6;
