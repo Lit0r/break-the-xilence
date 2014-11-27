@@ -257,7 +257,7 @@ masterControler mc1(, clk_100_buffered, scl, sda, pmod1[15:0], scl_alt, sda_alt)
 //masterControler mc2(, clk_100_buffered, scl[1], sda[1], pmod2[15:0], scl_alt[1], sda_alt[1]);
 //masterControler mc3(, clk_100_buffered, scl[2], sda[2], pmod3[15:0], scl_alt[2], sda_alt[2]);
 
-decoder d1(pmod1[15:0], dial1, dial2, dial3, dial4);
+decoder d1(clk_calc, pmod1[15:0], dial1, dial2, dial3, dial4);
 //decoder d2(pmod2[15:0], dial5, dial6, slider1, slider2);
 //decoder d3(pmod3[15:0], slider3, slider4, slider5, slider6);
 
