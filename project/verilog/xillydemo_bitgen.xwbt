@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.ncd
-OUTFILE=/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/xillydemo.bit
+INFILE=/afs/ece.cmu.edu/usr/yuminm/Private/18-545/break-the-xilence/break-the-xilence/project/verilog/xillydemo.ncd
+OUTFILE=/afs/ece.cmu.edu/usr/yuminm/Private/18-545/break-the-xilence/break-the-xilence/project/verilog/xillydemo.bit
 FAMILY=Zynq
 PART=xc7z020-1clg484
-WORKINGDIR=/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog
+WORKINGDIR=/afs/ece.cmu.edu/usr/yuminm/Private/18-545/break-the-xilence/break-the-xilence/project/verilog
 LICENSE=WebPack
-USER_INFO=210935882_0_0_361
+USER_INFO=210935856_0_0_379

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-11-26T14:04:19</DateModified>
+  <DateModified>2014-11-26T20:46:52</DateModified>
   <ModuleName>xillydemo</ModuleName>
-  <SummaryTimeStamp>2014-11-26T01:21:23</SummaryTimeStamp>
-  <SavedFilePath>/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/iseconfig/xillydemo.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2014-11-26T20:02:36</SummaryTimeStamp>
+  <SavedFilePath>/afs/ece.cmu.edu/usr/yuminm/Private/18-545/break-the-xilence/break-the-xilence/project/verilog/iseconfig/xillydemo.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/afs/ece.cmu.edu/usr/yuminm/Private/18-545/break-the-xilence/break-the-xilence/project/verilog/</ImplementationReportsDirectory>
   <DateInitialized>2014-11-03T11:20:42</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
