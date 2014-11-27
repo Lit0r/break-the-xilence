@@ -3,7 +3,8 @@ module decoder (clk, ins, o1, o2, o3, o4);
 
 	output reg [11:0] o1, o2, o3, o4;
 	input [15:0] ins;
-	
+	input clk;
+
 	always @(posedge clk) begin
 		case (ins[13:12])
 			0: begin
