@@ -3,6 +3,14 @@ module xillydemo
   input  clk_100,
   input  otg_oc,   
   inout [55:0] PS_GPIO,
+  /*inout [2:0] scl,
+  inout [2:0] sda,
+  inout [2:0] scl_alt,
+  inout [2:0] sda_alt,*/
+  inout scl,
+  inout sda,
+  inout scl_alt,
+  inout sda_alt,
   output [3:0] GPIO_LED,
   output [3:0] vga4_blue,
   output [3:0] vga4_green,
@@ -294,10 +302,24 @@ squaregen sq (
 assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
 //assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
 //assign audio = audio_post_filter;//adsr_out;
-//assign audio = audio_pre_filter;
+assign audio = (dial1[11] || dial2[11] || dial3[11] || dial4[11]) ? 0:audio_pre_filter;
 
+wire [15:0] pmod1; //, pmod2, pmod3;
+wire [11:0] dial1, dial2, dial3, dial4; //, dial5, dial6;
+//wire [11:0] slider1, slider2, slider3, slider4, slider5, slider6;
+
+
+<<<<<<< HEAD
 assign audio = result2;
+=======
+masterControler mc1(, clk_100_buffered, scl, sda, pmod1[15:0], scl_alt, sda_alt);
+//masterControler mc2(, clk_100_buffered, scl[1], sda[1], pmod2[15:0], scl_alt[1], sda_alt[1]);
+//masterControler mc3(, clk_100_buffered, scl[2], sda[2], pmod3[15:0], scl_alt[2], sda_alt[2]);
+>>>>>>> 405e0c7780fbb1bb516611c2e21c82e126de50f4
 
+decoder d1(clk_calc, pmod1[15:0], dial1, dial2, dial3, dial4);
+//decoder d2(pmod2[15:0], dial5, dial6, slider1, slider2);
+//decoder d3(pmod3[15:0], slider3, slider4, slider5, slider6);
 
 reg nevent;
 reg [22:0] oldfromps;
@@ -315,9 +337,9 @@ envelope_generator egtest (
 	.b(127), 
 	.c(63), 
 	.d(0), 
-	.x(4800000), 
-	.y(4800000), 
-	.z(4800000), 
+	.x(480000), 
+	.y(480000), 
+	.z(480000), 
 	.out_value(adsr_out), 
 	.busy()
 	);
@@ -340,12 +362,6 @@ assign fromps = user_w_write_32_data;
 
 
 // END HAMSTER TIEM
-
-
-
-
-
-
 
 
 

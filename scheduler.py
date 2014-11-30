@@ -3,6 +3,8 @@ import Queue
 import fcntl
 import os
 
+#final = (int(fs/freq) & 0x3fffff) | (bank << 22)
+
 f = open("/dev/snd/midiC1D0","rb")
 g = open("/dev/xillybus_write_32", "wb")
 freed = open("/dev/snd/midiC0D0", "rb")
@@ -37,25 +39,25 @@ try:
                 queuedNotes.insert(0, note)
                 playing = note
                 freq = 440 * (2 ** ((note - 69) / 12.0))
-                g.write(struct.pack("i", fs / freq))
-                g.flush
+                bank = 1
+                g.write(struct.pack("i", (int(fs / freq) & 0x3fffff) | (bank << 22)))
+                g.flush()
 
             elif(event == '80'):    
-                queuedNotes.remove(note)
+                if(queuedNotes.count() > 0):
+                    queuedNotes.remove(note)
                 if(queuedNotes == []):
-                    g.write(struct.pack("i", 0))
+                    bank = 1
+                    g.write(struct.pack("i", 0 | (bank << 22)))
                     g.flush()
                 elif(playing == note):
                     newNote = queuedNotes.pop(0) 
                     playing = newNote  
                     freq = 440 * (2 ** ((note - 69) / 12.0)) 
-                    g.write(struct.pack("i", fs / freq))
+                    bank = 1
+                    g.write(struct.pack("i", (int(fs / freq) & 0x3fffff) | (bank << 22)))
                     g.flush()
 
-            elif event == 'b0':
-                print "Control Event",
-                print "Slider", note,
-                print "to position", velocity
 
         #Here lies polyphonic scheduling
         else:
@@ -65,22 +67,18 @@ try:
                     bank = freeBanks.get()
                     d[note] = bank
                     freq = 440 * (2 ** ((note - 69) / 12.0))
-                    g.write(struct.pack("i", fs / freq))
+                    g.write(struct.pack("i", (int(fs / freq) & 0x3fffff) | (bank << 22)))
                     g.flush()
             elif event == '80':
                 bank = d[note]
                 freeBanks.push(bank)
-                g.write(struct.pack("i", 0))
-            elif event =='b0':
-                print "Control Event",
-                print "Slider", note,
-                print "to position", velocity
+                g.write(struct.pack("i", (int(fs / freq) & 0x3fffff) | (bank << 22)))
+                g.flush()
 
 
         try:
-            stuff = freed.read(3)
-            #freeBanks.put(freed.read(1))
-            print "Note", int(stuff[1].encode('hex'), 16)
+            free = freed.read(1)
+            freeBanks.put(free)
         except IOError:
             pass
         byte = f.read(3)
@@ -89,31 +87,5 @@ try:
 
 finally:
     f.close()
-
-
-            # if event == '90':
-            #     if not queuedNotes == []:
-            #         #queue the note
-            #         queuedNotes.insert(0, note)
-            #     else:
-            #         print "Note On",
-            #         print note
-            #         playing = note
-            #         freq = 440 * (2 ** ((note - 69) / 12.0))
-            #         g.write(struct.pack("i", fs / freq))
-            #         g.flush()
-            # elif event == '80':
-            #     print "Note Off",
-            #     print note
-            #     if queuedNotes == []:
-            #         playing = 0
-            #         g.write(struct.pack("i", 0))
-            #         g.flush()
-            #     else:
-            #         if playing == note:
-            #             newNote = queuedNotes.pop(0)
-            #             freq = 440 * (2 ** ((newNote - 69) / 12.0))
-            #             g.write(struct.pack("i", fs / freq))
-            #             g.flush()    
-            #         else:
-            #             queuedNotes.remove(note)
+    g.close()
+    freed.close()
