@@ -36,3 +36,20 @@ always @(posedge clk, negedge rst_b)
 		q <= d;
 		
 endmodule
+/*
+module register_periodic(
+	input clk,
+	input rst_b,
+	input [w-1:0] d,
+	output reg [w-1:0] q,
+	);
+parameter w=1;
+parameter period=3;
+
+reg [$clog2(period)-1:0] counter;
+wire [$clog2(period)-1:0] counter1;
+assign counter1 = counter + 1;
+
+
+endmodule
+*/

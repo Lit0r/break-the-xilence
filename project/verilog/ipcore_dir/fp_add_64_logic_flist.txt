@@ -1,0 +1,14 @@
+# Output products list for <fp_add_64_logic>
+_xmsgs/pn_parser.xmsgs
+fp_add_64_logic/doc/floating_point_ds335.pdf
+fp_add_64_logic/doc/floating_point_v5_0_readme.txt
+fp_add_64_logic/doc/floating_point_v5_0_vinfo.html
+fp_add_64_logic.asy
+fp_add_64_logic.gise
+fp_add_64_logic.ngc
+fp_add_64_logic.v
+fp_add_64_logic.veo
+fp_add_64_logic.xco
+fp_add_64_logic.xise
+fp_add_64_logic_flist.txt
+fp_add_64_logic_xmdf.tcl

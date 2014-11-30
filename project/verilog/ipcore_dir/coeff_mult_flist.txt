@@ -1,0 +1,14 @@
+# Output products list for <coeff_mult>
+_xmsgs/pn_parser.xmsgs
+coeff_mult/doc/floating_point_ds335.pdf
+coeff_mult/doc/floating_point_v5_0_readme.txt
+coeff_mult/doc/floating_point_v5_0_vinfo.html
+coeff_mult.asy
+coeff_mult.gise
+coeff_mult.ngc
+coeff_mult.v
+coeff_mult.veo
+coeff_mult.xco
+coeff_mult.xise
+coeff_mult_flist.txt
+coeff_mult_xmdf.tcl

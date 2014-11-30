@@ -23,12 +23,90 @@ module notebank(
 	 input rst_b,
 	 input note_on,
 	 input note_off,
-	 input [31:0] period, a, b, c, d, x, y, z, // adjust sizes later
-	 
-	 
-	 output [] audio,
+	 input [31:0] period, fa, fb, fc, fd, ab, ac, x, y, z, // adjust sizes later	 
+	 output [23:0] audio_out,
+	 output [41:0] audio_out0,
 	 output done
     );
 
+wire [23:0] sq_out, saw_out, gen_out;
+wire sq = 1'b1;
+
+// generators (mux?)
+squaregen sq (
+.clk(clk),
+.en(1'b1),
+.period(period),
+.tone(sq_out)
+);
+
+sawgen saw (
+.clk(clk),
+.en(1'b1),
+.period(period),
+.tone(saw_out)
+);
+
+assign gen_out = sq ? sq_out : saw_out;
+
+wire busy_f, done_f;
+wire [17:0] engen_f_out;
+
+//filter, envelope
+envelope_generator engen_f (
+	.clk(clki_48),
+	.rst_b(rst_b),
+	.note_on(note_on),
+	.note_off(note_off), 
+	.a(fa), 
+	.b(fb), 
+	.c(fc), 
+	.d(fd), 
+	.x(x), 
+	.y(y), 
+	.z(z), 
+	.out_value(engen_f_out), 
+	.busy(busy_f),
+	.done(done_f)
+	);
+
+wire coeff_done;
+wire [63:0] b0, b1, b2, a1, a2;
+wire [23:0] filter_out;
+
+
+// FILTER THING
+coefficients coef (clk_calc, clk_48, engen_f_out, b0, b1, b2, a1, a2, coeff_done);
+
+//iir
+iir iir_stage (clk_calc, clk_48, b0, b1, b2, a1, a2, gen_out, filter_out);
+
+wire [17:0] engen_a_out;
+wire done_a;
+
+// amplitude envelope
+envelope_generator engen_a (
+	.clk(clk_48),
+	.rst_b(rst_b),
+	.note_on(note_on),
+	.note_off(note_off), 
+	.a(0), 
+	.b(ab), 
+	.c(ac), 
+	.d(0), 
+	.x(x), 
+	.y(y), 
+	.z(z), 
+	.out_value(engen_a_out), 
+	.busy(busy_a),
+	.done(done_a)
+	);
+
+
+// output
+assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(filter_out + 42'b0);
+
+always @(posedge clk_calc)
+  audio_out <= audio_out0[41:18];
 
 endmodule

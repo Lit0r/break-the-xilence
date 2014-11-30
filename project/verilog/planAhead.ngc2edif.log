@@ -348,3 +348,583 @@ WARNING:NetListWriters:306 - Signal bus messages_ins/msg_buf_w0[26 : 0] on block
 Writing EDIF netlist file xillybus_core.edif ...
 ngc2edif: Total memory usage is 114328 kilobytes
 
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design xillydemo.ngc ...
+WARNING:NetListWriters:298 - No output is written to xillydemo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus audio_pre_filter<20 : 10> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Madd_pcnext[9]_GND_14_o_add_5
+   6_OUT_cy<6 : 3> on block xillydemo is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/divv<10 : 0> on block xillydemo
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/divv2<22 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/divv1<22 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/divv0<22 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/subva0<6 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/Mcompar_BUS_0003_INV_2523_o_lut<4 : 0> on
+   block xillydemo is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/n4755<39 : 1> on block xillydemo is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/n4917<39 : 2> on block xillydemo is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/a[39]_a[39]_mux_1_OUT<39 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file xillydemo.edif ...
+ngc2edif: Total memory usage is 116716 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design fifo_32x512.ngc ...
+WARNING:NetListWriters:298 - No output is written to fifo_32x512.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fifo_32x512.edif ...
+ngc2edif: Total memory usage is 103564 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design xillybus_core.ngc ...
+WARNING:NetListWriters:298 - No output is written to xillybus_core.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus messages_ins/msg_buf_real_word[26 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus bar_registers_ins/buf_ctrl_reg[26 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   unitw_1_ins/unitw_1_end_offset[9]_GND_16_o_mux_18_OUT[9 : 2] on block
+   xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus axi4_acp_tx_bridge_ins/total_len[9 : 1]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus wr_arbiter_ins/wr_arb_roundrobin[2 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   wr_arbiter_ins/wr_arb_roundrobin[2]_wr_arb_roundrobin[2]_select_73_OUT[2 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus messages_ins/Madd_n0448_Madd_cy[2 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/Mmux_msg_vacant_entries[3]_BUS_0004_mux_43_OUT_rs_A[3 : 0] on
+   block xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/msgbuf_read_data[31]_msgbuf_read_data[31]_mux_24_OUT[31 : 22] on
+   block xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/msg_buf_w1[31]_msg_buf_w0[31]_mux_50_OUT[26 : 0] on block
+   xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/GND_5_o_GND_5_o_mux_74_OUT[26 : 0] on block xillybus_core is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus messages_ins/msg_buf_w0[26 : 0] on block
+   xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file xillybus_core.edif ...
+ngc2edif: Total memory usage is 114328 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design float2fixed.ngc ...
+WARNING:NetListWriters:298 - No output is written to float2fixed.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file float2fixed.edif ...
+ngc2edif: Total memory usage is 104092 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design floating_point_v5_0.ngc ...
+WARNING:NetListWriters:298 - No output is written to floating_point_v5_0.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file floating_point_v5_0.edif ...
+ngc2edif: Total memory usage is 105828 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system.ngc ...
+WARNING:NetListWriters:298 - No output is written to system.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system.edif ...
+ngc2edif: Total memory usage is 109336 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_xillybus_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_xillybus_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_xillybus_0_wrapper.edif ...
+ngc2edif: Total memory usage is 103360 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_xillybus_lite_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_xillybus_lite_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_xillybus_lite_0_wrapper.edif ...
+ngc2edif: Total memory usage is 103712 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_processing_system7_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_processing_system7_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_processing_system7_0_wrapper.edif ...
+ngc2edif: Total memory usage is 107060 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_xillyvga_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_xillyvga_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_xillyvga_0_wrapper.edif ...
+ngc2edif: Total memory usage is 103424 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design xillyvga_core.ngc ...
+WARNING:NetListWriters:298 - No output is written to xillyvga_core.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifo_rd_data_w[32 : 0] on block
+   xillyvga_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus screensaver_ins/vorigin[8 : 0] on block
+   xillyvga_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus Result[9 : 0] on block xillyvga_core is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   registers_ins/v_data_start_reg[31]_GND_32_o_mux_33_OUT[2 : 0] on block
+   xillyvga_core is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file xillyvga_core.edif ...
+ngc2edif: Total memory usage is 106032 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design vga_fifo.ngc ...
+WARNING:NetListWriters:298 - No output is written to vga_fifo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file vga_fifo.edif ...
+ngc2edif: Total memory usage is 103900 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_axi_interconnect_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_axi_interconnect_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_axi_interconnect_0_wrapper.edif ...
+ngc2edif: Total memory usage is 104216 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_axi4lite_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_axi4lite_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_i
+   nst/m_amesg_i[65 : 0] on block system_axi4lite_0_wrapper is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_i
+   nst/s_amesg[65 : 0] on block system_axi4lite_0_wrapper is not reconstructed,
+   because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file system_axi4lite_0_wrapper.edif ...
+ngc2edif: Total memory usage is 105368 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_axi_interconnect_1_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_axi_interconnect_1_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_axi_interconnect_1_wrapper.edif ...
+ngc2edif: Total memory usage is 103956 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design fifo_8x2048.ngc ...
+WARNING:NetListWriters:298 - No output is written to fifo_8x2048.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fifo_8x2048.edif ...
+ngc2edif: Total memory usage is 103552 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design fix2float.ngc ...
+WARNING:NetListWriters:298 - No output is written to fix2float.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   U0/op_inst/FLT_PT_OP/FIX_TO_FLT_OP.SPD.OP/OP/exp_op<10 : 0> on block
+   fix2float is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file fix2float.edif ...
+ngc2edif: Total memory usage is 104024 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design xillydemo.ngc ...
+WARNING:NetListWriters:298 - No output is written to xillydemo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus audio_pre_filter<20 : 10> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   adau/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/Madd_pcnext[9]_GND_14_o_add_5
+   6_OUT_cy<6 : 3> on block xillydemo is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/divv<10 : 0> on block xillydemo
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/divv2<22 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/divv1<22 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/divv0<22 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus egtest/e/subva0<6 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/Mcompar_BUS_0003_INV_2523_o_lut<4 : 0> on
+   block xillydemo is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/n4755<39 : 1> on block xillydemo is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/n4917<39 : 2> on block xillydemo is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   egtest/e/mult2[39]_divv2[31]_div_3/a[39]_a[39]_mux_1_OUT<39 : 0> on block
+   xillydemo is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file xillydemo.edif ...
+ngc2edif: Total memory usage is 116596 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design fif_async_8.ngc ...
+WARNING:NetListWriters:298 - No output is written to fif_async_8.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fif_async_8.edif ...
+ngc2edif: Total memory usage is 103120 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design xillybus_core.ngc ...
+WARNING:NetListWriters:298 - No output is written to xillybus_core.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus messages_ins/msg_buf_real_word[26 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus bar_registers_ins/buf_ctrl_reg[26 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   unitw_1_ins/unitw_1_end_offset[9]_GND_16_o_mux_18_OUT[9 : 2] on block
+   xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus axi4_acp_tx_bridge_ins/total_len[9 : 1]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus wr_arbiter_ins/wr_arb_roundrobin[2 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   wr_arbiter_ins/wr_arb_roundrobin[2]_wr_arb_roundrobin[2]_select_73_OUT[2 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus messages_ins/Madd_n0448_Madd_cy[2 : 0]
+   on block xillybus_core is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/Mmux_msg_vacant_entries[3]_BUS_0004_mux_43_OUT_rs_A[3 : 0] on
+   block xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/msgbuf_read_data[31]_msgbuf_read_data[31]_mux_24_OUT[31 : 22] on
+   block xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/msg_buf_w1[31]_msg_buf_w0[31]_mux_50_OUT[26 : 0] on block
+   xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   messages_ins/GND_5_o_GND_5_o_mux_74_OUT[26 : 0] on block xillybus_core is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus messages_ins/msg_buf_w0[26 : 0] on block
+   xillybus_core is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file xillybus_core.edif ...
+ngc2edif: Total memory usage is 114332 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design float2fixed.ngc ...
+WARNING:NetListWriters:298 - No output is written to float2fixed.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file float2fixed.edif ...
+ngc2edif: Total memory usage is 104100 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design fif_async_32.ngc ...
+WARNING:NetListWriters:298 - No output is written to fif_async_32.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fif_async_32.edif ...
+ngc2edif: Total memory usage is 103132 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design floating_point_v5_0.ngc ...
+WARNING:NetListWriters:298 - No output is written to floating_point_v5_0.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file floating_point_v5_0.edif ...
+ngc2edif: Total memory usage is 105832 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system.ngc ...
+WARNING:NetListWriters:298 - No output is written to system.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system.edif ...
+ngc2edif: Total memory usage is 109340 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_xillybus_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_xillybus_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_xillybus_0_wrapper.edif ...
+ngc2edif: Total memory usage is 103356 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_xillybus_lite_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_xillybus_lite_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_xillybus_lite_0_wrapper.edif ...
+ngc2edif: Total memory usage is 103712 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_processing_system7_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_processing_system7_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_processing_system7_0_wrapper.edif ...
+ngc2edif: Total memory usage is 107056 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_xillyvga_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_xillyvga_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_xillyvga_0_wrapper.edif ...
+ngc2edif: Total memory usage is 103420 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design xillyvga_core.ngc ...
+WARNING:NetListWriters:298 - No output is written to xillyvga_core.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fifo_rd_data_w[32 : 0] on block
+   xillyvga_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus screensaver_ins/vorigin[8 : 0] on block
+   xillyvga_core is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus Result[9 : 0] on block xillyvga_core is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   registers_ins/v_data_start_reg[31]_GND_32_o_mux_33_OUT[2 : 0] on block
+   xillyvga_core is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file xillyvga_core.edif ...
+ngc2edif: Total memory usage is 106028 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design vga_fifo.ngc ...
+WARNING:NetListWriters:298 - No output is written to vga_fifo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file vga_fifo.edif ...
+ngc2edif: Total memory usage is 103896 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_axi_interconnect_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_axi_interconnect_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_axi_interconnect_0_wrapper.edif ...
+ngc2edif: Total memory usage is 104216 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_axi4lite_0_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_axi4lite_0_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_i
+   nst/m_amesg_i[65 : 0] on block system_axi4lite_0_wrapper is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_i
+   nst/s_amesg[65 : 0] on block system_axi4lite_0_wrapper is not reconstructed,
+   because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file system_axi4lite_0_wrapper.edif ...
+ngc2edif: Total memory usage is 105368 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design system_axi_interconnect_1_wrapper.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   system_axi_interconnect_1_wrapper.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file system_axi_interconnect_1_wrapper.edif ...
+ngc2edif: Total memory usage is 103956 kilobytes
+
+Release 14.2 - ngc2edif P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design fix2float.ngc ...
+WARNING:NetListWriters:298 - No output is written to fix2float.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   U0/op_inst/FLT_PT_OP/FIX_TO_FLT_OP.SPD.OP/OP/exp_op<10 : 0> on block
+   fix2float is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file fix2float.edif ...
+ngc2edif: Total memory usage is 104028 kilobytes
+

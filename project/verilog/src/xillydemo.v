@@ -192,6 +192,13 @@ end adau1761_test;
 wire [31:0] fromps;
 wire [23:0] audio;
 
+reg [22:0] period = 0;
+
+always @(posedge clk_calc)
+	if(fromps[22:0] != 0)
+		period <= fromps[22:0];
+
+
 
 clocking clocker(
 	.CLK_IN1(clk_100_buffered),
@@ -224,6 +231,55 @@ wire [23:0] audio_pre_filter;
 wire [41:0] audio_post_filter;
 
 
+//
+
+//fix to float
+
+//square the thing
+
+//float to fix output sound
+
+wire [63:0] resultD, resultQ, floatsignalD, floatsignalQ;
+wire [31:0] result2;
+
+
+fix2float your_instance_name5656 (
+  .a(audio_post_filter), // input [31 : 0] a
+  .clk(clk_48), // input clk
+  .result(floatsignalD) // output [63 : 0] result
+);
+
+register #(64) rlgjh (clk, 1'b1, floatsignalD, floatsignalQ, 1'b1);
+
+floating_point_v5_0 your_instance_name10101 (
+  .a(floatsignalQ), // input [63 : 0] a
+  .b(floatsignalQ), // input [63 : 0] b
+  .operation_nd(1'b1), // input operation_nd
+  .operation_rfd(), // output operation_rfd
+  .clk(clk_48), // input clk
+  .result(resultD), // output [63 : 0] result
+  .rdy() // output rdy
+);
+
+register #(64) werliwjehr (clk, 1'b1, resultD, resultQ, 1'b1);
+
+float2fixed your_instance_name78985 (
+  .a(resultQ), // input [63 : 0] a
+  .clk(clk_48), // input clk
+  .result(result2) // output [31 : 0] result
+);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -231,15 +287,16 @@ wire [41:0] audio_post_filter;
 squaregen sq (
 .clk(clk_calc),
 .en(/*fromps[22:0] != 0*/ 1'b1),
-.period(fromps[22:0]),
+.period(period),
 .tone(audio_pre_filter)
 );
 
 assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
-assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
+//assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
 //assign audio = audio_post_filter;//adsr_out;
 //assign audio = audio_pre_filter;
 
+assign audio = result2;
 
 
 reg nevent;
@@ -463,7 +520,34 @@ wire seen = 1'b1;
 
 
    // 32-bit loopback
-   fifo_32x512 fifo_32
+   fif_async_32 f32 (
+  .rst(1'b0), // input rst
+  .wr_clk(clk_100_buffered), // input wr_clk
+  .rd_clk(clk_48), // input rd_clk
+  .din(write_32_data), // input [31 : 0] din
+  .wr_en(write_32_wren), // input wr_en
+  .rd_en(seen), // input rd_en
+  .dout(dout), // output [31 : 0] dout
+  .full(full), // output full
+  .empty(write_32_full) // output empty
+);
+	
+	
+	fif_async_8 f8 (
+  .rst(1'b0), // input rst
+  .wr_clk(clk_48), // input wr_clk
+  .rd_clk(clk_100_buffered), // input rd_clk
+  .din(read_8_data), // input [7 : 0] din
+  .wr_en(read_8_wren), // input wr_en
+  .rd_en(read_8_rden), // input rd_en
+  .dout(read_8_data), // output [7 : 0] dout
+  .full(read_8_full), // output full
+  .empty(read_8_empty) // output empty
+);
+	
+	
+	/*
+	fifo_32x512 fifo_32
      (
       .clk(bus_clk),
       .srst(!user_w_write_32_open && !user_r_read_32_open),
@@ -491,7 +575,7 @@ wire seen = 1'b1;
       .empty(user_r_read_8_empty)
       );
 
-   assign  user_r_read_8_eof = 0;
+   assign  user_r_read_8_eof = 0;*/
 /*
    i2s_audio audio
      (

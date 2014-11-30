@@ -5,7 +5,7 @@ create_project -name xillydemo -dir "/afs/ece.cmu.edu/usr/elliotr/Private/18545/
 set srcset [get_property srcset [current_run -impl]]
 set_property design_mode GateLvl $srcset
 set_property edif_top_file "/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog/xillydemo.ngc" [ get_property srcset [ current_run ] ]
-add_files -norecurse { {/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog} {../system/implementation} {../cores} {../runonce} }
+add_files -norecurse { {/afs/ece.cmu.edu/usr/elliotr/Private/18545/break-the-xilence/project/verilog} {ipcore_dir} {../system/implementation} {../cores} {../runonce} }
 add_files [list {../system/implementation/system_processing_system7_0_wrapper.ncf}] -fileset [get_property constrset [current_run]]
 add_files [list {../system/implementation/system_axi4lite_0_wrapper.ncf}] -fileset [get_property constrset [current_run]]
 add_files [list {../system/implementation/system_axi_interconnect_1_wrapper.ncf}] -fileset [get_property constrset [current_run]]

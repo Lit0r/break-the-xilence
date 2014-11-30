@@ -1,0 +1,14 @@
+# Output products list for <coeff_add>
+_xmsgs/pn_parser.xmsgs
+coeff_add/doc/floating_point_ds335.pdf
+coeff_add/doc/floating_point_v5_0_readme.txt
+coeff_add/doc/floating_point_v5_0_vinfo.html
+coeff_add.asy
+coeff_add.gise
+coeff_add.ngc
+coeff_add.v
+coeff_add.veo
+coeff_add.xco
+coeff_add.xise
+coeff_add_flist.txt
+coeff_add_xmdf.tcl
