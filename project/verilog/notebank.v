@@ -56,7 +56,7 @@ sawgen saw (
 assign gen_out = sq ? sq_out : saw_out;
 
 
-wire busy_f, done_f;
+/*wire busy_f, done_f;
 wire [17:0] engen_f_out;
 
 //filter, envelope
@@ -88,6 +88,8 @@ coefficients coef (clk_slow, clk_fast, engen_f_out, b0, b1, b2, a1, a2, coeff_do
 //iir
 iir iir_stage (clk_slow, clk_fast, b0, b1, b2, a1, a2, gen_out, filter_out);
 
+*/
+
 wire [17:0] engen_a_out;
 wire done_a;
 
@@ -113,7 +115,8 @@ envelope_generator engen_a (
 
 
 // output
-assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(filter_out + 42'b0);
+//assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(filter_out + 42'b0);
+assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(gen_out);
 
 always @(posedge clk_slow)
   audio_out = audio_out0[41:18];

@@ -196,12 +196,12 @@ adau1761_test adau (
 
 
 //(input clk, input en, input [25:0] period, output logic [23:0] tone);
-squaregen sq (
-.clk(clk_calc),
-.en(/*fromps[22:0] != 0*/ 1'b1),
-.period(period),
-.tone(audio_pre_filter)
-);
+//squaregen sq (
+//.clk(clk_calc),
+//.en(/*fromps[22:0] != 0*/ 1'b1),
+//.period(period),
+//.tone(audio_pre_filter)
+//);
 
 //assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
 //assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
@@ -209,37 +209,30 @@ squaregen sq (
 //assign audio = audio_post_filter;
 
 
-reg nevent;
-reg [22:0] oldfromps;
-always @(posedge clk_calc) begin
-	nevent <= (fromps[22:0] != oldfromps);
-	oldfromps <= fromps[22:0];
-end
+//reg nevent;
+//reg [22:0] oldfromps;
+//always @(posedge clk_calc) begin
+//	nevent <= (fromps[22:0] != oldfromps);
+//	oldfromps <= fromps[22:0];
+//end
+//
+//envelope_generator egtest (
+//	.clk(clk_calc),
+//	.rst_b(1'b1),
+//	.note_on(nevent && fromps[22:0] != 0),
+//	.note_off(nevent && fromps[22:0] == 0), 
+//	.a(0),
+//	.b(127), 
+//	.c(63), 
+//	.d(0), 
+//	.x(480000), 
+//	.y(480000), 
+//	.z(480000), 
+//	.out_value(adsr_out), 
+//	.busy()
+//	);
 
-envelope_generator egtest (
-	.clk(clk_calc),
-	.rst_b(1'b1),
-	.note_on(nevent && fromps[22:0] != 0),
-	.note_off(nevent && fromps[22:0] == 0), 
-	.a(0),
-	.b(127), 
-	.c(63), 
-	.d(0), 
-	.x(480000), 
-	.y(480000), 
-	.z(480000), 
-	.out_value(adsr_out), 
-	.busy()
-	);
-
-
-
-
-
-
-
-
-assign fromps = user_w_write_32_data;
+//assign fromps = user_w_write_32_data;
  //assign audio;
 
 
@@ -467,7 +460,7 @@ wire [31:0] dout;
 );
 
 
-
+//assign dout = user_w_write_32_data;
 
 
 assign note_event_bank = dout[27:23]; // JACOB: I fgorget the exact bits. fix this!
