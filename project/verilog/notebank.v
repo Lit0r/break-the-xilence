@@ -32,13 +32,14 @@ module notebank(
 wire [41:0] audio_out0;
 
 wire [23:0] sq_out, saw_out, gen_out;
+reg  [23:0] audio_out;
 
 
 // THIS CAN CHANGE! THERE IS HOPE!
 wire sq = 1'b1;
 
 // generators (mux?)
-squaregen sq (
+squaregen sqgen (
 .clk(clk_fast),
 .en(1'b1),
 .period(period),
@@ -60,7 +61,7 @@ wire [17:0] engen_f_out;
 
 //filter, envelope
 envelope_generator engen_f (
-	.clk(clk_fast),
+	.clk(clk_slow),
 	.rst_b(rst_b),
 	.note_on(note_on),
 	.note_off(note_off), 
@@ -94,7 +95,7 @@ assign done = done_a;
 
 // amplitude envelope
 envelope_generator engen_a (
-	.clk(clk_fast),
+	.clk(clk_slow),
 	.rst_b(rst_b),
 	.note_on(note_on),
 	.note_off(note_off), 
@@ -114,7 +115,7 @@ envelope_generator engen_a (
 // output
 assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(filter_out + 42'b0);
 
-always @(posedge clk_calc)
-  audio_out <= audio_out0[41:18];
+always @(posedge clk_slow)
+  audio_out = audio_out0[41:18];
 
 endmodule

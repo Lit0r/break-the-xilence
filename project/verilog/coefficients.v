@@ -1,9 +1,28 @@
+function [63:0] fp_double;
+input [63:0] a;
+begin
+fp_double = {a[63], a[62:52]+1, a[51:0]};
+end
+endfunction
+
+function [63:0] fp_negate;
+input [63:0] a;
+begin
+fp_negate = {~a[63], a[62:0]};
+end
+endfunction
+
+
+
+
+
+
 // generates filter coefficients on the fly
 module coefficients (
   input clk_slow,
   input clk_fast,
   input k_fixed,
-  output [63:0] b0, b1, b2, a1, a2
+  output [63:0] b0, b1, b2, a1, a2,
   output done);
 
 // some constants, I might try to optimize these out later
@@ -179,16 +198,3 @@ endmodule
 
 // WARNING: UNSAFE FOR UNDERFLOW NUMBERS. OR REALLY BIG ONES
 // you are allowed to hit me for this
-function wire [63:0] fp_double;
-input [63:0] a;
-begin
-fp_double = {a[63], a[62:52]+1, a[51:0]};
-end
-endfunction
-
-function wire [63:0] fp_negate;
-input [63:0] a;
-begin
-fp_negate = {~a[63], a[62:0]};
-end
-endfunction

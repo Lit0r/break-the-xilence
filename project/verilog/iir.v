@@ -23,11 +23,12 @@
 // adjustable filter!
 
 // uses direct form I (see http://en.wikipedia.org/wiki/Digital_filter#Direct_Form_I)
-module iir_general_template(
+/*module iir_general_template(
 	input [sw-1:0] a[stages+1], 
 	input [sw-1:0] b[stages+1], 
 	input [aw-1:0] audio_in,
 	output [aw-1:0] audio_out);
+	
 parameter aw = 18; // audio width
 parameter sw = 18; // stage width
 parameter stages = 2; // filter stages
@@ -43,7 +44,7 @@ wire [aw:0] csum_tc [stages+1];
 
 assign bdelays_sm[0] = tc2sm(audio_in);
 assign audio_out = aaddends_sm[0];
-assign adelays_sm[0] = addends_sm[0];
+assign adelays_sm[0] = aaddends_sm[0];
 assign aaddends_sm[0] = tc2sm(csum_tc[0] + sm2tc(baddends_sm[0]));
 
 assign csum_tc[stages] = 0;
@@ -70,7 +71,7 @@ endgenerate
 
 
 
-endmodule:iir_general_template
+endmodule:iir_general_template*/
 
 // has 2 stages only
 
@@ -129,14 +130,14 @@ fix2float tofp (
 );
 
 // registers
-register #(24) regout (clk_fast, 1'b1, audio_in, inputQ, reg_en);
+register #(24) regout1 (clk_fast, 1'b1, audio_in, inputQ, reg_en);
 
 register #(64) tob1 (clk_fast, 1'b1, b0_in, b1_in, reg_en);
 register #(64) tob2 (clk_fast, 1'b1, b1_in, b2_in, reg_en);
 register #(64) toa1 (clk_fast, 1'b1, audio_float_out, a1_in, reg_en);
 register #(64) toa2 (clk_fast, 1'b1, a1_in, a2_in, reg_en);
 
-register #(24) regout (clk_fast, 1'b1, outputD, audio_out, reg_en);
+register #(24) regout2 (clk_fast, 1'b1, outputD, audio_out, reg_en);
 
 // multipliers
 

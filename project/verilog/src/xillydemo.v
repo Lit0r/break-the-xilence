@@ -3,14 +3,18 @@ module xillydemo
   input  clk_100,
   input  otg_oc,   
   inout [55:0] PS_GPIO,
-  /*inout [2:0] scl,
-  inout [2:0] sda,
-  inout [2:0] scl_alt,
-  inout [2:0] sda_alt,*/
-  inout scl,
-  inout sda,
-  inout scl_alt,
-  inout sda_alt,
+  inout scl1,
+  inout sda1,
+  inout scl_alt1,
+  inout sda_alt1,  
+  inout scl2,
+  inout sda2,
+  inout scl_alt2,
+  inout sda_alt2,  
+  inout scl3,
+  inout sda3,
+  inout scl_alt3,
+  inout sda_alt3,
   output [3:0] GPIO_LED,
   output [3:0] vga4_blue,
   output [3:0] vga4_green,
@@ -41,7 +45,7 @@ module xillydemo
   output [1:0] smbus_addr
 */
   ); 
-  parameter banks = 2;
+  parameter banks = 1;
 
 
 // IBUFG: Single-ended global clock input buffer
@@ -148,26 +152,8 @@ IBUFG #(
 // HAMSTER TIEM
 
 
-/*entity adau1761_test is
-    Port ( clk_100  : in    STD_LOGIC;
-           AC_ADR0  : out   STD_LOGIC;
-           AC_ADR1  : out   STD_LOGIC;
-           AC_GPIO0 : out   STD_LOGIC;  -- I2S MISO
-           AC_GPIO1 : in    STD_LOGIC;  -- I2S MOSI
-           AC_GPIO2 : in    STD_LOGIC;  -- I2S_bclk
-           AC_GPIO3 : in    STD_LOGIC;  -- I2S_LR
-           AC_MCLK  : out   STD_LOGIC;
-           AC_SCK   : out   STD_LOGIC;
-           AC_SDA   : inout STD_LOGIC;
-           sw       : in    STD_LOGIC_VECTOR(7 downto 0)
-           );
-end adau1761_test;
-*/
-
-
-
 wire [31:0] fromps;
-wire [23:0] audio;
+reg [23:0] audio;
 
 reg [22:0] period = 0;
 
@@ -202,14 +188,10 @@ adau1761_test adau (
 
 
 
-wire [17:0] adsr_out;
+//wire [17:0] adsr_out;
 
-wire [23:0] audio_pre_filter;
-wire [41:0] audio_post_filter;
-
-
-
-
+//wire [23:0] audio_pre_filter;
+//wire [41:0] audio_post_filter;
 
 
 
@@ -221,23 +203,11 @@ squaregen sq (
 .tone(audio_pre_filter)
 );
 
-assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
+//assign audio_post_filter = $signed(audio_pre_filter + 42'b0) * $signed(adsr_out);
 //assign audio = audio_post_filter[41:(42-24)];//audio_post_filter[35:18];//(35-18+1)];
 //assign audio = audio_post_filter;//adsr_out;
-assign audio = (dial1[11] || dial2[11] || dial3[11] || dial4[11]) ? 0:audio_pre_filter;
+//assign audio = audio_post_filter;
 
-wire [15:0] pmod1; //, pmod2, pmod3;
-wire [11:0] dial1, dial2, dial3, dial4; //, dial5, dial6;
-//wire [11:0] slider1, slider2, slider3, slider4, slider5, slider6;
-
-
-masterControler mc1(, clk_100_buffered, scl, sda, pmod1[15:0], scl_alt, sda_alt);
-//masterControler mc2(, clk_100_buffered, scl[1], sda[1], pmod2[15:0], scl_alt[1], sda_alt[1]);
-//masterControler mc3(, clk_100_buffered, scl[2], sda[2], pmod3[15:0], scl_alt[2], sda_alt[2]);
-
-decoder d1(clk_calc, pmod1[15:0], dial1, dial2, dial3, dial4);
-//decoder d2(pmod2[15:0], dial5, dial6, slider1, slider2);
-//decolsder d3(pmod3[15:0], slider3, slider4, slider5, slider6);
 
 reg nevent;
 reg [22:0] oldfromps;
@@ -445,7 +415,16 @@ assign fromps = user_w_write_32_data;
    //assign  user_r_mem_8_eof = 0;
    //assign  user_w_mem_8_full = 0;
 
+reg [banks-1:0] note_on;
+reg note_off[0:banks-1];
+reg [25:0] periods [0:banks-1];
+wire [23:0] bank_out [0:banks-1];
+wire done [0:banks-1];
+reg [4:0] bank_done; // which note bank is done
+wire is_note_on_event;
 
+reg note_done;
+wire [4:0] note_event_bank;
 
 
 
@@ -455,10 +434,10 @@ assign fromps = user_w_write_32_data;
 
 // since the clocks are integer multiples, I only really need to do this for flags, right?
 wire seen; // JACOB: this may need a testbench. check waveforms to see that 'seen' is a signal in the clk_48 domain that rises when clk_calc rises.
-FlagAck_CrossDomain(clk_calc, 1'b1, clk_48, seen);
-
+FlagAck_CrossDomain(clk_calc, 1'b1, ,clk_48, seen);
 
 wire no_new_note;
+wire [31:0] dout;
 
 
    // 32-bit loopback
@@ -479,8 +458,8 @@ wire no_new_note;
   .rst(1'b0), // input rst JACOB
   .wr_clk(clk_48), // input wr_clk
   .rd_clk(clk_100_buffered), // input rd_clk
-  .din(read_8_data), // input [7 : 0] din
-  .wr_en(read_8_wren), // input wr_en
+  .din(bank_done), // input [7 : 0] din
+  .wr_en(note_done), // input wr_en
   .rd_en(read_8_rden), // input rd_en
   .dout(read_8_data), // output [7 : 0] dout
   .full(read_8_full), // output full
@@ -489,36 +468,61 @@ wire no_new_note;
 
 
 
-reg note_on [banks];
-wire note_off[banks];
-wire [25:0] period [banks];
-wire [23:0] bank_out [banks];
-wire done [banks];
-reg [4:0] bank_done; // which note bank is done
 
-wire [4:0] note_event_bank;
 
-assign note_event_bank = dout[30:26]; // JACOB: I fgorget the exact bits. fix this!
-assign note_period = dout[25:0]; // JACOB: same thing
+assign note_event_bank = dout[27:23]; // JACOB: I fgorget the exact bits. fix this!
+assign note_period = dout[22:0]; // JACOB: same thing
 
 // JACOB: please find a way to determine the "new_note_event" signal.
 // if (seen && ~no_new_note) probably should do it??
-
+assign new_note_event = seen && ~no_new_note;
+assign is_note_on_event = new_note_event && (note_period != 0);
 
 // JACOB: x, y, z are the same as envelope.
 // fa fb fc fd are a, b, c, d for the _filter_
 // ab and ac are for _amplitude_ envelope (aa and ad are 0)
 // the pmods should hook to those variables!
+wire [15:0] pmod1, pmod2, pmod3;
+wire [11:0] dial1, dial2, dial3, dial4, dial5, dial6;
+wire [11:0] slider1, slider2, slider3, slider4, slider5, slider6;
 
+
+masterControler mc1(, clk_100_buffered, scl1, sda1, pmod1[15:0], scl_alt1, sda_alt1);
+masterControler mc2(, clk_100_buffered, scl2, sda2, pmod2[15:0], scl_alt2, sda_alt2);
+masterControler mc3(, clk_100_buffered, scl3, sda3, pmod3[15:0], scl_alt3, sda_alt3);
+
+decoder d1(clk_calc, pmod1[15:0], dial1, dial2, dial3, dial4);
+decoder d2(clk_calc, pmod2[15:0], dial5, dial6, slider1, slider2);
+decoder d3(clk_calc, pmod3[15:0], slider3, slider4, slider5, slider6);
 
 //JACOB DEFINE fa fb fc fd ab ac x y z appropriately based on what pmod does
+wire [11:0] fa, fb, fc, fd, ab, ac, x, y, z;
+
+//assign fa = slider1;
+//assign fb = slider2;
+//assign fc = slider3;
+//assign fd = slider4;
+//assign ab = slider5;
+//assign ac = slider6;
+assign fa = 12'h7ff;
+assign fb = 12'h123;
+assign fc = 12'h7ff;
+assign fd = 12'h034;
+assign ab = 12'hfff;
+assign ac = 12'h7ff;
+assign x = dial1;
+assign y = dial2;
+assign z = dial3;
 
 
-genvar i;
+
+
+
+genvar j;
 generate
-for(i = 0; i < banks; i = i + 1) begin
+for(j = 0; j < banks; j = j + 1) begin
   notebank (clk_calc, clk_48, 1'b1, 
-    note_on[i], note_off[i], period[i],
+    note_on[j], note_off[j], periods[j],
     fa + 32'b0, 
     fb + 32'b0, 
     fc + 32'b0, 
@@ -528,21 +532,22 @@ for(i = 0; i < banks; i = i + 1) begin
     x + 32'b0, 
     y + 32'b0, 
     z + 32'b0,
-    bank_out[i], 
-    done[i]);
+    bank_out[j], 
+    done[j]);
 end
 endgenerate
 
-reg note_done;
+//reg bank_done;
+reg [31:0] i;
 always @(posedge clk_calc) begin
   note_done = 0;
   bank_done = 0;
-  int i;
+  audio = 0;
   for(i = 0; i < banks; i = i + 1) begin
     if(done[i]) begin
       note_done = 1;
       bank_done = i;
-      break;
+      //break;
     end
   end
   
@@ -554,10 +559,17 @@ always @(posedge clk_calc) begin
   if(new_note_event) begin
     if(is_note_on_event) begin
       note_on[note_event_bank] = 1;
-      period[note_event_bank] = note_period;
+      periods[note_event_bank] = note_period;
     end else
       note_off[note_event_bank] = 1;
   end
+  
+  // sum them signals, please work.
+  for(i = 0; i < banks; i = i + 1)
+    audio = audio + bank_out[i];
+  
+  
+  
 end
 
 
