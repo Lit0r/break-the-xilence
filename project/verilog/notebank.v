@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -19,20 +20,20 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module notebank(
-    input clk_slow,
-    input clk_fast,
-	 input rst_b,
-	 input note_on,
-	 input note_off,
-	 input [31:0] period, fa, fb, fc, fd, ab, ac, x, y, z, // adjust sizes later	 
-	 output [23:0] audio_out,
-	 output done
+    input wire clk_slow,
+    input wire clk_fast,
+	 input wire rst_b,
+	 input wire note_on,
+	 input wire note_off,
+	 input wire [31:0] period, fa, fb, fc, fd, ab, ac, x, y, z, // adjust sizes later	 
+	 output reg [23:0] audio_out,
+	 output wire done
     );
 
 wire [41:0] audio_out0;
 
 wire [23:0] sq_out, saw_out, gen_out;
-reg  [23:0] audio_out;
+//reg  [23:0] audio_out;
 
 
 // THIS CAN CHANGE! THERE IS HOPE!
@@ -45,20 +46,20 @@ squaregen sqgen (
 .period(period),
 .tone(sq_out)
 );
-
+/*
 sawgen saw (
 .clk(clk_fast),
 .en(1'b1),
 .period(period),
 .tone(saw_out)
 );
+*/
+assign gen_out = sq_out;//sq ? sq_out : saw_out;
 
-assign gen_out = sq ? sq_out : saw_out;
 
-
-/*wire busy_f, done_f;
+wire busy_f, done_f;
 wire [17:0] engen_f_out;
-
+/*
 //filter, envelope
 envelope_generator engen_f (
 	.clk(clk_slow),
@@ -78,10 +79,10 @@ envelope_generator engen_f (
 	);
 
 wire coeff_done;
-wire [63:0] b0, b1, b2, a1, a2;
+wire [31:0] b0, b1, b2, a1, a2;
 wire [23:0] filter_out;
 
-
+assign engen_f_out = fa;
 // FILTER THING
 coefficients coef (clk_slow, clk_fast, engen_f_out, b0, b1, b2, a1, a2, coeff_done);
 
@@ -91,13 +92,13 @@ iir iir_stage (clk_slow, clk_fast, b0, b1, b2, a1, a2, gen_out, filter_out);
 */
 
 wire [17:0] engen_a_out;
-wire done_a;
+wire done_a, busy_a;
 
 assign done = done_a;
 
 // amplitude envelope
 envelope_generator engen_a (
-	.clk(clk_slow),
+	.clk(clk_fast),
 	.rst_b(rst_b),
 	.note_on(note_on),
 	.note_off(note_off), 
@@ -113,12 +114,13 @@ envelope_generator engen_a (
 	.done(done_a)
 	);
 
-
+//assign engen_a_out = filter_out;
 // output
-//assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(filter_out + 42'b0);
+//assign audio_out0 = $signed({1'b0, engen_a_out} + 42'b0) * $signed(filter_out);
 assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(gen_out);
 
-always @(posedge clk_slow)
+always @(posedge clk_fast)
   audio_out = audio_out0[41:18];
 
 endmodule
+`default_nettype wire

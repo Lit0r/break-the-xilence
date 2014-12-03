@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -18,6 +19,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 // adjustable filter!
@@ -82,41 +85,63 @@ endmodule:iir_general_template*/
 
 
 module iir (
-  input clk_slow,
-  input clk_fast,
-  input [63:0] b0, b1, b2, a1, a2,
-  input [23:0] audio_in,
-  output [23:0] audio_out
+  input wire clk_slow,
+  input wire clk_fast,
+  //input rst_b,
+  input wire [31:0] b0, b1, b2, a1, a2,
+  input wire [23:0] audio_in,
+  output wire [23:0] audio_out
   );
+
+
+
+function [31:0] fp_n;
+input [31:0] a;
+begin
+fp_n = {~a[31], a[30:0]};
+end
+endfunction
+
+
+
+
+
+
+
+
 
 // creation of 'slower clock' by periodic
 // register enable.
 // because enough clock dividers already.
-reg reg_en;
+//reg reg_en;
 
-always @(posedge clk_fast)
+wire reg_en;
+
+/*always @(posedge clk_fast)
   if(reg_en)
     reg_en <= 0;
   else
     reg_en <= (counter == 0);
-
+*/
 // can't go any slower than 8 or tangent approximation error accumulates a bunch.
 // actually you can totally get away with it, who am I kidding.
-reg [2:0] counter;
-wire [2:0] counter1;
+reg [6:0] counter;
+wire [6:0] counter1;
 assign counter1 = counter + 1;
-always @(posedge clk_slow)
-  //if(counter1 == 8)
-  //  counter <= 0;
-  //else
+always @(posedge clk_fast)
+  if(counter1 == 80)
+    counter <= 0;
+  else
     counter <= counter1;
+
+assign reg_en = (counter == 0);
 
 // lots of wires :D
 
 wire [23:0] inputQ, outputD;
-wire [63:0] b0_in, b1_in, b2_in, a1_in, a2_in;
-wire [63:0] b0_out, b1_out, b2_out, a1_out, a2_out;
-wire [63:0] sum1, sum2, sum3, sum4;
+wire [31:0] b0_in, b1_in, b2_in, a1_in, a2_in;
+wire [31:0] b0_out, b1_out, b2_out, a1_out, a2_out;
+wire [31:0] sum1, sum2, sum3, sum4;
  
 
 
@@ -130,89 +155,89 @@ fix2float tofp (
 );
 
 // registers
-register #(24) regout1 (clk_fast, 1'b1, audio_in, inputQ, reg_en);
+register #(24) regout1 (clk_fast, audio_in, inputQ, reg_en);
 
-register #(64) tob1 (clk_fast, 1'b1, b0_in, b1_in, reg_en);
-register #(64) tob2 (clk_fast, 1'b1, b1_in, b2_in, reg_en);
-register #(64) toa1 (clk_fast, 1'b1, audio_float_out, a1_in, reg_en);
-register #(64) toa2 (clk_fast, 1'b1, a1_in, a2_in, reg_en);
+register #(32) tob1_ (clk_fast, b0_in, b1_in, reg_en);
+register #(32) tob2_ (clk_fast, b1_in, b2_in, reg_en);
+register #(32) toa1_ (clk_fast, sum4, a1_in, reg_en);
+register #(32) toa2_ (clk_fast, a1_in, a2_in, reg_en);
 
-register #(24) regout2 (clk_fast, 1'b1, outputD, audio_out, reg_en);
+register #(24) regout2 (clk_fast, outputD, audio_out, reg_en);
 
 // multipliers
 
 
-floating_point_v5_0 m_b0 (
+fp_mult_32_logic m_b0 (
   .a(b0), // input [63 : 0] a
   .b(b0_in), // input [63 : 0] b
-  .operation_nd(1'b1), // input operation_nd
-  .operation_rfd(), // output operation_rfd
+//  .operation_nd(1'b1), // input operation_nd
+//  .operation_rfd(), // output operation_rfd
   .clk(clk_fast), // input clk
-  .result(b0_out), // output [63 : 0] result
-  .rdy() // output rdy
+  .result(b0_out) // output [63 : 0] result
+//  .rdy() // output rdy
 );
 
-floating_point_v5_0 m_b1 (
+fp_mult_32_logic m_b1 (
   .a(b1), // input [63 : 0] a
   .b(b1_in), // input [63 : 0] b
-  .operation_nd(1'b1), // input operation_nd
-  .operation_rfd(), // output operation_rfd
+//  .operation_nd(1'b1), // input operation_nd
+//  .operation_rfd(), // output operation_rfd
   .clk(clk_fast), // input clk
-  .result(b1_out), // output [63 : 0] result
-  .rdy() // output rdy
+  .result(b1_out) // output [63 : 0] result
+//  .rdy() // output rdy
 );
 
-floating_point_v5_0 m_b2 (
+fp_mult_32_logic m_b2 (
   .a(b2), // input [63 : 0] a
   .b(b2_in), // input [63 : 0] b
-  .operation_nd(1'b1), // input operation_nd
-  .operation_rfd(), // output operation_rfd
+//  .operation_nd(1'b1), // input operation_nd
+//  .operation_rfd(), // output operation_rfd
   .clk(clk_fast), // input clk
-  .result(b2_out), // output [63 : 0] result
-  .rdy() // output rdy
+  .result(b2_out) // output [63 : 0] result
+//  .rdy() // output rdy
 );
 
-floating_point_v5_0 m_a1 (
-  .a(a1), // input [63 : 0] a
+fp_mult_32_logic m_a1 (
+  .a(fp_n(a1)), // input [63 : 0] a
   .b(a1_in), // input [63 : 0] b
-  .operation_nd(1'b1), // input operation_nd
-  .operation_rfd(), // output operation_rfd
+//  .operation_nd(1'b1), // input operation_nd
+//  .operation_rfd(), // output operation_rfd
   .clk(clk_fast), // input clk
-  .result(a1_out), // output [63 : 0] result
-  .rdy() // output rdy
+  .result(a1_out) // output [63 : 0] result
+//  .rdy() // output rdy
 );
 
-floating_point_v5_0 m_a2 (
-  .a(a2), // input [63 : 0] a
+fp_mult_32_logic m_a2 (
+  .a(fp_n(a2)), // input [63 : 0] a
   .b(a2_in), // input [63 : 0] b
-  .operation_nd(1'b1), // input operation_nd
-  .operation_rfd(), // output operation_rfd
+//  .operation_nd(1'b1), // input operation_nd
+//  .operation_rfd(), // output operation_rfd
   .clk(clk_fast), // input clk
-  .result(a2_out), // output [63 : 0] result
-  .rdy() // output rdy
+  .result(a2_out) // output [63 : 0] result
+//  .rdy() // output rdy
 );
 
 // adders
 
-fp_add_64_logic s4 (
+fp_add_32_logic s4 (
   .a(sum3), // input [63 : 0] a
   .b(b0_out), // input [63 : 0] b
   .clk(clk_fast), // input clk
   .result(sum4) // output [63 : 0] result
 );
-fp_add_64_logic s3 (
+fp_add_32_logic s3 (
   .a(sum1), // input [63 : 0] a
   .b(sum2), // input [63 : 0] b
   .clk(clk_fast), // input clk
   .result(sum3) // output [63 : 0] result
 );
-fp_add_64_logic s2 (
+fp_add_32_logic s2 (
   .a(a1_out), // input [63 : 0] a
   .b(b1_out), // input [63 : 0] b
   .clk(clk_fast), // input clk
   .result(sum1) // output [63 : 0] result
 );
-fp_add_64_logic s1 (
+fp_add_32_logic s1 (
   .a(a2), // input [63 : 0] a
   .b(b2), // input [63 : 0] b
   .clk(clk_fast), // input clk

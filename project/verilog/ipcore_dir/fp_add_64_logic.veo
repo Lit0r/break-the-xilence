@@ -71,10 +71,10 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 fp_add_64_logic your_instance_name (
-  .a(a), // input [63 : 0] a
-  .b(b), // input [63 : 0] b
+  .a(a), // input [31 : 0] a
+  .b(b), // input [31 : 0] b
   .clk(clk), // input clk
-  .result(result) // output [63 : 0] result
+  .result(result) // output [31 : 0] result
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

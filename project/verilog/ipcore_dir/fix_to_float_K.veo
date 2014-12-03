@@ -74,7 +74,7 @@ fix_to_float_K your_instance_name (
   .a(a), // input [21 : 0] a
   .operation_nd(operation_nd), // input operation_nd
   .clk(clk), // input clk
-  .result(result), // output [63 : 0] result
+  .result(result), // output [31 : 0] result
   .rdy(rdy) // output rdy
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

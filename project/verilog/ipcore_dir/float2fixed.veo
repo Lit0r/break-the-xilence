@@ -71,7 +71,7 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 float2fixed your_instance_name (
-  .a(a), // input [63 : 0] a
+  .a(a), // input [31 : 0] a
   .clk(clk), // input clk
   .result(result) // output [31 : 0] result
 );

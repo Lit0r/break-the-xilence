@@ -1,4 +1,5 @@
 `timescale 1ns / 10ps
+`default_nettype wire
 
 module xillybus(GPIO_LED, quiesce, MIO, PS_SRSTB, PS_CLK, PS_PORB, DDR_Clk,
   DDR_Clk_n, DDR_CKE, DDR_CS_n, DDR_RAS_n, DDR_CAS_n, DDR_WEB, DDR_BankAddr,

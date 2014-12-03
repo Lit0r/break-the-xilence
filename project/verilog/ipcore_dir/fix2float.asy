@@ -12,6 +12,6 @@ PINATTR PinName clk
 PINATTR Polarity IN
 LINE Wide 512 80 480 80
 PIN 512 80 RIGHT 36
-PINATTR PinName result[63:0]
+PINATTR PinName result[31:0]
 PINATTR Polarity OUT
 

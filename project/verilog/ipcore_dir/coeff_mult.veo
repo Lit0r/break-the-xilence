@@ -71,11 +71,11 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 coeff_mult your_instance_name (
-  .a(a), // input [63 : 0] a
-  .b(b), // input [63 : 0] b
+  .a(a), // input [31 : 0] a
+  .b(b), // input [31 : 0] b
   .operation_nd(operation_nd), // input operation_nd
   .clk(clk), // input clk
-  .result(result), // output [63 : 0] result
+  .result(result), // output [31 : 0] result
   .rdy(rdy) // output rdy
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.2
-# Date: Tue Nov 25 22:43:29 2014
+# Date: Tue Dec  2 22:23:39 2014
 #
 ##############################################################
 #
@@ -57,16 +57,16 @@ CSET c_latency=6
 CSET c_mult_usage=No_Usage
 CSET c_optimization=Speed_Optimized
 CSET c_rate=1
-CSET c_result_exponent_width=11
-CSET c_result_fraction_width=53
+CSET c_result_exponent_width=8
+CSET c_result_fraction_width=24
 CSET c_speed=Maximum_speed
 CSET component_name=fix2float
 CSET maximum_latency=true
 CSET operation_type=Fixed_to_float
-CSET result_precision_type=Double
+CSET result_precision_type=Single
 # END Parameters
 # BEGIN Extra information
 MISC pkg_timestamp=2012-07-02T11:22:24Z
 # END Extra information
 GENERATE
-# CRC: 5fc96d34
+# CRC: a964f922

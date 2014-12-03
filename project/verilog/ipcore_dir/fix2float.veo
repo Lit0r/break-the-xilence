@@ -73,7 +73,7 @@
 fix2float your_instance_name (
   .a(a), // input [31 : 0] a
   .clk(clk), // input clk
-  .result(result) // output [63 : 0] result
+  .result(result) // output [31 : 0] result
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

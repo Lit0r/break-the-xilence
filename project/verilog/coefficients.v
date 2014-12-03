@@ -1,16 +1,5 @@
-function [63:0] fp_double;
-input [63:0] a;
-begin
-fp_double = {a[63], a[62:52]+1, a[51:0]};
-end
-endfunction
+`default_nettype none
 
-function [63:0] fp_negate;
-input [63:0] a;
-begin
-fp_negate = {~a[63], a[62:0]};
-end
-endfunction
 
 
 
@@ -19,53 +8,89 @@ endfunction
 
 // generates filter coefficients on the fly
 module coefficients (
-  input clk_slow,
-  input clk_fast,
-  input k_fixed,
-  output [63:0] b0, b1, b2, a1, a2,
-  output done);
+  input wire clk_slow,
+  input wire clk_fast,
+  //input rst_b,
+  input wire k_fixed,
+  output wire [31:0] b0, b1, b2, a1, a2,
+  output wire done);
 
 // some constants, I might try to optimize these out later
-wire [63:0] FP_1 = 64'h3FF0000000000000;
-wire [63:0] FP_2 = 64'h4000000000000000;
-wire [63:0] FP__1 = 64'hBFF0000000000000;
-wire [63:0] FP_4 = 64'h4010000000000000;
-wire [63:0] FP_1_4 = 64'h3FD0000000000000;
+wire [31:0] FP_1 = 32'h3f800000;
+wire [31:0] FP_2 = 32'h40000000;
+wire [31:0] FP__1 = 32'hbf800000;
+wire [31:0] FP_4 = 32'h40800000;
+wire [31:0] FP_1_4 = 32'h3e800000;
 
 // declare more wires, because those are helpful
 wire [17:0] k_fixed_Q;
-wire [63:0] b0_D, b1_D, b2_D, a1_D, a2_D;
-wire [63:0] k, kk, k_q, recip;
-wire [63:0] recip_s1, recip_s2;
-wire [63:0] a1_s1, a1_s2;
-wire [63:0] a2_s1, a2_s2;
+wire [31:0] b0_D, b1_D, b2_D, a1_D, a2_D;
+wire [31:0] k, kk, k_q, recip;
+wire [31:0] recip_s1, recip_s2;
+wire [31:0] a1_s1, a1_s2;
+wire [31:0] a2_s1, a2_s2;
 
-reg reg_en;
 
-always @(posedge clk_fast)
-  if(reg_en)
-    reg_en <= 0;
-  else
-    reg_en <= (counter == 0);
+
+
+
+function [31:0] fp_double;
+input [31:0] a;
+begin
+fp_double = {a[31], a[30:23]+1, a[22:0]};
+end
+endfunction
+
+function [31:0] fp_negate;
+input [31:0] a;
+begin
+fp_negate = {~a[31], a[30:0]};
+end
+endfunction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//reg reg_en = 0;
+reg [8:0] counter = 0;
+
+
+wire reg_en;
+assign reg_en = (counter == 0);
+//always @(posedge clk_fast)
+//  if(reg_en)
+//    reg_en <= 0;
+//  else
+//    reg_en <= (counter == 0);
 
 // this should give you WAY more than enough time.
-reg [4:0] counter;
-wire [4:0] counter1;
+
+wire [8:0] counter1;
 assign counter1 = counter + 1;
-always @(posedge clk_slow)
+always @(posedge clk_fast)
   //if(counter1 == 8)
   //  counter <= 0;
   //else
     counter <= counter1;
 
 
-register #(18) k_fixed_reg (clk_fast, 1'b1, k_fixed, k_fixed_Q, reg_en);
+register #(18) k_fixed_reg (clk_fast, k_fixed, k_fixed_Q, reg_en);
 
-register #(64) tob0 (clk_fast, 1'b1, b0_D, b0, reg_en);
-register #(64) tob1 (clk_fast, 1'b1, b1_D, b1, reg_en);
-register #(64) tob2 (clk_fast, 1'b1, b2_D, b2, reg_en);
-register #(64) toa1 (clk_fast, 1'b1, a1_D, a1, reg_en);
-register #(64) toa2 (clk_fast, 1'b1, a1_in, a2, reg_en);
+register #(32) tob0 (clk_fast, b0_D, b0, reg_en);
+register #(32) tob1 (clk_fast, b1_D, b1, reg_en);
+register #(32) tob2 (clk_fast, b2_D, b2, reg_en);
+register #(32) toa1 (clk_fast, a1_D, a1, reg_en);
+register #(32) toa2 (clk_fast, a2_D, a2, reg_en);
 
 
 // K = tan(pi * f / Fs)

@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.2
-# Date: Tue Nov 25 22:46:17 2014
+# Date: Tue Dec  2 22:25:57 2014
 #
 ##############################################################
 #
@@ -39,10 +39,10 @@ SET vhdlsim = false
 SELECT Floating-point xilinx.com:ip:floating_point:5.0
 # END Select
 # BEGIN Parameters
-CSET a_precision_type=Double
+CSET a_precision_type=Single
 CSET add_sub_value=Both
-CSET c_a_exponent_width=11
-CSET c_a_fraction_width=53
+CSET c_a_exponent_width=8
+CSET c_a_fraction_width=24
 CSET c_compare_operation=Programmable
 CSET c_has_ce=false
 CSET c_has_divide_by_zero=false
@@ -69,4 +69,4 @@ CSET result_precision_type=Int32
 MISC pkg_timestamp=2012-07-02T11:22:24Z
 # END Extra information
 GENERATE
-# CRC: 7e8bc871
+# CRC: 5f3e0c80

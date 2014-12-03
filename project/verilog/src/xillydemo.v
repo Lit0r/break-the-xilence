@@ -1,37 +1,40 @@
+`default_nettype none
 module xillydemo
   (
-  input  clk_100,
-  input  otg_oc,   
-  inout [55:0] PS_GPIO,
-  inout scl1,
-  inout sda1,
-  inout scl_alt1,
-  inout sda_alt1,  
-  inout scl2,
-  inout sda2,
-  inout scl_alt2,
-  inout sda_alt2,  
-  inout scl3,
-  inout sda3,
-  inout scl_alt3,
-  inout sda_alt3,
-  output [3:0] GPIO_LED,
-  output [3:0] vga4_blue,
-  output [3:0] vga4_green,
-  output [3:0] vga4_red,
-  output  vga_hsync,
-  output  vga_vsync,
+  input wire clk_100,
+  input wire otg_oc,   
+  inout wire [55:0] PS_GPIO,
+  inout wire scl1,
+  inout wire sda1,
+  inout wire scl_alt1,
+  inout wire sda_alt1,  
+  inout wire scl2,
+  inout wire sda2,
+  inout wire scl_alt2,
+  inout wire sda_alt2,  
+  inout wire scl3,
+  inout wire sda3,
+  inout wire scl_alt3,
+  inout wire sda_alt3,
+  output wire [3:0] GPIO_LED,
+  output wire [3:0] vga4_blue,
+  output wire [3:0] vga4_green,
+  output wire [3:0] vga4_red,
+  output wire vga_hsync,
+  output wire vga_vsync,
+  
+  //input RST_B,
 
 // NEW AUDIO
-           output AC_ADR0,
-           output AC_ADR1 , 
-           output AC_GPIO0 ,
-           input AC_GPIO1 ,
-           input AC_GPIO2 ,
-           input AC_GPIO3 ,
-           output AC_MCLK  ,
-           output AC_SCK   ,
-           inout AC_SDA   
+           output wire AC_ADR0,
+           output wire AC_ADR1 , 
+           output wire AC_GPIO0 ,
+           input wire AC_GPIO1 ,
+           input wire AC_GPIO2 ,
+           input wire AC_GPIO3 ,
+           output wire AC_MCLK  ,
+           output wire AC_SCK   ,
+           inout wire AC_SDA   
 // END NEW AUDIO
 
   /*output  audio_mclk,
@@ -52,6 +55,14 @@ module xillydemo
 //        7 Series
 // Xilinx HDL Libraries Guide, version 13.2
 
+
+//wire rst_b;
+
+
+//assign rst_b = ~RST;
+
+wire clk_calc, clk_48;
+
 wire clk_100_buffered;
 
 IBUFG #(
@@ -61,6 +72,21 @@ IBUFG #(
    .O(clk_100_buffered), // Clock buffer output
    .I(clk_100)  // Clock buffer input (connect directly to top-level port)
 );
+
+/*
+IBUFG #(
+   .IBUF_LOW_PWR("TRUE"), // Low power="TRUE", Highest performance="FALSE"
+   .IOSTANDARD("DEFAULT")  // Specify the input I/O standard
+) IBUFG_inst2 (
+   .O(rst_b), // Clock buffer output
+   .I(RST_B)  // Clock buffer input (connect directly to top-level port)
+);
+*/
+
+
+
+
+
 
 // End of IBUFG_inst instantiation
 
@@ -427,12 +453,13 @@ wire [4:0] note_event_bank;
 
 // since the clocks are integer multiples, I only really need to do this for flags, right?
 wire seen; // JACOB: this may need a testbench. check waveforms to see that 'seen' is a signal in the clk_48 domain that rises when clk_calc rises.
-FlagAck_CrossDomain(clk_calc, 1'b1, ,clk_48, seen);
+//FlagAck_CrossDomain(clk_calc, 1'b1, ,clk_48, seen);
+assign seen = 1'b1;
 
 wire no_new_note;
 wire [31:0] dout;
 
-
+/*
    // 32-bit loopback
   fif_async_32 f32 (
   .rst(1'b0), // input rst JACOB
@@ -458,9 +485,12 @@ wire [31:0] dout;
   .full(read_8_full), // output full
   .empty(read_8_empty) // output empty
 );
-
+*/
 
 //assign dout = user_w_write_32_data;
+
+wire [22:0] note_period;
+wire new_note_event;
 
 
 assign note_event_bank = dout[27:23]; // JACOB: I fgorget the exact bits. fix this!
@@ -468,7 +498,7 @@ assign note_period = dout[22:0]; // JACOB: same thing
 
 // JACOB: please find a way to determine the "new_note_event" signal.
 // if (seen && ~no_new_note) probably should do it??
-assign new_note_event = seen && ~no_new_note;
+assign new_note_event = 1'b1; // ~user_r_read_32_empty;
 assign is_note_on_event = new_note_event && (note_period != 0);
 
 // JACOB: x, y, z are the same as envelope.
@@ -489,7 +519,7 @@ decoder d2(clk_calc, pmod2[15:0], dial5, dial6, slider1, slider2);
 decoder d3(clk_calc, pmod3[15:0], slider3, slider4, slider5, slider6);
 
 //JACOB DEFINE fa fb fc fd ab ac x y z appropriately based on what pmod does
-wire [11:0] fa, fb, fc, fd, ab, ac, x, y, z;
+wire [31:0] fa, fb, fc, fd, ab, ac, x, y, z;
 
 //assign fa = slider1;
 //assign fb = slider2;
@@ -497,15 +527,25 @@ wire [11:0] fa, fb, fc, fd, ab, ac, x, y, z;
 //assign fd = slider4;
 //assign ab = slider5;
 //assign ac = slider6;
+
+
 assign fa = 12'h7ff;
+//assign fa = dial1;
+
+
 assign fb = 12'h123;
 assign fc = 12'h7ff;
 assign fd = 12'h034;
-assign ab = 12'hfff;
-assign ac = 12'h7ff;
-assign x = dial1;
-assign y = dial2;
-assign z = dial3;
+assign ab = 12'h7ff;
+assign ac = 12'h3ff;
+
+//assign x = dial1 << 20;
+assign x = 32'd24000000;
+assign y = 32'd24000000;
+assign z = 32'd24000000;
+//assign x = dial1;
+//assign y = dial2;
+//assign z = dial3;
 
 
 
@@ -569,7 +609,7 @@ end
 
 
 
-	/*
+	
 	fifo_32x512 fifo_32
      (
       .clk(bus_clk),
@@ -577,7 +617,7 @@ end
       .din(user_w_write_32_data),
       .wr_en(user_w_write_32_wren),
       .rd_en(seen),//.rd_en(user_r_read_32_rden),
-      .dout(user_r_read_32_data),
+      .dout(dout),
       .full(user_w_write_32_full),
       .empty(user_r_read_32_empty)
       );
@@ -598,7 +638,7 @@ end
       .empty(user_r_read_8_empty)
       );
 
-   assign  user_r_read_8_eof = 0;*/
+   assign  user_r_read_8_eof = 0;
 /*
    i2s_audio audio
      (
@@ -646,3 +686,4 @@ end
       );
 */
 endmodule
+`default_nettype wire
