@@ -1,0 +1,14 @@
+# Output products list for <fp_sub_32_logic>
+_xmsgs/pn_parser.xmsgs
+fp_sub_32_logic/doc/floating_point_ds335.pdf
+fp_sub_32_logic/doc/floating_point_v5_0_readme.txt
+fp_sub_32_logic/doc/floating_point_v5_0_vinfo.html
+fp_sub_32_logic.asy
+fp_sub_32_logic.gise
+fp_sub_32_logic.ngc
+fp_sub_32_logic.v
+fp_sub_32_logic.veo
+fp_sub_32_logic.xco
+fp_sub_32_logic.xise
+fp_sub_32_logic_flist.txt
+fp_sub_32_logic_xmdf.tcl

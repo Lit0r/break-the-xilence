@@ -184,18 +184,8 @@ module envgenmath (
 	engen_sub i_sub (clk, subva, subvb, sub);
    engen_mult i_mult (clk, sub, counter, mult);
 	engen_div i_div (clk, divisor_, dividend_, divisor_, dividend_, , divv, {6'b0, mult}, div0);
-	assign div = div0[49:32];//[81:32];
+	assign div = div0[81:70];
 	engen_add i_add (clk, div, subvb, pipe_res);
-/*   input aclk;
-  input s_axis_divisor_tvalid;
-  input s_axis_dividend_tvalid;
-  output s_axis_divisor_tready;
-  output s_axis_dividend_tready;
-  output m_axis_dout_tvalid;
-  input [31 : 0] s_axis_divisor_tdata;
-  input [55 : 0] s_axis_dividend_tdata;
-  output [87 : 0] m_axis_dout_tdata;*/
-
 
 
 endmodule
