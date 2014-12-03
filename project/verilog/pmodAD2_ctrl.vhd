@@ -234,7 +234,7 @@ begin
 						-- TX pins stay low once we're done
 						fDoTransmit <= '0';
 						fMessage <= '0';
-						stMain <= stDone;
+						stMain <= stGo;
 				end case;
 			end if;
 		end if;			
