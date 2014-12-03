@@ -1,12 +1,12 @@
 module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_value, busy,done);
 	input clk, rst_b;
 	input note_on, note_off;
-	input [6:0] a, b, c, d;
+	input [17:0] a, b, c, d;
 	input [31:0] x, y, z;
 	output [17:0] out_value;
 	output reg busy, done;
 
-
+	reg [17:0] out_value1;
 	//typedef enum {IDLE,ATTACK,DECAY,SUSTAIN,RELEASE} estate;
 	
 	wire [4:0] IDLE    = 5'b00001;
@@ -17,7 +17,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 	
 	reg [4:0] current, next;
 	
-	reg [17:0] riv; // relase state initial value
+	reg [17:0] riv = ~0; // relase state initial value
 	
 	
 	reg [31:0] counter;
@@ -25,13 +25,19 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 	assign counter1 = counter + 1;
 
   	always@(posedge clk, negedge rst_b) begin
-    	if(~rst_b) current <= IDLE;
-    	else begin
+    	if(~rst_b) begin 
+			current <= IDLE;
+			//out_value1 <= 0;
+			riv <= 0;
+			counter <= 0;
+    	end else begin
 			if(current != next) begin
 				counter <= 0;
 				if(next == RELEASE)
-					riv <= out_value;
-			end else
+					riv <= out_value1;
+			end else if (current == IDLE)
+				counter <= 0;
+			else
 				counter <= counter1;
 			current <= next;
 			
@@ -42,9 +48,9 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 		end
   	end	
 
-	reg [7:0] subva;
-	reg [7:0] subvb;
-	reg [31:0] divv; 
+	reg [17:0] subva = 0;
+	reg [17:0] subvb = 0;
+	reg [17:0] divv = 0; 
 	reg predef;
 	reg [17:0] predefv;
 	wire [17:0] pipe_res;
@@ -99,15 +105,14 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
   		endcase
   	end
 	
-	//reg [63:0] intermediate; // for calculations that'll overflow otherwise
-	envgenpipeline e (clk, counter, subva, subvb, divv, predef, predefv, pipe_res);
+	//envgenpipeline e (clk, counter, subva, subvb, divv, predef, predefv, pipe_res);
 	
-	assign out_value = pipe_res;
+	
 	
   	//output logic
   	always @* begin
   		busy = 0;
-		//out_value = 0;
+		out_value1 = 0;
 		divv = 1;
 		predef = 0;
 		predefv = 0;
@@ -117,52 +122,51 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 		
 		case(current)
   			IDLE:begin
-  				//out_value = a;
-				predef = 1;
-				predefv = a;
+  				out_value1 = a;
+				//predef = 1;
+				//predefv = a;
   				busy = 1'b0;
   			end
   			ATTACK:begin
-  				//out_value = $signed({1'b0, a}) + $signed({32'b0, counter}) * $signed(b - a) / $signed(x);
-  				subva = b;
-				subvb = a;
-				divv = x;
+  				out_value1 = $signed({1'b0, a}) + $signed({32'b0, counter}) * $signed(b - a) / $signed(x);
+  				//subva = b;
+				//subvb = a;
+				//divv = x;
 				busy = 1'b1;
-				//out_value = pipe_res;
   			end
   			DECAY:begin
-  				//out_value = $signed({1'b0, b}) + $signed({32'b0, counter}) * $signed(c - b) / $signed(y);
-  				subva = c;
-				subvb = b;
-				divv = y;
+  				out_value1 = $signed({1'b0, b}) + $signed({32'b0, counter}) * $signed(c - b) / $signed(y);
+  				//subva = c;
+				//subvb = b;
+				//divv = y;
 				busy = 1'b1;
-				//out_value = pipe_res;
   			end
   			SUSTAIN:begin
-  				//out_value = c;
-				predef = 1;
-				predefv = c;
+  				out_value1 = c;
+				//predef = 1;
+				//predefv = c;
   				busy = 1'b1;
   			end
   			RELEASE:begin
-				//out_value = $signed({1'b0, riv}) + $signed({32'b0, counter}) * $signed(d - riv) / $signed(z);
-  				subva = d;
-				subvb = riv;
-				divv = z;
+				out_value1 = $signed({1'b0, riv}) + $signed({32'b0, counter}) * $signed(d - riv) / $signed(z);
+  				//subva = d;
+				//subvb = riv;
+				//divv = z;
 				busy = 1'b1;
-				//out_value = pipe_res;
   			end
   		endcase
   	end
+	
+	assign out_value = out_value1;
 
 endmodule:envelope_generator
 
 module envgenpipeline (
 	input clk, 
 	input [31:0] counter, 
-	input [7:0] subva,
-	input [7:0] subvb, 
-	input [31:0] divv,
+	input [17:0] subva,
+	input [17:0] subvb, 
+	input [17:0] divv,
 	input predef,
 	input [17:0] predefv, 
 	
@@ -170,13 +174,13 @@ module envgenpipeline (
 	
 	
 	reg [31:0] counter0,  counter1;
-	reg [7:0]             subv1;
-	reg [7:0]  subva0; 
-	reg [7:0]  subvb0,    subvb1,    subvb2,    subvb3; 
-	reg [39:0]                       mult2;
-	reg [31:0] divv0,     divv1,     divv2; 
-	reg [31:0]                                  div3; 
-	reg [17:0]                                             add4;
+	reg [17:0]             subv1=~0;
+	reg [17:0]  subva0; 
+	reg [17:0]  subvb0,    subvb1,    subvb2,    subvb3; 
+	reg [49:0]                       mult2=~0;
+	reg [17:0] divv0,     divv1,     divv2; 
+	reg [17:0]                                  div3=~0; 
+	reg [17:0]                                             add4=~0;
 	reg        predef0,   predef1,   predef2,   predef3,   predef4;
 	reg [17:0] predefv0,  predefv1,  predefv2,  predefv3,  predefv4;
 	
@@ -196,7 +200,7 @@ always @(posedge clk) begin
 	predefv1 <= predefv0;
 	
 	subvb2 <= subvb1;
-	mult2 <= $signed(subv1) * $signed(counter1 + 40'b0);
+	mult2 <= $signed(subv1) * $signed(counter1 + 50'b0);
 	divv2 <= divv1;
 	predef2 <= predef1;
 	predefv2 <= predefv1;
