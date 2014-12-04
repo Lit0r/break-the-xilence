@@ -20,7 +20,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module squaregen (input wire clk, input wire en, input wire [25:0] period, output wire [23:0] tone);
+module squaregen (input wire clk, input wire en, input wire [22:0] period, output wire [23:0] tone);
     parameter amplitude = 24'hfffff; // TODO CHANGE?
 	 //parameter freq = 440;
     reg [31:0] count = 0;

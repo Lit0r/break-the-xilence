@@ -45,7 +45,8 @@ module fif_async_32(
   rd_en,
   dout,
   full,
-  empty
+  empty,
+  valid
 );
 
 input rst;
@@ -57,6 +58,7 @@ input rd_en;
 output [31 : 0] dout;
 output full;
 output empty;
+output valid;
 
 // synthesis translate_off
 
@@ -149,7 +151,7 @@ output empty;
     .C_HAS_SLAVE_CE(0),
     .C_HAS_SRST(0),
     .C_HAS_UNDERFLOW(0),
-    .C_HAS_VALID(0),
+    .C_HAS_VALID(1),
     .C_HAS_WR_ACK(0),
     .C_HAS_WR_DATA_COUNT(0),
     .C_HAS_WR_RST(0),
@@ -164,20 +166,20 @@ output empty;
     .C_INTERFACE_TYPE(0),
     .C_MEMORY_TYPE(4),
     .C_MIF_FILE_NAME("BlankString"),
-    .C_MSGON_VAL(1),
+    .C_MSGON_VAL(0),
     .C_OPTIMIZATION_MODE(0),
     .C_OVERFLOW_LOW(0),
-    .C_PRELOAD_LATENCY(1),
-    .C_PRELOAD_REGS(0),
+    .C_PRELOAD_LATENCY(0),
+    .C_PRELOAD_REGS(1),
     .C_PRIM_FIFO_TYPE("512x36"),
-    .C_PROG_EMPTY_THRESH_ASSERT_VAL(5),
+    .C_PROG_EMPTY_THRESH_ASSERT_VAL(6),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_AXIS(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_RACH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_RDCH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_WACH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_WDCH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_WRCH(1022),
-    .C_PROG_EMPTY_THRESH_NEGATE_VAL(6),
+    .C_PROG_EMPTY_THRESH_NEGATE_VAL(7),
     .C_PROG_EMPTY_TYPE(0),
     .C_PROG_EMPTY_TYPE_AXIS(0),
     .C_PROG_EMPTY_TYPE_RACH(0),
@@ -185,14 +187,14 @@ output empty;
     .C_PROG_EMPTY_TYPE_WACH(0),
     .C_PROG_EMPTY_TYPE_WDCH(0),
     .C_PROG_EMPTY_TYPE_WRCH(0),
-    .C_PROG_FULL_THRESH_ASSERT_VAL(504),
+    .C_PROG_FULL_THRESH_ASSERT_VAL(505),
     .C_PROG_FULL_THRESH_ASSERT_VAL_AXIS(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_RACH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_RDCH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WACH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WDCH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WRCH(1023),
-    .C_PROG_FULL_THRESH_NEGATE_VAL(503),
+    .C_PROG_FULL_THRESH_NEGATE_VAL(504),
     .C_PROG_FULL_TYPE(0),
     .C_PROG_FULL_TYPE_AXIS(0),
     .C_PROG_FULL_TYPE_RACH(0),
@@ -261,6 +263,7 @@ output empty;
     .DOUT(dout),
     .FULL(full),
     .EMPTY(empty),
+    .VALID(valid),
     .BACKUP(),
     .BACKUP_MARKER(),
     .CLK(),
@@ -280,7 +283,6 @@ output empty;
     .WR_ACK(),
     .OVERFLOW(),
     .ALMOST_EMPTY(),
-    .VALID(),
     .UNDERFLOW(),
     .DATA_COUNT(),
     .RD_DATA_COUNT(),

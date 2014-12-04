@@ -1,11 +1,11 @@
 `default_nettype none
 
 module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_value, busy,done);
-	input clk, rst_b;
-	input note_on, note_off;
-	input [17:0] a, b, c, d;
-	input [31:0] x, y, z;
-	output [17:0] out_value;
+	input wire clk, rst_b;
+	input wire note_on, note_off;
+	input wire [17:0] a, b, c, d;
+	input wire [31:0] x, y, z;
+	output wire [17:0] out_value;
 	output reg busy, done;
 
 	//reg [17:0] out_value1;
@@ -54,7 +54,7 @@ module envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, out_v
 
 	reg [17:0] subva = 0;
 	reg [17:0] subvb = 0;
-	reg [17:0] divv = 0; 
+	reg [31:0] divv = 0; 
 	reg predef;
 	reg [17:0] predefv;
 	wire [17:0] pipe_res;
@@ -170,21 +170,21 @@ module envgenmath (
 	input wire [31:0] counter, 
 	input wire [17:0] subva,
 	input wire [17:0] subvb, 
-	input wire [17:0] divv,
+	input wire [31:0] divv,
 	input wire predef,
 	input wire [17:0] predefv, 
 	
 	output wire [17:0] pipe_res);
 
 	wire [17:0] sub, div;
-	wire [81:0] div0;
+	wire [87:0] div0;
    wire[49:0] mult;
 	wire dividend_, divisor_;
 
 	engen_sub i_sub (clk, subva, subvb, sub);
    engen_mult i_mult (clk, sub, counter, mult);
 	engen_div i_div (clk, divisor_, dividend_, divisor_, dividend_, , divv, {6'b0, mult}, div0);
-	assign div = div0[81:70];
+	assign div = div0[49:32];
 	engen_add i_add (clk, div, subvb, pipe_res);
 
 

@@ -7,17 +7,31 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/coefficients |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|coefficients.v</ClosedNode>
+         <ClosedNode>/i2s_audio |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|i2s_audio.v</ClosedNode>
+         <ClosedNode>/iir |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|iir.v</ClosedNode>
+         <ClosedNode>/masterControler - Behavioral |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|masterControler.vhd</ClosedNode>
+         <ClosedNode>/notebank |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|notebank.v</ClosedNode>
          <ClosedNode>/tb_adau1761_test - behavior |afs|ece.cmu.edu|usr|elliotr|Documents|xillinux-eval-zedboard-1.3a|verilog|tb_adau1761_test.vhd</ClosedNode>
          <ClosedNode>/tb_adau1761_test - behavior |afs|ece.cmu.edu|usr|elliotr|Private|18545|break-the-xilence|project|verilog|tb_adau1761_test.vhd</ClosedNode>
+         <ClosedNode>/tb_adau1761_test - behavior |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|tb_adau1761_test.vhd</ClosedNode>
          <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|elliotr|Documents|xillinux-eval-zedboard-1.3a|verilog|src|xillydemo.v/smbus - smbus</ClosedNode>
          <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|elliotr|Documents|xillinux-eval-zedboard-1.3a|verilog|src|xillydemo.v/xillybus_ins - xillybus</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/TWIUtils</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/adau - adau1761_test - Behavioral</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/egtest - envelope_generator</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/mc1 - masterControler - Behavioral</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/mc1 - masterControler - Behavioral/analogReciever - pmodAD2_ctrl - Behavioral</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/mc2 - masterControler - Behavioral</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/mc3 - masterControler - Behavioral</ClosedNode>
+         <ClosedNode>/xillydemo |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|src|xillydemo.v/xillybus_ins - xillybus</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>xillydemo (/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >39</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >15</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000037d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000037d0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000221000000020000000000000000000000000200000064ffffffff000000810000000300000002000002210000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>xillydemo (/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v)</CurrentItem>
    </ItemView>
@@ -25,18 +39,17 @@
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>CORE Generator</ClosedNode>
-         <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design/Place &amp; Route/Back-annotate Pin Locations</ClosedNode>
          <ClosedNode>Implement Design/Place &amp; Route/Generate IBIS Model</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Analyze Timing / Floorplan Design (PlanAhead)</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >22</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000015a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000015a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000117000000010000000100000000000000000000000064ffffffff000000810000000000000001000001170000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Analyze Timing / Floorplan Design (PlanAhead)</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -47,7 +60,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000002f0000000040101000100000000000000000000000064ffffffff0000008100000000000000040000007e0000000100000000000000d60000000100000000000000840000000100000000000001180000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>adau1761_configuraiton_data.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -67,26 +80,26 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -98,7 +111,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000242000000010000000100000000000000000000000064ffffffff000000810000000000000001000002420000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -111,13 +124,14 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000249000000010000000100000000000000000000000064ffffffff000000810000000000000001000002490000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/coefficients |afs|ece.cmu.edu|usr|jcnelson|Private|class|545|break-the-xilence|project|verilog|coefficients.v</ClosedNode>
          <ClosedNode>/i2s_audio |afs|ece.cmu.edu|usr|elliotr|Private|18545|break-the-xilence|project|verilog|src|i2s_audio.v</ClosedNode>
          <ClosedNode>/iir |afs|ece.cmu.edu|usr|elliotr|Private|18545|break-the-xilence|project|verilog|iir.v</ClosedNode>
          <ClosedNode>/mult_timing |afs|ece.cmu.edu|usr|elliotr|Private|18545|break-the-xilence|project|verilog|mult_timing.v</ClosedNode>
@@ -129,13 +143,13 @@
          <ClosedNode>PROJECT</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>xillydemo (/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v)</SelectedItem>
+         <SelectedItem>env_tb (/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/env_tb.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >20</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >10</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000037d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000037d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>xillydemo (/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/src/xillydemo.v)</CurrentItem>
+      <CurrentItem>env_tb (/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/env_tb.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -143,13 +157,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
@@ -157,13 +171,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
@@ -175,7 +189,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000242000000010000000100000000000000000000000064ffffffff000000810000000000000001000002420000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -226,12 +240,12 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>xillydemo</SelectedItem>
+         <SelectedItem>xc7z020-1clg484</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001c5000000020000000000000000000000000000000064ffffffff000000810000000000000002000001330000000100000000000000920000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>xillydemo</CurrentItem>
+      <CurrentItem>xc7z020-1clg484</CurrentItem>
    </ItemView>
 </Project>

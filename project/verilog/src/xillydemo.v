@@ -48,7 +48,7 @@ module xillydemo
   output [1:0] smbus_addr
 */
   ); 
-  parameter banks = 1;
+  parameter banks = 6;
 
 
 // IBUFG: Single-ended global clock input buffer
@@ -178,14 +178,14 @@ IBUFG #(
 // HAMSTER TIEM
 
 
-wire [31:0] fromps;
-reg [23:0] audio;
-
-reg [22:0] period = 0;
-
-always @(posedge clk_calc)
-	if(fromps[22:0] != 0)
-		period <= fromps[22:0];
+//wire [31:0] fromps;
+//reg [23:0] audio;
+//
+//reg [22:0] period = 0;
+//
+//always @(posedge clk_calc)
+//	if(fromps[22:0] != 0)
+//		period <= fromps[22:0];
 
 
 
@@ -444,12 +444,10 @@ wire is_note_on_event;
 
 reg note_done;
 wire [4:0] note_event_bank;
+reg [23:0] audio;
 
 
 
-//wire seen = 1'b1;
-	//always @(posedge clk_48)
-	  //  seen <= user_w_write_32_wren;
 
 // since the clocks are integer multiples, I only really need to do this for flags, right?
 wire seen; // JACOB: this may need a testbench. check waveforms to see that 'seen' is a signal in the clk_48 domain that rises when clk_calc rises.
@@ -458,19 +456,21 @@ assign seen = 1'b1;
 
 wire no_new_note;
 wire [31:0] dout;
+wire full;
+wire thing;
 
-/*
    // 32-bit loopback
   fif_async_32 f32 (
   .rst(1'b0), // input rst JACOB
   .wr_clk(clk_100_buffered), // input wr_clk
   .rd_clk(clk_48), // input rd_clk
-  .din(write_32_data), // input [31 : 0] din
-  .wr_en(write_32_wren), // input wr_en
+  .din(user_w_write_32_data), // input [31 : 0] din
+  .wr_en(user_w_write_32_wren), // input wr_en
   .rd_en(seen), // input rd_en
   .dout(dout), // output [31 : 0] dout
   .full(full), // output full
-  .empty(no_new_note) // output empty
+  .empty(no_new_note), // output empty
+  .valid(thing)
 );
 	
 	
@@ -480,25 +480,22 @@ wire [31:0] dout;
   .rd_clk(clk_100_buffered), // input rd_clk
   .din(bank_done), // input [7 : 0] din
   .wr_en(note_done), // input wr_en
-  .rd_en(read_8_rden), // input rd_en
-  .dout(read_8_data), // output [7 : 0] dout
-  .full(read_8_full), // output full
-  .empty(read_8_empty) // output empty
+  .rd_en(user_r_read_8_rden), // input rd_en
+  .dout(user_r_read_8_data), // output [7 : 0] dout
+  .full(user_w_write_8_full), // output full
+  .empty(user_r_read_8_empty) // output empty
 );
-*/
-
-//assign dout = user_w_write_32_data;
 
 wire [22:0] note_period;
 wire new_note_event;
-
 
 assign note_event_bank = dout[27:23]; // JACOB: I fgorget the exact bits. fix this!
 assign note_period = dout[22:0]; // JACOB: same thing
 
 // JACOB: please find a way to determine the "new_note_event" signal.
 // if (seen && ~no_new_note) probably should do it??
-assign new_note_event = 1'b1; // ~user_r_read_32_empty;
+//assign new_note_event = thing;//1'b1; //~no_new_note;
+assign new_note_event = 1'b1; //~no_new_note;
 assign is_note_on_event = new_note_event && (note_period != 0);
 
 // JACOB: x, y, z are the same as envelope.
@@ -519,7 +516,8 @@ decoder d2(clk_calc, pmod2[15:0], dial5, dial6, slider1, slider2);
 decoder d3(clk_calc, pmod3[15:0], slider3, slider4, slider5, slider6);
 
 //JACOB DEFINE fa fb fc fd ab ac x y z appropriately based on what pmod does
-wire [31:0] fa, fb, fc, fd, ab, ac, x, y, z;
+wire [17:0] fa, fb, fc, fd, ab, ac;
+wire [31:0] x, y, z;
 
 //assign fa = slider1;
 //assign fb = slider2;
@@ -529,20 +527,20 @@ wire [31:0] fa, fb, fc, fd, ab, ac, x, y, z;
 //assign ac = slider6;
 
 
-assign fa = 12'h7ff;
+assign fa = 18'h7ff;
 //assign fa = dial1;
 
 
-assign fb = 12'h123;
-assign fc = 12'h7ff;
-assign fd = 12'h034;
-assign ab = 12'h7ff;
-assign ac = 12'h3ff;
+assign fb = 18'h123;
+assign fc = 18'h7ff;
+assign fd = 18'h034;
+assign ab = 18'h3ffff;
+assign ac = 18'h1ffff;
 
 //assign x = dial1 << 20;
-assign x = 32'd24000000;
-assign y = 32'd24000000;
-assign z = 32'd24000000;
+assign x = 32'd48000000;
+assign y = 32'd48000000;
+assign z = 32'd48000000;
 //assign x = dial1;
 //assign y = dial2;
 //assign z = dial3;
@@ -556,15 +554,15 @@ generate
 for(j = 0; j < banks; j = j + 1) begin
   notebank (clk_calc, clk_48, 1'b1, 
     note_on[j], note_off[j], periods[j],
-    fa + 32'b0, 
-    fb + 32'b0, 
-    fc + 32'b0, 
-    fd + 32'b0, 
-    ab + 32'b0, 
-    ac + 32'b0, 
-    x + 32'b0, 
-    y + 32'b0, 
-    z + 32'b0,
+    fa, 
+    fb, 
+    fc, 
+    fd, 
+    ab, 
+    ac, 
+    x, 
+    y, 
+    z,
     bank_out[j], 
     done[j]);
 end
@@ -580,7 +578,6 @@ always @(posedge clk_calc) begin
     if(done[i]) begin
       note_done = 1;
       bank_done = i;
-      //break;
     end
   end
   
@@ -594,6 +591,7 @@ always @(posedge clk_calc) begin
       note_on[note_event_bank] = 1;
       periods[note_event_bank] = note_period;
     end else
+		periods[note_event_bank] = note_period; // TODO REMOVE THIS FOR ENVELOPING!
       note_off[note_event_bank] = 1;
   end
   
@@ -608,7 +606,7 @@ end
 
 
 
-
+/*
 	
 	fifo_32x512 fifo_32
      (
@@ -630,14 +628,14 @@ end
      (
       .clk(bus_clk),
       .srst(!user_w_write_8_open && !user_r_read_8_open),
-      .din(user_w_write_8_data),
-      .wr_en(user_w_write_8_wren),
+      .din(bank_done),
+      .wr_en(note_done),
       .rd_en(user_r_read_8_rden),
       .dout(user_r_read_8_data),
       .full(user_w_write_8_full),
       .empty(user_r_read_8_empty)
       );
-
+*/
    assign  user_r_read_8_eof = 0;
 /*
    i2s_audio audio

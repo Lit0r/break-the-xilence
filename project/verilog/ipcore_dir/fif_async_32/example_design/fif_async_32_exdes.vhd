@@ -75,6 +75,7 @@ entity fif_async_32_exdes is
    PORT (
            WR_CLK                    : IN  std_logic;
      	   RD_CLK                    : IN  std_logic;
+           VALID                     : OUT std_logic;
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
@@ -98,6 +99,7 @@ architecture xilinx of fif_async_32_exdes is
    PORT (
            WR_CLK                    : IN  std_logic;
      	   RD_CLK                    : IN  std_logic;
+           VALID                     : OUT std_logic;
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
@@ -128,6 +130,7 @@ begin
     PORT MAP (
            WR_CLK                    => wr_clk_i,
            RD_CLK                    => rd_clk_i,
+           VALID                     => valid,
            RST                       => rst,
            WR_EN 		     => wr_en,
            RD_EN                     => rd_en,

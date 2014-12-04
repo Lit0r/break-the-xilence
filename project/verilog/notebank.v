@@ -25,7 +25,9 @@ module notebank(
 	 input wire rst_b,
 	 input wire note_on,
 	 input wire note_off,
-	 input wire [31:0] period, fa, fb, fc, fd, ab, ac, x, y, z, // adjust sizes later	 
+	 input wire [22:0] period, 
+	 input wire [17:0] fa, fb, fc, fd, ab, ac, 
+	 input wire [31:0] x, y, z, // adjust sizes later	 
 	 output reg [23:0] audio_out,
 	 output wire done
     );
@@ -33,7 +35,6 @@ module notebank(
 wire [41:0] audio_out0;
 
 wire [23:0] sq_out, saw_out, gen_out;
-//reg  [23:0] audio_out;
 
 
 // THIS CAN CHANGE! THERE IS HOPE!
@@ -94,7 +95,8 @@ iir iir_stage (clk_slow, clk_fast, b0, b1, b2, a1, a2, gen_out, filter_out);
 wire [17:0] engen_a_out;
 wire done_a, busy_a;
 
-assign done = done_a;
+//assign done = done_a;
+assign done = note_off;
 
 // amplitude envelope
 envelope_generator engen_a (
@@ -102,10 +104,10 @@ envelope_generator engen_a (
 	.rst_b(rst_b),
 	.note_on(note_on),
 	.note_off(note_off), 
-	.a(0), 
+	.a(18'b0), 
 	.b(ab), 
 	.c(ac), 
-	.d(0), 
+	.d(18'b0), 
 	.x(x), 
 	.y(y), 
 	.z(z), 
@@ -117,7 +119,8 @@ envelope_generator engen_a (
 //assign engen_a_out = filter_out;
 // output
 //assign audio_out0 = $signed({1'b0, engen_a_out} + 42'b0) * $signed(filter_out);
-assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(gen_out);
+//assign audio_out0 = $signed({1'b0, engen_a_out}) * $signed(gen_out);
+assign audio_out0[41:18] = gen_out;
 
 always @(posedge clk_fast)
   audio_out = audio_out0[41:18];

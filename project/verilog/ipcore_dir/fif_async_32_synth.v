@@ -60,7 +60,8 @@ module fif_async_32 (
   rd_en,
   dout,
   full,
-  empty
+  empty,
+  valid
 );
 
   input rst;
@@ -72,6 +73,7 @@ module fif_async_32 (
   output [31 : 0] dout;
   output full;
   output empty;
+  output valid;
 
   // WARNING: This file provides a module declaration only, it does not support
   //          direct instantiation. Please use an instantiation template (VEO) to

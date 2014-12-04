@@ -63,7 +63,8 @@ fif_async_32 your_instance_name (
   .rd_en(rd_en), // input rd_en
   .dout(dout), // output [31 : 0] dout
   .full(full), // output full
-  .empty(empty) // output empty
+  .empty(empty), // output empty
+  .valid(valid) // output valid
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
