@@ -5,17 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/engen_mult.v" Line 20209: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/engen_div.v" Line 23291: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"/afs/ece.cmu.edu/usr/jcnelson/Private/class/545/break-the-xilence/project/verilog/ipcore_dir/engen_add.v" Line 1040: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"/afs/ece.cmu.edu/support/xilinx/xilinx.release/14.2/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
-</msg>
-
 </messages>
 

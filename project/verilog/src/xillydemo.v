@@ -23,7 +23,7 @@ module xillydemo
   output wire vga_hsync,
   output wire vga_vsync,
   
-  //input RST_B,
+  input wire rst_b,
 
 // NEW AUDIO
            output wire AC_ADR0,
@@ -187,7 +187,7 @@ IBUFG #(
 //	if(fromps[22:0] != 0)
 //		period <= fromps[22:0];
 
-
+wire [23:0] audio;
 
 clocking clocker(
 	.CLK_IN1(clk_100_buffered),
@@ -444,7 +444,7 @@ wire is_note_on_event;
 
 reg note_done;
 wire [4:0] note_event_bank;
-reg [23:0] audio;
+
 
 
 
@@ -552,7 +552,7 @@ assign z = 32'd48000000;
 genvar j;
 generate
 for(j = 0; j < banks; j = j + 1) begin
-  notebank (clk_calc, clk_48, 1'b1, 
+  fake_notebank (clk_calc, clk_48, rst_b, 
     note_on[j], note_off[j], periods[j],
     fa, 
     fb, 
@@ -568,12 +568,13 @@ for(j = 0; j < banks; j = j + 1) begin
 end
 endgenerate
 
+reg[23:0] audio0;
 //reg bank_done;
 reg [31:0] i;
 always @(posedge clk_calc) begin
   note_done = 0;
   bank_done = 0;
-  audio = 0;
+  audio0 = 0;
   for(i = 0; i < banks; i = i + 1) begin
     if(done[i]) begin
       note_done = 1;
@@ -597,11 +598,15 @@ always @(posedge clk_calc) begin
   
   // sum them signals, please work.
   for(i = 0; i < banks; i = i + 1)
-    audio = audio + bank_out[i];
+    audio0 = audio0 + bank_out[i];
   
   
   
 end
+
+tremolo tr (clk_48, audio0, {dial1, 10'b0}, audio);
+
+
 
 
 
@@ -684,4 +689,3 @@ end
       );
 */
 endmodule
-`default_nettype wire

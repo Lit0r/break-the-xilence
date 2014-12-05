@@ -1,12 +1,11 @@
 `timescale 1ns / 1ps
-`default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date:    00:36:58 11/04/2014 
+// Create Date:    03:01:21 12/05/2014 
 // Design Name: 
-// Module Name:    squaregen 
+// Module Name:    tremolo 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -19,9 +18,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-
-module squaregen (input wire clk, input wire en, input wire [22:0] period, output wire [23:0] tone, output wire on);
-    parameter amplitude = 24'hfffff; // TODO CHANGE?
+module tremolo (input wire clk, input wire [23:0] audio_in, input wire [22:0] period, output wire [23:0] audio_out);
+    //parameter amplitude = 24'hfffff; // TODO CHANGE?
 	 //parameter freq = 440;
     reg [31:0] count = 0;
     
@@ -31,17 +29,11 @@ module squaregen (input wire clk, input wire en, input wire [22:0] period, outpu
     always @(posedge clk)
         if(count >= period)
             count <= 0;
-        else if(en)
-            count <= count + 1;
+        else 
+		      count <= count + 1;
     
-	 assign on = (count > (period >> 1));
-    assign tone = en ? 
-        (count > (period >> 1)) ? amplitude : -amplitude // TODO CHANGE BOUNDS
-        : 0;
-    //assign tone = count << 6;
+    assign audio_out = (count > (period >> 1)) ? audio_in : 0;
 
 
 
 endmodule
-
-`default_nettype wire
