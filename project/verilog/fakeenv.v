@@ -39,10 +39,13 @@ module fake_envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, 
 	                down ? out_value - 1 : out_value;
 
 
-	reg [31:0] counter0;
+	wire [31:0] counter0;
 	
 	
-	//assign counter0 = 
+	assign counter0 = (current == IDLE || current == SUSTAIN 
+		|| current != next || counter == ticks)
+	? 0
+	: counter1;
 
   	always @(posedge clk, negedge rst_b) begin
 		if(~rst_b) begin
@@ -51,21 +54,12 @@ module fake_envelope_generator(clk,rst_b,note_on,note_off, a, b, c, d, x, y, z, 
 			current <= 0;
 			out_value0 <= 0;
 		end else begin
-			
-			if(current != next) begin
-				counter <= 0;
+			if(current != next) 
             startfrom <= out_value;
-			end else if (current == IDLE || current == SUSTAIN)
-				counter <= 0;
-			else
-			   if(counter == ticks) begin
-				  out_value0 <= out_value1;
-				  counter <= 0;
-				end
-			else
-				counter <= counter1;
-			
+			if(counter == ticks) 
+				out_value0 <= out_value1;
 			current <= next;
+			counter <= counter0;
 		end	
   	end	
 

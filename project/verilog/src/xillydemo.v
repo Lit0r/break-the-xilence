@@ -511,9 +511,9 @@ masterControler mc1(, clk_100_buffered, scl1, sda1, pmod1[15:0], scl_alt1, sda_a
 masterControler mc2(, clk_100_buffered, scl2, sda2, pmod2[15:0], scl_alt2, sda_alt2);
 masterControler mc3(, clk_100_buffered, scl3, sda3, pmod3[15:0], scl_alt3, sda_alt3);
 
-decoder d1(clk_calc, pmod1[15:0], dial1, dial2, dial3, dial4);
-decoder d2(clk_calc, pmod2[15:0], dial5, dial6, slider1, slider2);
-decoder d3(clk_calc, pmod3[15:0], slider3, slider4, slider5, slider6);
+decoder d1(clk_calc, pmod1[15:0], dial1, slider3, slider4, slider5);
+decoder d2(clk_calc, pmod2[15:0], slider1, slider2, dial3, dial2);
+decoder d3(clk_calc, pmod3[15:0], dial4, dial5, dial6, slider6);
 
 //JACOB DEFINE fa fb fc fd ab ac x y z appropriately based on what pmod does
 wire [17:0] fa, fb, fc, fd, ab, ac;
@@ -534,13 +534,16 @@ assign fa = 18'h7ff;
 assign fb = 18'h123;
 assign fc = 18'h7ff;
 assign fd = 18'h034;
-assign ab = 18'h3ffff;
+//assign ab = 18'h3ffff;
+assign ab = {dial1, 6'b0};
+
+
 assign ac = 18'h1ffff;
 
 //assign x = dial1 << 20;
-assign x = 32'd48000000;
-assign y = 32'd48000000;
-assign z = 32'd48000000;
+assign x = dial2 + 32'b0;
+assign y = dial2 + 32'b0;
+assign z = dial2 + 32'b0;
 //assign x = dial1;
 //assign y = dial2;
 //assign z = dial3;
@@ -564,7 +567,8 @@ for(j = 0; j < banks; j = j + 1) begin
     y, 
     z,
     bank_out[j], 
-    done[j]);
+    done[j],
+	 (slider2[11:4]) + 1);
 end
 endgenerate
 
@@ -604,7 +608,7 @@ always @(posedge clk_calc) begin
   
 end
 
-tremolo tr (clk_48, audio0, {dial1, 10'b0}, audio);
+tremolo tr (clk_48, audio0, {slider1, 12'b0}, audio, dial1 < 192);
 
 
 

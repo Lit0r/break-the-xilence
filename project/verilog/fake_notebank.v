@@ -29,7 +29,8 @@ module fake_notebank(
 	 input wire [17:0] fa, fb, fc, fd, ab, ac, 
 	 input wire [31:0] x, y, z, // adjust sizes later	 
 	 output wire [23:0] audio_out,
-	 output wire done
+	 output wire done,
+	 input wire [7:0] duty
     );
 
 wire [41:0] audio_out0;
@@ -44,7 +45,7 @@ wire sqon;
 
 reg on = 0;
 
-
+/*
 squaregen sqgen (
 .clk(clk_fast),
 .en(on),
@@ -52,13 +53,25 @@ squaregen sqgen (
 .tone(sq_out),
 .on(sqon)
 );
+*/
+pwmgen sqgen (
+.clk(clk_slow),
+.en(on),
+.period(period),
+.tone(sq_out),
+.on(sqon),
+.duty(duty)
+);
+
+
+
 
 wire on_n;
 assign on_n = note_on ? 1 : note_off ? 0 : on;
 
 
 
-	always @(posedge clk_fast) begin
+	always @(posedge clk_slow) begin
   on <= on_n;
 end
 
@@ -130,7 +143,9 @@ fake_envelope_generator engen_a (
 //assign audio_out0[41:18] = filter_out;
 
 //assign audio_out = {sqon ? engen_a_out : -engen_a_out, 6'b0};
-assign audio_out = gen_out;
+//assign audio_out = {sqon ? engen_a_out : -engen_a_out, 6'b0};
+//assign audio_out = gen_out;
+assign audio_out = sqon ? {ab, 6'b0} : - {ab, 6'b0};
 
 
 //always @(posedge clk_slow)

@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module tremolo (input wire clk, input wire [23:0] audio_in, input wire [22:0] period, output wire [23:0] audio_out);
+module tremolo (input wire clk, input wire [23:0] audio_in, input wire [24:0] period, output wire [23:0] audio_out, input wire bypass);
     //parameter amplitude = 24'hfffff; // TODO CHANGE?
 	 //parameter freq = 440;
     reg [31:0] count = 0;
@@ -27,12 +27,12 @@ module tremolo (input wire clk, input wire [23:0] audio_in, input wire [22:0] pe
     
     
     always @(posedge clk)
-        if(count >= period)
+        if(count >= (period))
             count <= 0;
         else 
 		      count <= count + 1;
     
-    assign audio_out = (count > (period >> 1)) ? audio_in : 0;
+    assign audio_out = (bypass || (count > (period >> 1))) ? audio_in : 0;
 
 
 
